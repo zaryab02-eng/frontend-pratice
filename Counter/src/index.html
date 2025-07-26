@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Tailwind via CDN -->
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>JS Counter Phase 1</title>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-[#2A2C24] p-4">
+   <div class="h-[25rem] w-[17rem] bg-[#CFCFEA] border-4 border-black rounded-2xl flex flex-col items-center">
+   <span id="Number" class="p-2 relative top-[15%] text-center text-8xl">0</span>
+   <div class="h-max w-full flex items-center justify-center relative top-[20%] gap-0.5">
+   <button id="decrease" class="bg-blue-600 text-white h-max w-max border-2 border-amber-50 rounded-2xl p-2"><i class="fa-solid fa-minus"></i></button>
+   <button id="resetButton" class="bg-red-600 text-white h-max w-max border-2 border-amber-50 rounded-2xl p-2"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+   <button id="increase" class="bg-blue-600 text-white h-max w-max border-2 border-amber-50 rounded-2xl p-2"><i class="fa-solid fa-plus"></i></button>
+   </div>
+   <p id="message" class="w-max h-max p-2 relative top-[29%]"></p>
+   </div>
+  <!-- Link to your JS file -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Utililty Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="output.css">
+</head>
+<body id="page" class="flex items-center justify-center min-h-dvh bg-[#D3F8E2] text-black">
+<button id="mode" class="p-1 h-max w-max bg-black border-2 border-blue-600 rounded-[6px] text-white relative bottom-[17.1rem] left-[49rem]">☀️Toggle Light</button>
+<button id="resetAll" class="p-1 h-[4.5rem] w-[4.5rem] bg-red-600 border-2 border-blue-600 rounded-[50%] text-white flex flex-col items-center relative bottom-[1rem] left-[49.5rem]">Reset <i class="fa-solid fa-skull"></i> All</button>
+   <div id="container" class="h-[32rem] w-[45rem] bg-[#A9DEF9] border-4 border-black rounded-2xl relative ">
+   <div id="button-box" class="h-28 w-80 absolute left-[21rem] top-[9rem] flex items-center justify-around">
+    <button id="decrease" class="h-12 w-12 bg-red-600 border-2 border-black rounded-[50%]"><i class="fa-solid fa-minus"></i></button>
+    <button id="reset" class="h-24 w-24 bg-green-600 border-2 border-black rounded-[50%]"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+    <button id="increase" class="h-12 w-12 bg-blue-600 border-2 border-black rounded-[50%]"><i class="fa-solid fa-plus"></i></button>
+   </div>
+   <div id="counter-box" class="bg-[#F2EFE9] h-[250px] w-[200px] border-0 rounded-2xl absolute left-[12%] top-[15%] flex justify-center items-center">
+    <span id="num" class="text-9xl">0</span>
+   </div>
+   <div id="clock" class="bg-[#F2EFE9] h-28 w-100  border-0 rounded-2xl absolute bottom-6 left-2/4 transform translate-x-[-50%] text-8xl font-bold my-4"></div>
+   </div>
+    <script src="script.js"></script>
+</body>
+</html>
