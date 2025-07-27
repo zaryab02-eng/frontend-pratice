@@ -14,7 +14,7 @@ function checkPassword () {
         return;
     }
 
-    if(inPass == password) {
+    if(inPass === password) {
         input.value = '';
         msg.innerText = "✅Access Granted!";
     } else {
