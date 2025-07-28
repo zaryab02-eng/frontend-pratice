@@ -17,6 +17,13 @@
       transition: width 300ms ease-in-out;
     }
 
+     .active-red {
+     background-color: red !important;
+     color: white !important;
+     border-color: white !important;
+     }
+
+
     #white::after {
       background: linear-gradient(to right, white, rgb(187, 181, 181));
     }
@@ -60,6 +67,7 @@
   border-radius: 16px;
   background-image: conic-gradient(from var(--angle), red, orange, yellow, lime, cyan, blue, magenta, red);
   animation: spin 3s linear infinite;
+  border-radius: 8px;
 }
 
 #box::before {
@@ -77,13 +85,14 @@
     }
   </style>
 </head>
-<body id="page" class="min-h-dvh min-w-dvw bg-black text-white flex justify-center items-center">
+<body id="page" class="min-h-dvh min-w-dvw bg-black text-white flex justify-center items-center relative">
+    <button id="reset" class="bg-black rounded-[8px] h-min w-[10rem] text-xl p-2 text-amber-50 absolute top-2.5 border-2 z-0 overflow-hidden font-semibold right-2.5">RESET!</button>
   <div id="box" class="h-[6rem] w-[42rem] p-2 bg-black flex items-center justify-center gap-2 relative rounded-lg">
-    <button id="white" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">White!</button>
-    <button id="red" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Red!</button>
-    <button id="yellow" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">Yellow!</button>
-    <button id="green" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Green!</button>
-    <button id="blue" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Blue!</button>
+    <button id="white" class="rounded-[8px] h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">White!</button>
+    <button id="red" class="rounded-[8px] h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Red!</button>
+    <button id="yellow" class="rounded-[8px] h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">Yellow!</button>
+    <button id="green" class="rounded-[8px] h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Green!</button>
+    <button id="blue" class="rounded-[8px] h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Blue!</button>
   </div>
 
   <script src="script.js"></script>
