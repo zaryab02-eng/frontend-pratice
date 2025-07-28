@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bg-Buttons</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transition: width 300ms ease-in-out;
+    }
+
+    #white::after {
+      background: linear-gradient(to right, white, rgb(187, 181, 181));
+    }
+
+    #red::after {
+      background: linear-gradient(to right, rgb(236, 52, 52), red);
+    }
+
+    #yellow::after {
+      background: linear-gradient(to right, rgb(243, 243, 94), yellow);
+    }
+
+    #green::after {
+      background: linear-gradient(to right, rgb(123, 241, 123), green);
+    }
+
+    #blue::after {
+      background: linear-gradient(to right, rgb(131, 131, 240), blue);
+    }
+
+    button:hover::after {
+      width: 100%;
+    }
+
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+#box::before,
+#box::after {
+  --angle: 0deg;
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  z-index: -1;
+  border-radius: 16px;
+  background-image: conic-gradient(from var(--angle), red, orange, yellow, lime, cyan, blue, magenta, red);
+  animation: spin 3s linear infinite;
+}
+
+#box::before {
+  filter: blur(1.5rem); /* optional glow */
+}
+
+
+    @keyframes spin {
+      from {
+        --angle: 0deg;
+      }
+      to {
+        --angle: 360deg;
+      }
+    }
+  </style>
+</head>
+<body id="page" class="min-h-dvh min-w-dvw bg-black text-white flex justify-center items-center">
+  <div id="box" class="h-[6rem] w-[42rem] p-2 bg-black flex items-center justify-center gap-2 relative rounded-lg">
+    <button id="white" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">Click Me!</button>
+    <button id="red" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Click Me!</button>
+    <button id="yellow" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden hover:text-black cursor-pointer">Click Me</button>
+    <button id="green" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Click Me!</button>
+    <button id="blue" class="h-min w-[10rem] text-xl p-2 border-2 border-white font-semibold text-white relative z-0 overflow-hidden cursor-pointer">Click Me!</button>
+  </div>
+</body>
+</html>
