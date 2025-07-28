@@ -1,24 +1,21 @@
-   const page = document.getElementById("page");
+const page = document.getElementById("page");
 
-    // 2️⃣ list every Tailwind bg-* class you'll ever use
-    const allBgs = [
-      "bg-black",
-      "bg-white",
-      "bg-red-600",
-      "bg-yellow-300",
-      "bg-green-600",
-      "bg-blue-400",
-    ];
+const allBg = [
+    "bg-black",
+    "bg-white",
+    "bg-red-600",
+    "bg-yellow-400",
+    "bg-green-500",
+    "bg-blue-500",
+];
 
-    // 3️⃣ helper: remove all then add the one you want
-    function switchBg(newBgClass) {
-      page.classList.remove(...allBgs);
-      page.classList.add(newBgClass);
-    }
+function bgChanger (addBg) {
+    page.classList.remove(...allBg);
+    page.classList.add(addBg);
+}
 
-    // 4️⃣ wire up each button
-    document.getElementById("white").onclick  = () => switchBg("bg-white");
-    document.getElementById("red").onclick    = () => switchBg("bg-red-600");
-    document.getElementById("yellow").onclick = () => switchBg("bg-yellow-300");
-    document.getElementById("green").onclick  = () => switchBg("bg-green-500");
-    document.getElementById("blue").onclick   = () => switchBg("bg-blue-400");
+document.getElementById("white").onclick = () => bgChanger("bg-white");
+document.getElementById("red").onclick = () => bgChanger("bg-red-600");
+document.getElementById("yellow").onclick = () => bgChanger("bg-yellow-400");
+document.getElementById("green").onclick = () => bgChanger("bg-green-500");
+document.getElementById("blue").onclick = () => bgChanger("bg-blue-500");
