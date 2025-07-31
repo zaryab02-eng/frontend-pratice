@@ -13,13 +13,10 @@
     --container-lg: 32rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
-    --radius-2xl: 1rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -182,17 +179,8 @@
   .top-\[4\.5rem\] {
     top: 4.5rem;
   }
-  .right-3 {
-    right: calc(var(--spacing) * 3);
-  }
-  .right-4 {
-    right: calc(var(--spacing) * 4);
-  }
   .right-5 {
     right: calc(var(--spacing) * 5);
-  }
-  .bottom-1 {
-    bottom: calc(var(--spacing) * 1);
   }
   .bottom-1\.5 {
     bottom: calc(var(--spacing) * 1.5);
@@ -209,17 +197,14 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
   .h-24 {
     height: calc(var(--spacing) * 24);
   }
   .h-\[2\.4rem\] {
     height: 2.4rem;
   }
-  .h-\[19rem\] {
-    height: 19rem;
+  .h-\[20rem\] {
+    height: 20rem;
   }
   .h-\[34rem\] {
     height: 34rem;
@@ -232,12 +217,6 @@
   }
   .w-lg {
     width: var(--container-lg);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -254,56 +233,28 @@
   .justify-end {
     justify-content: flex-end;
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
   .gap-3\.5 {
     gap: calc(var(--spacing) * 3.5);
   }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
   }
-  .rounded-\[3px\] {
-    border-radius: 3px;
-  }
   .rounded-\[6px\] {
     border-radius: 6px;
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-0 {
-    border-style: var(--tw-border-style);
-    border-width: 0px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .border-b-2 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 2px;
-  }
-  .border-b-4 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 4px;
-  }
-  .border-b-\[2px\] {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 2px;
-  }
   .border-b-\[3px\] {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 3px;
   }
-  .border-b-\[4px\] {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 4px;
+  .border-\[\#3E4B6E\] {
+    border-color: #3E4B6E;
   }
-  .border-b-\[7px\] {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 7px;
+  .border-\[\#90261B\] {
+    border-color: #90261B;
   }
   .border-\[\#B6A499\] {
     border-color: #B6A499;
@@ -332,9 +283,6 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
-  .pb-1 {
-    padding-bottom: calc(var(--spacing) * 1);
-  }
   .pb-1\.5 {
     padding-bottom: calc(var(--spacing) * 1.5);
   }
@@ -347,10 +295,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-6xl {
     font-size: var(--text-6xl);
@@ -379,12 +323,11 @@
   .text-white {
     color: var(--color-white);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .active\:border-b-0 {
+    &:active {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
+    }
   }
 }
 @property --tw-border-style {
@@ -396,17 +339,11 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
