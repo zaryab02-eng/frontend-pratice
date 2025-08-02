@@ -3,33 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="output.css">
+    <title>Grade Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .font-Roboto { font-family: 'Roboto', sans-serif; }
+    </style>
 </head>
-<body class="h-14 bg-linear-to-r from-[#5A84EE] to-[#A18FF0] flex flex-col justify-center items-center min-h-dvh">
-<div class="bg-[#1F2933] h-[36.5px] w-[19rem] border-white rounded-tl-2xl rounded-tr-2xl border-l-[1px] border-r-[1px] border-t-[1px] flex justify-center items-center text-2xl text-white font-semibold"><h2 class="relative bottom-0.5">Display</h2></div>    
-<div class="border-l-[1px] border-r-[1px] border-b-[1px] border-white h-[22rem] w-[19rem] bg-linear-to-r from-[#ADBCFD] to-[#D0C2FB] flex flex-col items-center p-2 rounded-bl-2xl rounded-br-2xl justify-evenly">
-    <h1 class="text-[#343B4A] text-[28px]/[1.1] font-semibold font-Roboto text-center">Grade Average Calculator</h1>
-    <p class="text-[#585A7A] text-center text-[14px]/[1.1] ml-7 mr-7">Calculate the average of your gardes easily</p>
-    <div class="grid grid-cols-[auto_1fr] grid-rows-4 gap-y-[11px] gap-x-[28px] p-1.5 relative top-[5px]">
-        <span class="text-[#292E4A] text-[15px] font-semibold">Student Name</span>
-        <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden"><input type="text" class="h-[1.3rem] w-[8rem] focus:outline-0"></div>
-        <span class="text-[#292E4A] text-[15px] font-semibold">Grade 1</span>
-        <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden"><input type="number" class="[appearance:textfied] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[8rem] focus:outline-0"></div>
-        <span class="text-[#292E4A] text-[15px] font-semibold">Grade 2</span>
-        <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden"><input type="number" class="[appearance:textfied] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[8rem] focus:outline-0"></div>
-        <span class="text-[#292E4A] text-[15px] font-semibold">Grade 3</span>
-        <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden"><input type="number" class="[appearance:textfied] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[8rem] focus:outline-0"></div>
+<body class="bg-gradient-to-r from-[#5A84EE] to-[#A18FF0] flex flex-col justify-center items-center min-h-screen">
+    <div id="display" class="bg-[#1F2933] h-[36.5px] w-[21rem] border-white rounded-tl-2xl rounded-tr-2xl border-l-[1px] border-r-[1px] border-t-[1px] flex justify-center items-center text-2xl text-white font-semibold">
+        <h2 class="relative bottom-0.5" id="displayText">Display</h2>
+    </div>    
+    
+    <div class="border-l-[1px] border-r-[1px] border-b-[1px] border-white h-[30rem] w-[21rem] bg-gradient-to-r from-[#ADBCFD] to-[#D0C2FB] flex flex-col items-center p-2 rounded-bl-2xl rounded-br-2xl justify-start gap-2">
+        <h1 class="text-[#343B4A] text-[22px]/[1.1] font-semibold font-Roboto text-center mt-1">Grade Average Calculator</h1>
+        <p class="text-[#585A7A] text-center text-[12px]/[1.1] ml-7 mr-7 mb-1">Calculate the average of your grades easily</p>
+        
+        <!-- Properly aligned grid with student name and subjects -->
+        <div class="grid grid-cols-[auto_1fr] grid-rows-4 gap-y-[1rem] gap-x-[20px] p-1">
+            <!-- Student Name Row -->
+            <span class="text-[#292E4A] text-[15px] font-semibold">Student Name</span>
+            <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden">
+                <input id="studentName" type="text" class="h-[1.3rem] w-[7rem] focus:outline-0 bg-transparent" placeholder="Enter name">
+            </div>
+            
+            <!-- Subject 1 Row -->
+            <select id="subject1" class="text-[#292E4A] text-[15px] font-semibold focus:outline-0 bg-[#FDFCFF] rounded-[5px] px-1">
+                <option value="" disabled selected>Select Subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer">Computer</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="English">English</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Economics">Economics</option>
+                <option value="Accounts">Accounts</option>
+            </select>
+            <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden">
+                <input id="grade1" type="number" class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[7rem] focus:outline-0 bg-transparent" placeholder="Grade" min="0" max="100">
+            </div>
+            
+            <!-- Subject 2 Row -->
+            <select id="subject2" class="text-[#292E4A] text-[15px] font-semibold focus:outline-0 bg-[#FDFCFF] rounded-[5px] px-1">
+                <option value="" disabled selected>Select Subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer">Computer</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="English">English</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Economics">Economics</option>
+                <option value="Accounts">Accounts</option>
+            </select>
+            <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden">
+                <input id="grade2" type="number" class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[7rem] focus:outline-0 bg-transparent" placeholder="Grade" min="0" max="100">
+            </div>
+            
+            <!-- Subject 3 Row -->
+            <select id="subject3" class="text-[#292E4A] text-[15px] font-semibold focus:outline-0 bg-[#FDFCFF] rounded-[5px] px-1">
+                <option value="" disabled selected>Select Subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer">Computer</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="English">English</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Economics">Economics</option>
+                <option value="Accounts">Accounts</option>
+            </select>
+            <div class="h-[1.8rem] w-[8rem] bg-[#FDFCFF] border-0 rounded-[5px] pl-1 pt-0.5 overflow-hidden">
+                <input id="grade3" type="number" class="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none h-[1.3rem] w-[7rem] focus:outline-0 bg-transparent" placeholder="Grade" min="0" max="100">
+            </div>
+        </div>
+        
+        <!-- Result Display -->
+        <div id="result" class="text-[#292E4A] text-center font-semibold text-sm hidden mb-1">
+            <p>Average: <span id="averageScore">0</span>%</p>
+        </div>
+        
+        <!-- Students List -->
+        <div id="studentsList" class="w-full max-h-32 overflow-y-auto bg-white/20 rounded-lg p-2 hidden">
+            <h3 class="text-[#292E4A] font-semibold text-sm mb-2 text-center">Submitted Students</h3>
+            <div id="studentsContainer" class="space-y-1">
+                <!-- Student entries will be added here -->
+            </div>
+        </div>
+        
+        <!-- Control Buttons -->
+        <div class="relative flex mt-2">
+            <button id="reset" class="h-[36.5px] w-[43px] bg-red-500 border-0 rounded-bl-[14px] rounded-tl-[14px] text-2xl text-white hover:bg-red-600 transition-colors">
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+            <button id="calculate" class="font-semibold bg-[#0079FF] pr-11 pl-11 pt-[3px] pb-[5px] text-white text-[19px] font-sans hover:bg-blue-600 transition-colors">
+                Calculate
+            </button>
+            <button id="submit" class="h-[36.5px] w-[43px] bg-green-500 border-0 rounded-br-[14px] rounded-tr-[14px] text-2xl text-white hover:bg-green-600 transition-colors">
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </div>
     </div>
-    <div class="relative top-1 flex">
-        <button id="calculate" class="font-semibold bg-[#0079FF] pr-14 pl-14 pt-[3px] pb-[5px] text-white text-[19px] font-sans border-0 rounded-bl-[14px] rounded-tl-[14px]">Calculate</button>
-        <button id="reset" class="h-[36.5px] w-[46px] bg-red-500 border-0 rounded-br-[14px] rounded-tr-[14px] text-2xl text-white"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-    </div>
-</div>
- <div></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
