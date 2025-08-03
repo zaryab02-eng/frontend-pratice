@@ -1,16 +1,26 @@
-let result = document.getElementById("resultArea");
-let nameInput = document.getElementById("nameInput");
-let button = document.getElementById("showNameBtn");
+const result = document.getElementById("resultArea");
+const nameInput = document.getElementById("nameInput");
+const button = document.getElementById("showNameBtn");
 
-function printName () {
-    const name = nameInput.value;
-    result.textContent = name;
-}
 
-button.addEventListener("click", printName);
+function nameHandle () {
+    const nameEnter = nameInput.value;
+    if (nameEnter === '') {
+        result.textContent = "Please enter your name first";
+        nameInput.value = '';
+        return;
+    } else {
+        result.textContent = `Your name is : ${nameEnter}`;
+        nameInput.value = '';
+    }
+};
 
-nameInput.addEventListener("keydown", function (event) {
+button.addEventListener("click", () => {
+    nameHandle();
+});
+
+nameInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        printName();
+        nameHandle();
     }
 });
