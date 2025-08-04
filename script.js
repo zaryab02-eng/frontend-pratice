@@ -447,12 +447,6 @@ function exactAge() {
     }
 
     result.innerHTML = ''; // Clear previous result
-
-    if (years === 0) {
-        result.innerHTML = '<span class="text-red-300">Bro... you aren\'t even born yet. 💀</span>';
-        return;
-    }
-
     // Create age display with animation
     const ageDisplay = document.createElement("div");
     ageDisplay.className = "animate-slideUp";
@@ -465,18 +459,30 @@ function exactAge() {
     // Add your custom age-based comments
     const commentLine = document.createElement("div");
     commentLine.className = "text-blue-300 mt-3";
-    
-    if (years > 0 && years <= 4) {
-        commentLine.textContent = "Who gave you phone access, little one? 📱🍼";
-    } else if (years > 4 && years <= 12) {
-        commentLine.textContent = "Cartoons > Homework. We all know that. 📺✏️";
-    } else if (years > 12 && years <= 17) {
-        commentLine.textContent = "Ah, the teenage phase: drama, crushes & mood swings 🎭💔";
-    } else if (years > 17 && years <= 24) {
-        commentLine.textContent = "Start struggling to understand yourself. ~Zaryab";
-    } else {
-        commentLine.textContent = "Life is a beautiful journey! Keep exploring! ✨";
-    }
+
+if (years < 0) {
+    commentLine.textContent = "Are you from the future? 🤖";
+} else if (years === 0) {
+    commentLine.textContent = "Bro... you aren't even born yet. 💀";
+} else if (years > 0 && years <= 4) {
+    commentLine.textContent = "Who gave you phone access, little one? 📱🍼";
+} else if (years > 4 && years <= 12) {
+    commentLine.textContent = "Cartoons > Homework. We all know that. 📺✏️";
+} else if (years > 12 && years <= 17) {
+    commentLine.textContent = "Ah, the teenage phase: drama, crushes & mood swings 🎭💔";
+} else if (years > 17 && years <= 24) {
+    commentLine.textContent = "Start struggling to understand yourself. ~Zaryab";
+} else if (years > 24 && years <= 34) {
+    commentLine.textContent = "Bills are now your most loyal friends.💸";
+} else if (years > 34 && years <= 49) {
+    commentLine.textContent = "You've officially unlocked 'I miss the 90s' mode.📼";
+} else if (years > 49 && years <= 64) {
+    commentLine.textContent = "Time to yell at kids playing near your gate.👴";
+} else if (years > 64 && years <= 99) {
+    commentLine.textContent = "Age is just a number… but wow, that is a big number.😅";
+} else if (years >= 100) {
+    commentLine.textContent = "You deserve your own Wikipedia page!📜";
+}
     
     ageDisplay.appendChild(commentLine);
 
