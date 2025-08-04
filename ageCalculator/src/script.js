@@ -345,8 +345,12 @@ result.appendChild(ageDisplay);
 
 if (years < 0) {
     commentLine.textContent = "Whoah, Marty McFly? Time travel detected! 🤖⏰";
-} else if (years === 0) {
+} else if (years === 0 && months === 0 && days === 0) {
     commentLine.textContent = "Bro… you haven't even taken your first breath. 💀";
+} else if (years === 0 && months === 0) {
+    commentLine.textContent = "Fresh out the oven! Welcome to the world, tiny human. 👶✨";
+} else if (years === 0) {
+    commentLine.textContent = "Baby mode activated: milk, sleep, repeat. 🍼😴";
 } else if (years >= 1 && years <= 2) {
     commentLine.textContent = "Toddler mode: drool, tantrums, and mystery stains. 🍼🧩";
 } else if (years >= 3 && years <= 4) {
@@ -450,7 +454,6 @@ if (years < 0) {
 } else {
     commentLine.textContent = "Over 100? You're basically a mythic deity now. 🏰⚡";
 }
-
             
             ageDisplay.appendChild(commentLine);
 
