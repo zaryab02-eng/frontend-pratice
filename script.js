@@ -58,22 +58,35 @@
             }
 
             // Populate days based on selected month and year
-            function updateDays() {
-                const month = parseInt(monthSelect.value);
-                const year = parseInt(yearSelect.value) || currentYear;
-                
-                daySelect.innerHTML = '<option value="">Day</option>';
-                
-                if (month) {
-                    const daysInMonth = new Date(year, month, 0).getDate();
-                    for (let day = 1; day <= daysInMonth; day++) {
-                        const option = document.createElement('option');
-                        option.value = day;
-                        option.textContent = day;
-                        daySelect.appendChild(option);
-                    }
-                }
-            }
+function updateDays() {
+    const month = parseInt(monthSelect.value);
+    const year = parseInt(yearSelect.value) || currentYear;
+    
+    // Store currently selected day to preserve it if possible
+    const currentDay = daySelect.value;
+    
+    daySelect.innerHTML = '<option value="">Day</option>';
+    
+    if (month) {
+        const daysInMonth = new Date(year, month, 0).getDate();
+        for (let day = 1; day <= daysInMonth; day++) {
+            const option = document.createElement('option');
+            option.value = day;
+            option.textContent = day;
+            daySelect.appendChild(option);
+        }
+        
+        // Restore previously selected day if it's still valid
+        if (currentDay && currentDay <= daysInMonth) {
+            daySelect.value = currentDay;
+        }
+        
+        // Enable day selector
+        daySelect.disabled = false;
+    } else {
+        daySelect.disabled = true;
+    }
+}
 
             monthSelect.addEventListener('change', updateDays);
             yearSelect.addEventListener('change', updateDays);
@@ -210,14 +223,40 @@
                 months += 12;
             }
 
-            result.innerHTML = '';
-            const ageDisplay = document.createElement("div");
-            ageDisplay.className = "animate-slideUp";
-            ageDisplay.innerHTML = `
-                <div class="text-4xl mb-3">🎉</div>
-                <div class="text-2xl font-bold text-white mb-2">You are ${years} years, ${months} months, and ${days} days old.</div>
-            `;
-            result.appendChild(ageDisplay);
+result.innerHTML = '';
+const ageDisplay = document.createElement("div");
+ageDisplay.className = "animate-slideUp space-y-4";
+ageDisplay.innerHTML = `
+    <div class="text-center">
+        <div class="text-5xl mb-4 animate-bounce">🎉</div>
+        
+        <!-- Main Age Display -->
+        <div class="glass-effect p-4 rounded-xl border-2 border-blue-300/30 mb-4">
+            <div class="text-white text-lg font-semibold mb-2">Your Age</div>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-gradient-to-b from-blue-500/20 to-purple-500/20 rounded-lg p-3">
+                    <div class="text-2xl font-bold text-blue-300">${years}</div>
+                    <div class="text-xs text-blue-100">Years</div>
+                </div>
+                <div class="bg-gradient-to-b from-purple-500/20 to-pink-500/20 rounded-lg p-3">
+                    <div class="text-2xl font-bold text-purple-300">${months}</div>
+                    <div class="text-xs text-purple-100">Months</div>
+                </div>
+                <div class="bg-gradient-to-b from-pink-500/20 to-red-500/20 rounded-lg p-3">
+                    <div class="text-2xl font-bold text-pink-300">${days}</div>
+                    <div class="text-xs text-pink-100">Days</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fun Comment Section -->
+        <div class="glass-effect p-4 rounded-xl border-2 border-yellow-300/30">
+            <div class="text-yellow-300 text-sm font-semibold mb-2">🎭 Fun Fact</div>
+            <div class="text-white text-sm leading-relaxed" id="ageComment"></div>
+        </div>
+    </div>
+`;
+result.appendChild(ageDisplay);
 
             // Add age-based comments
             const commentLine = document.createElement("div");
