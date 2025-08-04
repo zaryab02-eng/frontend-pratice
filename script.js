@@ -223,29 +223,114 @@
             const commentLine = document.createElement("div");
             commentLine.className = "text-blue-300 mt-3";
 
-            if (years < 0) {
-                commentLine.textContent = "Are you from the future? 🤖";
-            } else if (years === 0) {
-                commentLine.textContent = "Bro... you aren't even born yet. 💀";
-            } else if (years > 0 && years <= 4) {
-                commentLine.textContent = "Who gave you phone access, little one? 📱🍼";
-            } else if (years > 4 && years <= 12) {
-                commentLine.textContent = "Cartoons > Homework. We all know that. 📺✏️";
-            } else if (years > 12 && years <= 17) {
-                commentLine.textContent = "Ah, the teenage phase: drama, crushes & mood swings 🎭💔";
-            } else if (years > 17 && years <= 24) {
-                commentLine.textContent = "Start struggling to understand yourself. ~Zaryab";
-            } else if (years > 24 && years <= 34) {
-                commentLine.textContent = "Bills are now your most loyal friends.💸";
-            } else if (years > 34 && years <= 49) {
-                commentLine.textContent = "You've officially unlocked 'I miss the 90s' mode.📼";
-            } else if (years > 49 && years <= 64) {
-                commentLine.textContent = "Time to yell at kids playing near your gate.👴";
-            } else if (years > 64 && years <= 99) {
-                commentLine.textContent = "Age is just a number… but wow, that is a big number.😅";
-            } else if (years >= 100) {
-                commentLine.textContent = "You deserve your own Wikipedia page!📜";
-            }
+if (years < 0) {
+    commentLine.textContent = "Whoah, Marty McFly? Time travel detected! 🤖⏰";
+} else if (years === 0) {
+    commentLine.textContent = "Bro… you haven’t even taken your first breath. 💀";
+} else if (years >= 1 && years <= 2) {
+    commentLine.textContent = "Toddler mode: drool, tantrums, and mystery stains. 🍼🧩";
+} else if (years >= 3 && years <= 4) {
+    commentLine.textContent = "You think everything is 'yours'—including my phone. 😅📱";
+} else if (years >= 5 && years <= 6) {
+    commentLine.textContent = "Crayon Picasso in the making. 🖍️🎨";
+} else if (years >= 7 && years <= 8) {
+    commentLine.textContent = "‘Why?’ is your favorite question. 🤔❓";
+} else if (years >= 9 && years <= 10) {
+    commentLine.textContent = "You believe you’re invincible—until homework says otherwise. 📚⚡";
+} else if (years >= 11 && years <= 12) {
+    commentLine.textContent = "Secretly googling how to ask your crush out. 🕵️‍♂️💕";
+} else if (years >= 13 && years <= 14) {
+    commentLine.textContent = "Hormones raging—welcome to the mood swing rollercoaster. 🎢😭";
+} else if (years >= 15 && years <= 16) {
+    commentLine.textContent = "Driver’s permit dreams & pizza-stained selfies. 🚗🍕";
+} else if (years >= 17 && years <= 18) {
+    commentLine.textContent = "Late-night study sessions fueled by regret and energy drinks. 📖⚡";
+} else if (years >= 19 && years <= 20) {
+    commentLine.textContent = "Ramen gourmet or broke college legend? 🍜🏆";
+} else if (years >= 21 && years <= 22) {
+    commentLine.textContent = "Legal adult… still living on instant noodles and memes. 😂";
+} else if (years >= 23 && years <= 24) {
+    commentLine.textContent = "‘What do I want to do with my life?’ starter pack engaged. 🤷‍♂️🎯";
+} else if (years >= 25 && years <= 26) {
+    commentLine.textContent = "Quarter-life crisis with a side of avocado toast. 🥑🍞";
+} else if (years >= 27 && years <= 28) {
+    commentLine.textContent = "Job title sounds fancy; paycheck says ‘LOL’. 💼💸";
+} else if (years >= 29 && years <= 30) {
+    commentLine.textContent = "Happy 30th! Time to start using anti-aging cream… or not. 🎂🧴";
+} else if (years >= 31 && years <= 32) {
+    commentLine.textContent = "Back pain & midweek naps coming in hot. 🛌🔥";
+} else if (years >= 33 && years <= 34) {
+    commentLine.textContent = "‘When I was your age…’ about to become your catchphrase. 📖👴";
+} else if (years >= 35 && years <= 36) {
+    commentLine.textContent = "Birthday cake with kale frosting? Adulting hurts. 🥬🎂";
+} else if (years >= 37 && years <= 38) {
+    commentLine.textContent = "Weekend plans: laundry, taxes, existential dread. 🧺📜";
+} else if (years >= 39 && years <= 40) {
+    commentLine.textContent = "40’s club: creaky knees & wisdom teeth regrets. 🦴🦷";
+} else if (years >= 41 && years <= 42) {
+    commentLine.textContent = "Your phone autocorrects ‘vibe’ to ‘tribe’—it’s watching you. 📱👀";
+} else if (years >= 43 && years <= 44) {
+    commentLine.textContent = "You’ve seen fashion trends come back… and go back again. 👖🔄";
+} else if (years >= 45 && years <= 46) {
+    commentLine.textContent = "‘Kids these days’ lectures incoming. 📣🛑";
+} else if (years >= 47 && years <= 48) {
+    commentLine.textContent = "You laugh at jokes before they finish telling them. 😂⏳";
+} else if (years >= 49 && years <= 50) {
+    commentLine.textContent = "Half-century hype! 🎉 But also… back pain. 🤕";
+} else if (years >= 51 && years <= 52) {
+    commentLine.textContent = "Senior discount ninja—always on the hunt. 🛍️🥋";
+} else if (years >= 53 && years <= 54) {
+    commentLine.textContent = "Your playlist is 50% golden oldies, 50% ‘what is this?’ 🎶❓";
+} else if (years >= 55 && years <= 56) {
+    commentLine.textContent = "Naps are now your favorite sport. 🏅😴";
+} else if (years >= 57 && years <= 58) {
+    commentLine.textContent = "Grandkids think you’re a living legend. 👶🏆";
+} else if (years >= 59 && years <= 60) {
+    commentLine.textContent = "Celebrating six decades of epic life hacks. 🎂🛠️";
+} else if (years >= 61 && years <= 62) {
+    commentLine.textContent = "You’ve unlocked ‘wisdom of the ages’ status. 🧙‍♂️✨";
+} else if (years >= 63 && years <= 64) {
+    commentLine.textContent = "Still here? Must be some crazy good genes. 🧬💪";
+} else if (years >= 65 && years <= 66) {
+    commentLine.textContent = "Retirement phase: golf clubs & dad jokes. ⛳️🤣";
+} else if (years >= 67 && years <= 68) {
+    commentLine.textContent = "Memory’s a bit fuzzy, but the stories are gold. 📖🥇";
+} else if (years >= 69 && years <= 70) {
+    commentLine.textContent = "70 years young—still schooling us all. 🎓💥";
+} else if (years >= 71 && years <= 72) {
+    commentLine.textContent = "Legend status: activate mythical tale mode. 🐉📜";
+} else if (years >= 73 && years <= 74) {
+    commentLine.textContent = "Your cake needs its own cake. 🎂²";
+} else if (years >= 75 && years <= 76) {
+    commentLine.textContent = "75 and still sharper than cheddar. 🧀🔪";
+} else if (years >= 77 && years <= 78) {
+    commentLine.textContent = "Time-traveler vibes: you’ve lived more lives. ⏳🌌";
+} else if (years >= 79 && years <= 80) {
+    commentLine.textContent = "80 candles? We need a flamethrower. 🔥🕯️";
+} else if (years >= 81 && years <= 82) {
+    commentLine.textContent = "You’re like a fine wine—improving with age. 🍷✨";
+} else if (years >= 83 && years <= 84) {
+    commentLine.textContent = "Still viral-worthy—got any TikTok moves? 🎥🕺";
+} else if (years >= 85 && years <= 86) {
+    commentLine.textContent = "85 trips around the sun: NASA called, they’re impressed. 🚀🌞";
+} else if (years >= 87 && years <= 88) {
+    commentLine.textContent = "Your jokes are vintage classics now. 😂🏆";
+} else if (years >= 89 && years <= 90) {
+    commentLine.textContent = "Ninety and knockout—you’re a champion! 🥊🏅";
+} else if (years >= 91 && years <= 92) {
+    commentLine.textContent = "Century countdown: 8 to go! 🎉🔢";
+} else if (years >= 93 && years <= 94) {
+    commentLine.textContent = "Living legend vibes at max level. 🌟👑";
+} else if (years >= 95 && years <= 96) {
+    commentLine.textContent = "You’ve seen eras change—got wisdom to spare. 🕰️💡";
+} else if (years >= 97 && years <= 98) {
+    commentLine.textContent = "Legendary elder: stories sell out stadiums. 🎤🏟️";
+} else if (years >= 99 && years <= 100) {
+    commentLine.textContent = "Centennial boss—100 years and still slaying! 💯👊";
+} else {
+    commentLine.textContent = "Over 100? You’re basically a mythic deity now. 🏰⚡";
+}
+
             
             ageDisplay.appendChild(commentLine);
 
