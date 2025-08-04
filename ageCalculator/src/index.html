@@ -46,7 +46,6 @@
         }
     </script>
     <style>
-        /* Add this to your <style> section */
         html, body {
             overflow-x: hidden;
             max-width: 100%;
@@ -56,54 +55,136 @@
             box-sizing: border-box;
         }
         
-        /* Custom styles for enhanced visuals */
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Dark theme styles */
+        .dark-theme {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
         
-        /* Light mode styles */
-        .light-mode {
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-        }
-        
-        .light-mode .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
+        .dark-theme .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(148, 163, 184, 0.2);
         }
         
-        .light-mode .text-white {
-            color: #1a202c !important;
+        /* Light theme styles */
+        .light-theme {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
         }
         
-        .light-mode .text-blue-100 {
-            color: #4a5568 !important;
-        }
-        
-        .light-mode .text-blue-300 {
-            color: #3182ce !important;
-        }
-        
-        .light-mode .text-purple-300 {
-            color: #805ad5 !important;
-        }
-        
-        .light-mode .text-yellow-300 {
-            color: #d69e2e !important;
-        }
-        
-        .light-mode .text-amber-300 {
-            color: #d97706 !important;
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
+        .light-theme .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(148, 163, 184, 0.3);
         }
         
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        .light-theme .text-white {
+            color: #1e293b !important;
+        }
+        
+        .light-theme .text-blue-100 {
+            color: #475569 !important;
+        }
+        
+        .light-theme .text-blue-300 {
+            color: #3b82f6 !important;
+        }
+        
+        .light-theme .text-purple-300 {
+            color: #8b5cf6 !important;
+        }
+        
+        .light-theme .text-yellow-300 {
+            color: #eab308 !important;
+        }
+        
+        .light-theme .text-amber-300 {
+            color: #f59e0b !important;
+        }
+
+        .light-theme .text-red-300 {
+            color: #dc2626 !important;
+        }
+        
+        /* Custom date picker styles */
+        .custom-date-picker {
+            position: relative;
+            width: 100%;
+        }
+        
+        .date-input-wrapper {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .date-select {
+            flex: 1;
+            min-width: 80px;
+            padding: 12px 8px;
+            border-radius: 12px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            color: #1f2937;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        .date-select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .date-select:hover {
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .light-theme .date-select {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .dark-theme .date-select {
+            background: rgba(30, 41, 59, 0.9);
+            color: #f1f5f9;
+            border-color: rgba(148, 163, 184, 0.4);
+        }
+        
+        .dark-theme .date-select:hover {
+            background: rgba(30, 41, 59, 0.95);
+            border-color: #60a5fa;
+        }
+        
+        .dark-theme .date-select:focus {
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+        }
+        
+        /* Hide default date input on mobile */
+        .native-date-input {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .native-date-input {
+                display: block;
+            }
+            .custom-date-inputs {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .custom-date-inputs {
+                display: block;
+            }
         }
         
         /* Smooth scrolling */
@@ -122,16 +203,16 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(148, 163, 184, 0.1);
         }
         
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(148, 163, 184, 0.3);
             border-radius: 3px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(148, 163, 184, 0.5);
         }
 
         /* Historical events styling */
@@ -144,12 +225,12 @@
         }
 
         .age-zilla {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .light-mode .age-zilla {
-            color: #1a202c !important;
-            text-shadow: none;
+        .light-theme .age-zilla {
+            color: #1e293b !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
         
         /* Compact sizing adjustments */
@@ -162,9 +243,29 @@
                 min-height: 85vh;
             }
         }
+
+        /* Enhanced button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .light-theme .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+
+        .light-theme .btn-primary:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 min-h-screen">
+<body class="dark-theme min-h-screen">
     <!-- Navigation Header -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,22 +284,30 @@
                     </div>
                     
                     <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-lg glass-effect hover:bg-white/20 transition duration-300" title="Toggle Dark Mode">
-                        <!-- Sun Icon (for dark mode) -->
-                        <img id="theme-toggle-light-icon" src="assets/icons8-moon-50.png" alt="Sun" class="w-4 h-4 text-yellow-300 hidden">
-                        <!-- Moon Icon (for light mode) -->
-                        <img id="theme-toggle-dark-icon" src="assets/icons8-sun-48.png" alt="Moon" class="w-4 h-4 text-blue-300">
+                    <button id="theme-toggle" class="p-2 rounded-lg glass-effect hover:bg-white/20 transition duration-300" title="Toggle Theme">
+                        <!-- Sun Icon (for light mode) -->
+                        <svg id="theme-toggle-light-icon" class="w-4 h-4 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <!-- Moon Icon (for dark mode) -->
+                        <svg id="theme-toggle-dark-icon" class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
                     </button>
                 </div>
                 
                 <!-- Mobile menu button and theme toggle -->
                 <div class="md:hidden flex items-center space-x-2">
                     <!-- Mobile Dark Mode Toggle -->
-                    <button id="mobile-theme-toggle" class="p-2 rounded-lg glass-effect hover:bg-white/20 transition duration-300" title="Toggle Dark Mode">
-                        <!-- Sun Icon (for dark mode) -->
-                        <img id="mobile-theme-toggle-light-icon" src="assets/icons8-moon-50.png" alt="Sun" class="w-4 h-4 text-yellow-300 hidden">
-                        <!-- Moon Icon (for light mode) -->
-                        <img id="mobile-theme-toggle-dark-icon" src="assets/icons8-sun-48.png" alt="Moon" class="w-4 h-4 text-blue-300">
+                    <button id="mobile-theme-toggle" class="p-2 rounded-lg glass-effect hover:bg-white/20 transition duration-300" title="Toggle Theme">
+                        <!-- Sun Icon (for light mode) -->
+                        <svg id="mobile-theme-toggle-light-icon" class="w-4 h-4 text-yellow-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <!-- Moon Icon (for dark mode) -->
+                        <svg id="mobile-theme-toggle-dark-icon" class="w-4 h-4 text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
                     </button>
                     
                     <!-- Mobile Hamburger Menu -->
@@ -231,28 +340,59 @@
                     <!-- Header -->
                     <div class="text-center mb-6">
                         <div class="text-4xl mb-3 animate-float">🎂</div>
-                        <h2 class="text-3xl font-bold text-white mb-2 text-shadow">Age Calculator</h2>
+                        <h2 class="text-3xl font-bold text-white mb-2">Age Calculator</h2>
                         <p class="text-blue-100 text-base">Discover your journey through time!</p>
                     </div>
                     
                     <!-- Birth Date Input -->
-                    <div class="mb-6">
-                        <label for="birthYearInput" class="block text-sm font-semibold text-white mb-3 text-center">
+                    <div class="mb-6 custom-date-picker">
+                        <label class="block text-sm font-semibold text-white mb-3 text-center">
                             📅 Select Your Birth Date
                         </label>
+                        
+                        <!-- Desktop Native Date Input -->
                         <input 
                             type="date" 
                             id="birthYearInput" 
-                            min="1900"
-                            max="2025"
-                            class="w-full px-4 py-3 bg-white/90 border-2 border-blue-300 rounded-xl text-gray-800 text-base font-medium focus:outline-none focus:ring-4 focus:ring-blue-400/50 focus:border-blue-400 backdrop-blur-sm text-center transition duration-300 hover:bg-white"
+                            min="1900-01-01"
+                            max="2025-12-31"
+                            class="native-date-input w-full px-4 py-3 bg-white/90 border-2 border-blue-300 rounded-xl text-gray-800 text-base font-medium focus:outline-none focus:ring-4 focus:ring-blue-400/50 focus:border-blue-400 backdrop-blur-sm text-center transition duration-300 hover:bg-white"
                         >
+                        
+                        <!-- Mobile Custom Date Inputs -->
+                        <div class="custom-date-inputs">
+                            <div class="date-input-wrapper">
+                                <select id="monthSelect" class="date-select">
+                                    <option value="">Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                                
+                                <select id="daySelect" class="date-select">
+                                    <option value="">Day</option>
+                                </select>
+                                
+                                <select id="yearSelect" class="date-select">
+                                    <option value="">Year</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Calculate Button -->
                     <button 
                         id="calculateBtn" 
-                        class="w-full bg-gradient-to-r from-blue-400 to-red-500 hover:from-blue-400 hover:to-red-500 text-white font-bold py-3 px-6 rounded-xl transition duration-300 transform hover:scale-105 shadow-2xl text-lg mb-6 border border-gray-500/30"
+                        class="btn-primary w-full text-white font-bold py-3 px-6 rounded-xl transition duration-300 transform hover:scale-105 shadow-2xl text-lg mb-6"
                     >
                         ✨ Calculate My Age ✨
                     </button>
@@ -311,19 +451,20 @@
                 <div class="glass-effect p-6 md:p-8 rounded-2xl shadow-2xl">
                     <!-- Section Title -->
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 text-shadow">About This Project</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">About This Project</h2>
                         <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
                     </div>
                     
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <!-- Developer Info -->
                         <div class="text-center md:text-left">
-                            <!-- Profile Photo Placeholder -->
+                             <!-- Profile Photo Placeholder -->
                             <div class="mb-6 flex justify-center md:justify-start">
                                 <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
                                     <img src="assets/photo_2025-08-04_10-24-01.webp" alt="Developer Photo" class="w-full h-full rounded-full object-cover">
                                 </div>
                             </div>
+
                             
                             <!-- Developer Description -->
                             <div class="text-white space-y-3">
@@ -331,7 +472,7 @@
                                 <p class="text-base leading-relaxed">
                                     Passionate developer with expertise in creating intuitive and beautiful web applications.
                                     This is my first web tool and I love building tools that make people's lives easier and more enjoyable
-                                    and will more interesting creative tools in future.
+                                    and will create more interesting creative tools in future.
                                 </p>
                                 <p class="text-base leading-relaxed">
                                     With a focus on user experience and modern design principles, I create applications 
@@ -365,16 +506,16 @@
                                 <div class="flex items-start space-x-3">
                                     <div class="text-xl">📱</div>
                                     <div>
-                                        <h4 class="text-base font-semibold mb-1">Fully Responsive</h4>
-                                        <p class="text-blue-100 text-sm">Beautiful design that works perfectly on all devices - desktop, tablet, and mobile.</p>
+                                        <h4 class="text-base font-semibold mb-1">Mobile Optimized</h4>
+                                        <p class="text-blue-100 text-sm">Beautiful design with custom mobile-friendly date picker that works perfectly on all devices.</p>
                                     </div>
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
                                     <div class="text-xl">🎨</div>
                                     <div>
-                                        <h4 class="text-base font-semibold mb-1">Modern UI/UX</h4>
-                                        <p class="text-blue-100 text-sm">Sleek glassmorphism design with smooth animations and delightful interactions.</p>
+                                        <h4 class="text-base font-semibold mb-1">Eye-Friendly Themes</h4>
+                                        <p class="text-blue-100 text-sm">Carefully crafted dark and light themes that are easy on the eyes with smooth transitions.</p>
                                     </div>
                                 </div>
                                 
@@ -398,7 +539,7 @@
                 <div class="glass-effect p-6 md:p-8 rounded-2xl shadow-2xl">
                     <!-- Section Title -->
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 text-shadow">Get In Touch</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Get In Touch</h2>
                         <p class="text-blue-100 text-lg">Let's connect and create something amazing together!</p>
                         <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-blue-400 mx-auto rounded-full mt-3"></div>
                     </div>
@@ -418,7 +559,7 @@
                         </div>
                         
                         <!-- LinkedIn -->
-                        <div class="text-center group">
+                       <div class="text-center group">
                             <a href="https://www.linkedin.com/in/mohd-zaryab-678295365/">
                                 <div class="bg-gradient-to-r from-blue-600 to-blue-800 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition duration-300">
                                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -456,12 +597,12 @@
 
     <!-- Background Decorative Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-600/10 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-56 h-56 bg-gray-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-        <div class="absolute top-3/4 left-1/2 w-48 h-48 bg-gray-700/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-56 h-56 bg-purple-500/5 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+        <div class="absolute top-3/4 left-1/2 w-48 h-48 bg-indigo-500/5 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
     </div>
 
-    <!-- JavaScript -->
+        <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
