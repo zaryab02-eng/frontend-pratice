@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <!-- Tailwind CSS compiled with CLI -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 text-center space-y-6 w-80">
+      <!-- DISPLAY ELEMENT (Counter Number) -->
+      <!-- JS Hook: #counterDisplay -->
+      <div id="counterDisplay" class="text-6xl font-bold text-gray-800">0</div>
+
+      <!-- BUTTONS -->
+      <div class="grid grid-cols-3 gap-4">
+        <!-- +1 Button -->
+        <!-- JS Hook: #btnPlusOne -->
+        <button
+          id="btnPlusOne"
+          class="bg-green-500 hover:bg-green-600 text-white py-2 rounded"
+        >
+          +1
+        </button>
+
+        <!-- -1 Button -->
+        <!-- JS Hook: #btnMinusOne -->
+        <button
+          id="btnMinusOne"
+          class="bg-red-500 hover:bg-red-600 text-white py-2 rounded"
+        >
+          -1
+        </button>
+
+        <!-- Reset Button -->
+        <!-- JS Hook: #btnReset -->
+        <button
+          id="btnReset"
+          class="bg-gray-500 hover:bg-gray-600 text-white py-2 rounded col-span-3"
+        >
+          Reset
+        </button>
+
+        <!-- +5 Button -->
+        <!-- JS Hook: #btnPlusFive -->
+        <button
+          id="btnPlusFive"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 rounded"
+        >
+          +5
+        </button>
+
+        <!-- -5 Button -->
+        <!-- JS Hook: #btnMinusFive -->
+        <button
+          id="btnMinusFive"
+          class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 rounded"
+        >
+          -5
+        </button>
+      </div>
+    </div>
+
+    <!-- JS File -->
+    <script src="script.js"></script>
+  </body>
+</html>
