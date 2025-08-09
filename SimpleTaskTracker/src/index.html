@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Responsive Todo — Clean UI</title>
+
+    <!-- Tailwind CSS compiled with CLI -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <style>
+    .custom-strike {
+      text-decoration: line-through;
+      text-decoration-color: blue;
+      text-decoration-thickness: 2px;
+    }
+  </style>
+  <body class="bg-gray-500 min-h-screen flex items-center justify-center p-4">
+    <!-- Card -->
+    <div
+      class="w-full max-w-xs sm:max-w-lg md:max-w-2xl bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8"
+    >
+      <header
+        class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4"
+      >
+        <div>
+          <h1
+            class="text-lg sm:text-2xl md:text-3xl font-extrabold text-gray-900"
+          >
+            My Tasks
+          </h1>
+          <p class="text-xs sm:text-sm text-gray-500 mt-1">
+            Quickly add tasks and mark them done.
+          </p>
+        </div>
+
+        <!-- Remaining counter badge -->
+        <div class="text-right">
+          <div class="text-xs text-gray-500">Remaining</div>
+          <!-- JS Hook: #remainingCount -->
+          <div
+            id="remainingCount"
+            class="mt-1 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-semibold text-sm sm:text-base"
+          >
+            0
+          </div>
+        </div>
+      </header>
+
+      <!-- Input row: stacks on xs, inline on sm+ -->
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <!-- JS Hook: #taskInput -->
+        <input
+          id="taskInput"
+          type="text"
+          inputmode="text"
+          placeholder="Add a new task (e.g. Buy groceries)"
+          class="flex-1 min-w-0 border border-gray-200 rounded-xl px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-300 text-sm sm:text-base"
+          aria-label="New task"
+        />
+
+        <!-- JS Hook: #addTaskBtn -->
+        <button
+          id="addTaskBtn"
+          class="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-3 rounded-xl shadow text-sm sm:text-base"
+        >
+          <svg
+            class="w-4 h-4 sm:w-5 sm:h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <path
+              d="M12 5v14M5 12h14"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="hidden sm:inline">Add Task</span>
+          <span class="sm:hidden">Add</span>
+        </button>
+      </div>
+
+      <!-- Task list: scrollable and responsive height -->
+      <!-- JS Hook: #taskList -->
+      <ul
+        id="taskList"
+        class="space-y-3 overflow-y-auto pr-2 max-h-[30vh] sm:max-h-64 md:max-h-[40vh]"
+      >
+        <!--
+          JS should insert <li> items with this structure (keep commented as reference):
+          <li class="task-item flex items-center justify-between gap-3 bg-gray-50 rounded-lg p-3 shadow-sm">
+            <div class="flex items-center gap-3">
+              <button class="complete-btn w-9 h-9 flex items-center justify-center rounded-full border border-gray-200" aria-label="Complete task">
+                ✓
+              </button>
+              <span class="task-text text-gray-800 text-sm sm:text-base">Sample task text</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="delete-btn text-sm px-3 py-1 rounded bg-red-100 text-red-600">Delete</button>
+            </div>
+          </li>
+
+          Recommended JS-completed state classes:
+            - "line-through", "text-gray-400", "opacity-70"
+            - optional: add "bg-gray-100"
+        -->
+      </ul>
+
+      <!-- Empty state -->
+      <div
+        id="emptyState"
+        class="mt-4 text-center text-sm text-gray-400"
+        aria-hidden
+      >
+        No tasks yet — add your first task!
+      </div>
+    </div>
+
+    <!-- Your JS file -->
+    <script src="script.js"></script>
+  </body>
+</html>
