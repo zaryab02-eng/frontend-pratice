@@ -3,29 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Items</title>
+    <title>Box Creator</title>
     <!-- Tailwind CSS compiled with CLI -->
     <link rel="stylesheet" href="output.css" />
   </head>
+  <style>
+    /* Hide scrollbar across browsers but keep the element scrollable */
+    .scrollHidden {
+      /* Firefox */
+      scrollbar-width: none;
+      /* IE 10+ */
+      -ms-overflow-style: none;
+    }
+
+    /* Chrome, Safari, Edge (WebKit/Blink) */
+    .scrollHidden::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  </style>
+
   <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div
       class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md space-y-6 text-center"
     >
-      <h1 class="text-2xl font-bold text-gray-800">Item Adder</h1>
+      <h1 class="text-2xl font-bold text-gray-800">Dynamic Boxes</h1>
 
-      <!-- ADD ITEM BUTTON -->
-      <!-- JS Hook: #addItemBtn -->
+      <!-- ADD BOX BUTTON -->
+      <!-- JS Hook: #addBoxBtn -->
       <button
-        id="addItemBtn"
+        id="addBoxBtn"
         class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
       >
-        Add Item
+        Add Box
       </button>
 
-      <!-- CONTAINER FOR PARAGRAPHS -->
-      <!-- JS Hook: #itemContainer -->
-      <div id="itemContainer" class="space-y-2 text-gray-700">
-        <!-- New <p> tags will be added here by JS -->
+      <!-- CONTAINER FOR BOXES -->
+      <!-- JS Hook: #boxContainer -->
+      <div
+        id="boxContainer"
+        class="space-y-4 flex flex-col items-center justify-start overflow-y-auto scrollHidden border border-gray-300 rounded p-2"
+        style="height: 300px; width: 100%"
+      >
+        <!-- Example structure for JS reference -->
+        <!-- 
+        <div class="bg-gray-50 p-4 rounded shadow flex items-center justify-between w-full">
+          <p class="text-gray-800">This is box #1</p>
+          <button class="remove-btn bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">Remove Me</button>
+        </div>
+        -->
       </div>
     </div>
 
