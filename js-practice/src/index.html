@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Change Color (Tailwind only)</title>
+
+    <!-- Tailwind CSS compiled with CLI -->
+    <!-- Make sure you build output.css via Tailwind CLI (no CDN). -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-6"
+  >
+    <!--
+      Layout:
+      - A centered card with an H1 and a button below it.
+      - IDs are present for your JS:
+        * #text      -> H1 to change color
+        * #colorBtn  -> Button to listen for clicks
+    -->
+
+    <main
+      class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center gap-6"
+    >
+      <!-- H1 / Target -->
+      <!-- JS Hook: document.getElementById('text') -->
+      <!-- Suggested toggle classes in JS: "text-red-500" and "text-blue-500" (or use any Tailwind text-* classes) -->
+      <h1
+        id="text"
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900"
+      >
+        Hello World
+      </h1>
+
+      <!-- Button -->
+      <!-- JS Hook: document.getElementById('colorBtn') -->
+      <!-- Styled as a pill button; your JS will toggle classes on the H1 -->
+      <button
+        id="colorBtn"
+        type="button"
+        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
+        aria-pressed="false"
+      >
+        Change Color
+      </button>
+
+      <!-- Optional small hint area for you (comment only) -->
+      <!--
+        Implementation notes for your JS (do not include JS here as requested):
+        - On click: toggle H1 classes, e.g.
+            text.classList.toggle('text-red-500');
+            text.classList.toggle('text-blue-500');
+        - Or use classList.replace() if you want mutually exclusive classes.
+        - Update the button's aria-pressed attribute for accessibility:
+            btn.setAttribute('aria-pressed', String(isRed));
+      -->
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
