@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Counter</title>
+
+    <!-- Tailwind CSS compiled with CLI (output.css) -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-gradient-to-b from-gray-100 to-gray-50 flex items-center justify-center p-6"
+  >
+    <main
+      class="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center gap-6"
+    >
+      <h1 class="text-lg sm:text-xl font-semibold text-gray-700">Counter</h1>
+
+      <!-- DISPLAY ELEMENT -->
+      <!-- JS Hook: document.getElementById('counterDisplay') -->
+      <!-- Use innerText / textContent to update the number from script.js -->
+      <div
+        id="counterDisplay"
+        aria-live="polite"
+        class="w-40 h-20 sm:w-56 sm:h-24 flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-gray-900 rounded-lg bg-gray-50 shadow-inner"
+      >
+        0
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="w-full flex gap-3 sm:gap-4">
+        <!-- JS Hook: document.getElementById('btnMinus') -->
+        <button
+          id="btnMinus"
+          type="button"
+          class="flex-1 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-medium shadow-sm cursor-pointer"
+          aria-label="Decrease"
+        >
+          −
+        </button>
+
+        <!-- JS Hook: document.getElementById('btnReset') -->
+        <button
+          id="btnReset"
+          type="button"
+          class="px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium shadow-sm cursor-pointer"
+          aria-label="Reset"
+        >
+          Reset
+        </button>
+
+        <!-- JS Hook: document.getElementById('btnPlus') -->
+        <button
+          id="btnPlus"
+          type="button"
+          class="flex-1 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white font-medium shadow-sm cursor-pointer"
+          aria-label="Increase"
+        >
+          +
+        </button>
+      </div>
+
+      <!-- small usage hint (comment only) -->
+      <!--
+        JS notes:
+        - Get elements: const display = document.getElementById('counterDisplay');
+                       const plus = document.getElementById('btnPlus'); etc.
+        - Update number: display.textContent = currentValue;
+        - Add listeners:
+            plus.addEventListener('click', () => { currentValue++; updateDisplay(); });
+            minus.addEventListener('click', () => { currentValue--; updateDisplay(); });
+            reset.addEventListener('click', () => { currentValue = 0; updateDisplay(); });
+      -->
+    </main>
+
+    <!-- load your JS (write script.js to handle logic) -->
+    <script src="script.js"></script>
+  </body>
+</html>
