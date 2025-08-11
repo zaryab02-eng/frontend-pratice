@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Name List Manager — Professional UI</title>
+
+    <!-- Tailwind CSS compiled with CLI -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-emerald-900 text-slate-50"
+  >
+    <div
+      aria-hidden
+      class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+    >
+      <svg
+        class="absolute left-1/2 top-0 -translate-x-1/2 opacity-20 w-[1200px] h-[600px]"
+        viewBox="0 0 1200 600"
+        fill="none"
+      >
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#7dd3fc" />
+            <stop offset="1" stop-color="#a78bfa" />
+          </linearGradient>
+        </defs>
+        <circle cx="300" cy="200" r="300" fill="url(#g)"></circle>
+        <circle cx="900" cy="400" r="280" fill="#34d399"></circle>
+      </svg>
+    </div>
+
+    <main class="min-h-screen flex items-center justify-center p-6">
+      <section class="w-full max-w-3xl mx-auto">
+        <header
+          class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              Name List Manager
+            </h1>
+            <p class="mt-1 text-sm text-slate-200/70">
+              Quickly add names and keep a beautiful list.
+            </p>
+          </div>
+
+          <div class="hidden sm:flex items-center gap-3">
+            <div class="text-xs text-slate-200/70">Total</div>
+            <div
+              id="totalCount"
+              class="inline-flex items-center px-3 py-1 rounded-full bg-white/6 text-xs font-semibold"
+            >
+              0
+            </div>
+          </div>
+        </header>
+
+        <div
+          class="bg-white/6 backdrop-blur-md border border-white/8 rounded-2xl shadow-2xl p-5 sm:p-6"
+        >
+          <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <input
+              id="nameInput"
+              type="text"
+              placeholder="Enter full name (e.g. Jane Doe)"
+              class="flex-1 min-w-0 bg-white/6 placeholder-slate-200/60 text-slate-50 px-4 py-3 rounded-lg border border-white/12 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+              aria-label="Enter name"
+            />
+
+            <button
+              id="addNameBtn"
+              type="button"
+              class="inline-flex items-center gap-3 justify-center bg-gradient-to-r from-emerald-400 to-indigo-500 hover:from-emerald-300 hover:to-indigo-600 text-slate-900 font-semibold px-4 py-3 rounded-lg shadow-md transition"
+            >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path
+                  d="M12 5v14M5 12h14"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Add Name
+            </button>
+          </div>
+
+          <div class="mt-5">
+            <ul
+              id="nameList"
+              class="space-y-3 max-h-[48vh] sm:max-h-[40vh] overflow-y-auto pr-2 leading-0.5"
+            ></ul>
+
+            <div
+              id="emptyState"
+              class="mt-4 rounded-lg border border-white/6 bg-white/4 px-4 py-6 text-center"
+            >
+              <p class="text-slate-100/80 mb-2">No names yet</p>
+              <p class="text-xs text-slate-200/60">
+                Add a name to get started — it will appear as a polished list
+                item.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="mt-4 text-xs text-slate-200/60 text-center">
+          Tip: Use <code>#nameList</code> to append list items and update
+          <code>#totalCount</code>.
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
