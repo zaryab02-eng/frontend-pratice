@@ -16,9 +16,18 @@ let movies = [
 inputMovie.addEventListener("input", () => {
   const movieEntered = inputMovie.value.toLowerCase();
 
+  if (movieEntered === "" || movieEntered.trim() === "") {
+    display.innerHTML = "";
+    return;
+  }
+
   const filteredMovie = movies.filter((movie) => {
     return movie.toLowerCase().includes(movieEntered);
   });
 
-  display.innerHTML = filteredMovie.join("<br>");
+  if (filteredMovie.length === 0) {
+    display.innerText = "No movie found";
+  } else {
+    display.innerHTML = filteredMovie.join("<br>");
+  }
 });
