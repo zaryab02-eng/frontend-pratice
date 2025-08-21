@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save My Name</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+  >
+    <div class="bg-white shadow-2xl rounded-2xl p-8 w-96 text-center">
+      <h1 class="text-2xl font-bold text-gray-800 mb-6">💾 Save My Name</h1>
+
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Enter your name"
+        class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+      />
+
+      <div class="flex gap-3 justify-center mb-6">
+        <button
+          id="saveBtn"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Save Name
+        </button>
+
+        <button
+          id="loadBtn"
+          class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Load Name
+        </button>
+
+        <button
+          id="clearBtn"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Clear Name
+        </button>
+      </div>
+
+      <div id="nameDisplay" class="text-lg font-semibold text-gray-700"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
