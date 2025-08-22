@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Storage</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+  >
+    <!-- Main Container -->
+    <div class="bg-white shadow-2xl rounded-2xl p-8 w-96 space-y-6">
+      <!-- Heading -->
+      <h1 class="text-2xl font-bold text-center text-gray-800">
+        📝 User Profile
+      </h1>
+
+      <!-- Form Section -->
+      <div class="space-y-4">
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="Enter your name"
+          class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Enter your email"
+          class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+
+        <input
+          type="number"
+          id="ageInput"
+          placeholder="Enter your age"
+          class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      <!-- Buttons Section -->
+      <div class="flex gap-3 justify-center">
+        <button
+          id="saveBtn"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Save Profile
+        </button>
+
+        <button
+          id="loadBtn"
+          class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Load Profile
+        </button>
+
+        <button
+          id="clearBtn"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition"
+        >
+          Clear Profile
+        </button>
+      </div>
+
+      <!-- Display Area -->
+      <div
+        id="profileDisplay"
+        class="text-left font-semibold w-max text-gray-700 mt-4 p-3 bg-gray-100 rounded-xl"
+      >
+        <!-- Messages will appear here -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
