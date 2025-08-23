@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lucky Number</title>
+    <!-- Tailwind CLI build -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body
+    class="flex justify-center items-center min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-rose-800 text-slate-50 antialiased"
+  >
+    <main class="flex items-center justify-center p-6">
+      <section class="w-full max-w-lg">
+        <div
+          class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl"
+        >
+          <div
+            class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-fuchsia-500/20 blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl"
+          ></div>
+
+          <div class="relative p-8 space-y-6">
+            <header class="space-y-1">
+              <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                🍀 Lucky Number
+              </h1>
+              <p class="text-sm text-slate-200/80">
+                Click to generate your lucky number for today.
+              </p>
+            </header>
+
+            <!-- Display (JS: update this text) -->
+            <div
+              id="luckyDisplay"
+              class="min-h-[64px] flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-lg font-semibold"
+              aria-live="polite"
+            >
+              Ready when you are ✨
+            </div>
+
+            <!-- Button (JS: add click handler) -->
+            <div class="flex items-center gap-3">
+              <button
+                id="luckyBtn"
+                type="button"
+                class="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 text-slate-900 font-bold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 active:scale-[0.98] transition"
+              >
+                <span class="i">Get Lucky Number</span>
+                <svg
+                  class="w-5 h-5 transition group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M5 12h14M13 5l7 7-7 7"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- Subtle helper text -->
+              <span class="text-xs text-slate-200/70 hidden sm:inline">
+                Tip: Show “Generating lucky number...” while processing.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Your JS goes here -->
+    <script src="script.js"></script>
+  </body>
+</html>
