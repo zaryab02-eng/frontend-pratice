@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Generator</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body
+    class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-600 via-pink-500 to-red-500"
+  >
+    <div
+      class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md text-center"
+    >
+      <h1 class="text-3xl font-extrabold mb-6 text-gray-800">😂 Random Joke</h1>
+
+      <button
+        id="jokeBtn"
+        class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md transition transform hover:scale-105"
+      >
+        Get a Joke
+      </button>
+
+      <div
+        id="jokeDisplay"
+        class="mt-6 p-4 text-lg font-medium text-gray-700 bg-gray-100 rounded-xl shadow-inner min-h-[80px] flex items-center justify-center"
+      >
+        Your joke will appear here...
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
