@@ -6,17 +6,6 @@ const books = [
   { title: "Web Design", pages: 150, available: false, genre: "tech" },
 ];
 
-// Rules:
-// 1. Available + Tech + 200+ pages = "Premium Tech: TITLE"
-// 2. Available + Tech + Under 200 pages = "Basic Tech: TITLE"
-// 3. Available + Fiction = "Available Fiction: TITLE"
-// 4. Not Available = "Currently Unavailable: TITLE"
-
-// Expected Output:
-// ["Premium Tech: JAVASCRIPT GUIDE", "Currently Unavailable: MYSTERY NOVEL",
-//  "Basic Tech: PYTHON BASICS", "Available Fiction: ROMANCE STORY",
-//  "Currently Unavailable: WEB DESIGN"]
-
 const result = books.map((book) => {
   if (book.available === true && book.genre == "tech" && book.pages > 200) {
     return `Premium Tech: ${book.title.toUpperCase()}`;
