@@ -20,3 +20,5 @@ const result = salesPeople.map((people) => {
     return `Needs Improvement: ${people.name} (Total: $${totalSales})`;
   }
 });
+
+console.log(result);
