@@ -12,13 +12,11 @@ const salesPeople = [
 const result = salesPeople.map((people) => {
   const totalSales = people.sales.reduce((sum, sale) => sum + sale, 0);
 
-  if (totalSales > 3000) {
-    return `Top Performer: ${people.name.toUpperCase()} (${totalSales})`;
-  } else if (totalSales >= 1500 && totalSales <= 2999) {
-    return `Good Performer: ${people.name.toUpperCase()} (${totalSales})`;
-  } else if (totalSales < 1500) {
-    return `Need Improvement: ${people.name.toUpperCase()} (${totalSales})`;
+  if (totalSales >= 3000) {
+    return `Top Performer: ${people.name} (Total: $${totalSales})`;
+  } else if (totalSales >= 1500) {
+    return `Good Performer: ${people.name} (Total: $${totalSales})`;
+  } else {
+    return `Needs Improvement: ${people.name} (Total: $${totalSales})`;
   }
 });
-
-console.log(result);
