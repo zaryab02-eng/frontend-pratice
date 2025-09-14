@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Basic Foundation</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Milk <button onclick="deleteItem(this)">❌</button></li>
+      <li>Bread <button onclick="deleteItem(this)">❌</button></li>
+      <li>Egg <button onclick="deleteItem(this)">❌</button></li>
+      <li>Oats <button onclick="deleteItem(this)">❌</button></li>
+    </ul>
+    <script>
+      function deleteItem(button) {
+        button.closest("li").remove();
+      }
+    </script>
+  </body>
+</html>
