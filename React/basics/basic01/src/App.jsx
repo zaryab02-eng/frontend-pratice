@@ -7,9 +7,19 @@ const App = () => {
     <div>
       <div>
         <h1>The counter is {a}</h1>
-        <div id="button">
-          <button onClick={() => setA(a + 1)}>Increase</button>
-          <button onClick={() => setA(a - 1)}>Decrease</button>
+        <div className="flex gap-2">
+          <button
+            className="bg-green-400 p-2 border-0 border-white rounded"
+            onClick={() => setA(a + 1)}
+          >
+            Increase
+          </button>
+          <button
+            className="bg-red-400 p-2 border-0 border-white rounded"
+            onClick={() => setA(a - 1)}
+          >
+            Decrease
+          </button>
         </div>
       </div>
     </div>
