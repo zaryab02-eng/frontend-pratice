@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [a, setA] = useState(1);
+  const [a, setA] = useState(0);
 
   return (
     <div>
-      <h1>The Counter is: {a}</h1>
-      <button id="incre" onClick={() => setA(a + 1)}>
-        Increment
-      </button>
-      <button id="decre" onClick={() => setA(a - 1)}>
-        Decrement
-      </button>
+      <div>
+        <h1>The counter is {a}</h1>
+        <div id="button">
+          <button onClick={() => setA(a + 1)}>Increase</button>
+          <button onClick={() => setA(a - 1)}>Decrease</button>
+        </div>
+      </div>
     </div>
   );
 };
