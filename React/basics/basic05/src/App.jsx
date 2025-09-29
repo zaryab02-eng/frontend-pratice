@@ -29,6 +29,10 @@ const Likes = () => {
             disLike!
           </button>
         </div>
+        {likes > 5 && (
+          <p className="text-green-500 font-bold">Wow! So popular!🔥</p>
+        )}
+        {disLikes > 5 && <p className="text-red-600 font-bold">Oh no!😢</p>}
       </div>
     </>
   );
