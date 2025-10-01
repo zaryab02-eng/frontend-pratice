@@ -9,6 +9,18 @@ const App = () => {
     setInput("");
   };
 
+  // DELETE FUNCTION - This removes an item from the list
+  const deleteItem = (indexToDelete) => {
+    // filter goes through EACH item in the array
+    // It keeps items where the condition is TRUE
+    // It removes items where the condition is FALSE
+    const newItems = item.filter((singleItem, index) => {
+      return index !== indexToDelete;
+      // This means: "Keep this item ONLY if its index is NOT the one we want to delete"
+    });
+    setItem(newItems);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-y-2">
@@ -28,14 +40,20 @@ const App = () => {
           </button>
         </div>
         <div>
-          {" "}
           {item.map((items, index) => (
-            <p
-              className="bg-amber-50 p-2 text-black font-bold leading-1.5"
+            <div
+              className="flex justify-between bg-amber-50 p-2 mb-1"
               key={index}
             >
-              {items}
-            </p>
+              <p className="text-black font-bold">{items}</p>
+              {/* When you click this button, it calls deleteItem with THIS item's index */}
+              <button
+                className="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-400"
+                onClick={() => deleteItem(index)}
+              >
+                Delete
+              </button>
+            </div>
           ))}
         </div>
       </div>
