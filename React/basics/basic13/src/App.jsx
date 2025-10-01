@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const App = () => {
-  const [num, setNum] = useState([1, 2, 3]);
-  const [nextNum, setNextNum] = useState(4);
+  const [num, setNum] = useState([]);
+  const [nextNum, setNextNum] = useState(1);
 
   const addNum = () => {
     setNum([...num, nextNum]);
@@ -11,10 +11,15 @@ const App = () => {
 
   return (
     <>
-      {num.map((nums, idx) => (
-        <p key={idx}>{nums}</p>
-      ))}
-      <button onClick={addNum}>Add Next Number</button>
+      <div className="bg-white p-2 text-black h-32 border border-red-600 overflow-y-auto">
+        {num.map((nums, idx) => (
+          <p key={idx}>{nums}</p>
+        ))}
+      </div>
+
+      <button className="p-1 bg-amber-300 rounded text-black" onClick={addNum}>
+        Add Next Number
+      </button>
     </>
   );
 };
