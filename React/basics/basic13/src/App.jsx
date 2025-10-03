@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const App = () => {
   const [num, setNum] = useState([]);
@@ -9,32 +9,33 @@ const App = () => {
     setNextNum(nextNum + 1);
   };
 
-  const deleteItem = (indexToDelete) => {
-    const newNum = num.filter((_, idx) => idx !== indexToDelete);
+  const deleteButton = (indexToDelete) => {
+    const newNum = num.filter((singleNum, idx) => {
+      return idx !== indexToDelete;
+    });
     setNum(newNum);
   };
 
   return (
     <>
-      <div className="bg-white p-2 text-black h-32 border border-red-600 overflow-y-auto">
+      <ul className="bg-white text-black p-5">
         {num.map((nums, idx) => (
-          <div key={idx} className="flex gap-2 items-center">
-            <p>{nums}</p>
+          <li key={idx}>
+            {nums}
             <button
-              onClick={() => deleteItem(idx)}
-              className="p-1 bg-red-400 rounded text-white"
+              onClick={() => deleteButton(idx)}
+              className="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-400"
             >
               Delete
             </button>
-          </div>
+          </li>
         ))}
-      </div>
-
+      </ul>
       <button
-        className="p-1 bg-amber-300 rounded text-black mt-2"
+        className="bg-blue-700 text-black text-2xl rounded"
         onClick={addNum}
       >
-        Add Next Number
+        Add Num
       </button>
     </>
   );
