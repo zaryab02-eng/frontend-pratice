@@ -24,6 +24,15 @@ const App = () => {
           >
             Save
           </button>
+          <button
+            className="px-2 py-1 bg-red-600 rounded text-black hover:bg-red-500 hover:cursor-pointer"
+            onClick={() => {
+              setNewAge(age);
+              setIsEditing(false);
+            }}
+          >
+            Cancel
+          </button>
         </>
       ) : (
         <>
