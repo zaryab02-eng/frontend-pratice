@@ -1,71 +1,60 @@
 import { useState } from "react";
 
 const App = () => {
-  // Initial fruits
   const [fruits, setFruits] = useState(["Apple", "Banana", "Orange"]);
-  // Track which fruit (by index) is currently being edited
-  const [editIndex, setEditIndex] = useState(null);
-  // Store the temporary value while editing
-  const [editedFruit, setEditedFruit] = useState("");
+  const [editIndex, setEditIndex] = useState(null); // WHICH fruit (0, 1, or 2)
+  const [editValue, setEditValue] = useState("");
+
+  const startEdit = (index) => {
+    setEditIndex(index); // Remember which one
+    setEditValue(fruits[index]); // Put current fruit in input
+  };
+
+  const saveEdit = () => {
+    const newFruits = fruits.map((fruit, index) => {
+      if (index === editIndex) {
+        return editValue; // Replace this one
+      }
+      return fruit; // Keep others same
+    });
+    setFruits(newFruits);
+    setEditIndex(null);
+  };
 
   return (
-    <div className="p-4 space-y-3">
-      {/* Map through fruits */}
-      {fruits.map((fruit, idx) => (
-        <div key={idx} className="flex items-center gap-3">
-          {editIndex === idx ? (
-            // ✅ If this fruit is being edited
+    <div className="p-4">
+      {fruits.map((fruit, index) => (
+        <div key={index} className="mb-2">
+          {editIndex === index ? (
+            // THIS fruit is being edited
             <>
               <input
-                type="text"
-                value={editedFruit}
-                onChange={(e) => setEditedFruit(e.target.value)}
-                className="border px-2 py-1 rounded text-black"
+                className="bg-white px-2 py-1 text-black border"
+                value={editValue}
+                onChange={(e) => setEditValue(e.target.value)}
               />
-
-              {/* ✅ Save button — updates the fruit at that index */}
               <button
-                className="bg-green-600 text-white px-2 py-1 rounded"
-                onClick={() => {
-                  const updatedFruits = [...fruits];
-                  updatedFruits[idx] = editedFruit;
-                  setFruits(updatedFruits);
-                  setEditIndex(null); // Exit edit mode
-                }}
+                className="bg-green-600 text-white px-2 py-1 ml-2"
+                onClick={saveEdit}
               >
                 Save
               </button>
-
-              {/* ✅ Cancel button — discards changes */}
               <button
-                className="bg-gray-500 text-white px-2 py-1 rounded"
+                className="bg-gray-600 text-white px-2 py-1 ml-2"
                 onClick={() => setEditIndex(null)}
               >
                 Cancel
               </button>
             </>
           ) : (
-            // ✅ Normal display mode
+            // THIS fruit is NOT being edited
             <>
-              <p className="text-lg">{fruit}</p>
-
-              {/* ✅ Edit button — enables editing mode for this specific fruit */}
+              <span className="text-white">{fruit}</span>
               <button
-                className="bg-blue-600 text-white px-2 py-1 rounded"
-                onClick={() => {
-                  setEditIndex(idx);
-                  setEditedFruit(fruit);
-                }}
+                className="bg-blue-600 text-white px-2 py-1 ml-2"
+                onClick={() => startEdit(index)}
               >
                 Edit
-              </button>
-
-              {/* ✅ Delete button — removes only this fruit */}
-              <button
-                className="bg-red-600 text-white px-2 py-1 rounded"
-                onClick={() => setFruits(fruits.filter((_, i) => i !== idx))}
-              >
-                Delete
               </button>
             </>
           )}
