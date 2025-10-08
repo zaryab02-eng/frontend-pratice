@@ -21,7 +21,30 @@ const App = () => {
     setEditIndex(null);
   };
 
-  return <div>App</div>;
+  return (
+    <div>
+      {students.map((student, index) => (
+        <div key={index}>
+          {editIndex === index ? (
+            <>
+              <input
+                type="text"
+                value={editValue}
+                onChange={(e) => setEditValue(e.target.value)}
+              />
+              <button onClick={saveEdit}>Save</button>
+              <button onClick={() => setEditIndex(null)}>Cancel</button>
+            </>
+          ) : (
+            <>
+              <p>{student}</p>
+              <button onClick={() => startEdit(index)}>Edit</button>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default App;
