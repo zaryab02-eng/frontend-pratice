@@ -98,7 +98,7 @@ const App = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
-                        className="text-black"
+                        className="text-black hover:text-blue-600"
                         onClick={() => {
                           setEditIndex(index);
                           setEditValue(task);
@@ -107,7 +107,7 @@ const App = () => {
                         <MdEdit />
                       </button>
                       <button
-                        className="text-black"
+                        className="text-black hover:text-red-500"
                         onClick={() => dltTask(index)}
                       >
                         <RiDeleteBin4Line />
