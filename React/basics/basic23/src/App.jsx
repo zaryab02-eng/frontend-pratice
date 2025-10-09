@@ -13,9 +13,9 @@ const App = () => {
   const saveEdit = () => {
     const newNames = names.map((name, index) => {
       if (index === clickedIndex) {
-        return editValue; // Isko badal do
+        return editValue;
       }
-      return name; // Baaki same
+      return name;
     });
     setNames(newNames);
     setClickedIndex(null);
@@ -25,13 +25,13 @@ const App = () => {
     <>
       {names.map((name, index) => (
         <div
-          className="flex bg-amber-200 w-[12srem] h-[4rem] p-3 justify-between"
+          className="flex bg-amber-200 w-[14rem] h-[4rem] p-3 justify-between items-center"
           key={index}
         >
           {clickedIndex === index ? (
             <>
               <input
-                className="bg-white text-black px-2 py-1"
+                className="bg-white text-black px-2 py-1 w-[5rem]"
                 type="text"
                 value={editValue}
                 onChange={(e) => setEditValue(e.target.value)}
