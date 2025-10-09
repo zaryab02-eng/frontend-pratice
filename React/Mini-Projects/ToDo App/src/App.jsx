@@ -3,10 +3,13 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { useState } from "react";
 import { RiDeleteBin4Line } from "react-icons/ri";
+import { MdEdit } from "react-icons/md";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [editIndex, setEditIndex] = useState(null);
+  const [editValue, setEditValue] = useState("");
 
   const saveEditTask = () => {
     if (newTask.trim() === "") return;
@@ -19,9 +22,20 @@ const App = () => {
     setTasks(newTasks);
   };
 
+  const saveEdit = () => {
+    const updatedTasks = tasks.map((task, index) => {
+      if (index === editIndex) {
+        return editValue;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+    setEditIndex(null);
+  };
+
   return (
     <>
-      <div className="bg-[#fefefe] h-[19rem] w-[19rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border rounded-2xl">
+      <div className="bg-[#fefefe] h-[19rem] w-[21rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border rounded-2xl">
         <div className="flex justify-between p-3">
           <div className="flex items-center space-x-2">
             <div className="flex w-max h-max rounded-full p-[0.5px] border border-green-600">
@@ -52,16 +66,55 @@ const App = () => {
           {tasks.map((task, index) => (
             <ul key={index} className="py-1.5">
               <li className="flex items-center justify-between bg-[#f9fafb] border rounded-lg px-2 py-1">
-                {/* Left side - circle and task */}
-                <div className="flex items-center space-x-2">
-                  <FaRegCircle className="text-gray-600 text-sm" />
-                  <span className="text-black text-sm">{task}</span>
-                </div>
-
-                {/* Right side - delete button */}
-                <button className="text-black" onClick={() => dltTask(index)}>
-                  <RiDeleteBin4Line />
-                </button>
+                {editIndex === index ? (
+                  // EDIT MODE
+                  <>
+                    <input
+                      value={editValue}
+                      onChange={(e) => setEditValue(e.target.value)}
+                      className="border px-1 py-0.5 text-black text-sm rounded flex-1"
+                    />
+                    <div className="flex space-x-1 ml-2">
+                      <button
+                        onClick={saveEdit}
+                        className="bg-green-600 text-white px-2 py-0.5 text-xs rounded"
+                      >
+                        Save
+                      </button>
+                      <button
+                        onClick={() => setEditIndex(null)}
+                        className="bg-gray-600 text-white px-2 py-0.5 text-xs rounded"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  // NORMAL MODE
+                  <>
+                    <div className="flex items-center space-x-2">
+                      <FaRegCircle className="text-gray-600 text-sm" />
+                      <span className="text-black text-sm">{task}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <button
+                        className="text-black"
+                        onClick={() => {
+                          setEditIndex(index);
+                          setEditValue(task);
+                        }}
+                      >
+                        <MdEdit />
+                      </button>
+                      <button
+                        className="text-black"
+                        onClick={() => dltTask(index)}
+                      >
+                        <RiDeleteBin4Line />
+                      </button>
+                    </div>
+                  </>
+                )}
               </li>
             </ul>
           ))}
