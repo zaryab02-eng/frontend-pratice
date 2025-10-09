@@ -14,6 +14,13 @@ const App = () => {
     setNewTask("");
   };
 
+  const dltTask = (taskToDelete) => {
+    const newTasks = tasks.filter((task, index) => {
+      taskToDelete !== index;
+    });
+    return setNewTask(newTasks);
+  };
+
   return (
     <>
       <div className="bg-[#fefefe] h-[19rem] w-[19rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border rounded-2xl">
@@ -54,7 +61,7 @@ const App = () => {
                 </div>
 
                 {/* Right side - delete button */}
-                <button className="text-black">
+                <button className="text-black" onClick={dltTask}>
                   <RiDeleteBin4Line />
                 </button>
               </li>
