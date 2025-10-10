@@ -103,7 +103,10 @@ const App = () => {
                   // NORMAL MODE
                   <>
                     <div className="flex items-center space-x-2">
-                      <button onClick={() => toggleComplete(index)}>
+                      <button
+                        className="cursor-pointer"
+                        onClick={() => toggleComplete(index)}
+                      >
                         {completedTasks.includes(index) ? (
                           <FaCheckCircle className="text-green-600 text-sm" />
                         ) : (
@@ -122,7 +125,7 @@ const App = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
-                        className="text-black hover:text-blue-600"
+                        className="text-black cursor-pointer hover:text-blue-600"
                         onClick={() => {
                           setEditIndex(index);
                           setEditValue(task);
@@ -131,7 +134,7 @@ const App = () => {
                         <MdEdit />
                       </button>
                       <button
-                        className="text-black hover:text-red-500"
+                        className="text-black cursor-pointer hover:text-red-500"
                         onClick={() => dltTask(index)}
                       >
                         <RiDeleteBin4Line />
