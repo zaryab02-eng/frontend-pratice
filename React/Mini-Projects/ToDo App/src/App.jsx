@@ -1,6 +1,7 @@
 import { TiTick } from "react-icons/ti";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 import { useState } from "react";
 import { RiDeleteBin4Line } from "react-icons/ri";
 import { MdEdit } from "react-icons/md";
@@ -10,6 +11,7 @@ const App = () => {
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [editValue, setEditValue] = useState("");
+  const [completedTasks, setCompletedTasks] = useState([]);
 
   const saveEditTask = () => {
     if (newTask.trim() === "") return;
@@ -31,6 +33,14 @@ const App = () => {
     });
     setTasks(updatedTasks);
     setEditIndex(null);
+  };
+
+  const toggleComplete = (index) => {
+    if (completedTasks.includes(index)) {
+      setCompletedTasks(completedTasks.filter((i) => i !== index));
+    } else {
+      setCompletedTasks([...completedTasks, index]);
+    }
   };
 
   return (
@@ -93,8 +103,22 @@ const App = () => {
                   // NORMAL MODE
                   <>
                     <div className="flex items-center space-x-2">
-                      <FaRegCircle className="text-gray-600 text-sm" />
-                      <span className="text-black text-sm">{task}</span>
+                      <button onClick={() => toggleComplete(index)}>
+                        {completedTasks.includes(index) ? (
+                          <FaCheckCircle className="text-green-600 text-sm" />
+                        ) : (
+                          <FaRegCircle className="text-gray-600 text-sm" />
+                        )}
+                      </button>
+                      <span
+                        className={`text-black text-sm ${
+                          completedTasks.includes(index)
+                            ? "line-through text-gray-400"
+                            : ""
+                        }`}
+                      >
+                        {task}
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
