@@ -36,7 +36,7 @@ const App = () => {
         >
           Load
         </button>
-        <p className="text-white font-bold ">Loaded Name: {displayName}</p>
+        <p className="text-white font-bold">Loaded Name: {displayName}</p>
       </div>
     </>
   );
