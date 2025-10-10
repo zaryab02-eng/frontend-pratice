@@ -67,7 +67,7 @@ const App = () => {
           />
           <button
             onClick={saveEditTask}
-            className="text-white bg-blue-600 px-4.5 py-1 rounded-full text-[12px] font-bold"
+            className="text-white bg-blue-600 hover:bg-blue-500 cursor-pointer px-4.5 py-1 rounded-full text-[12px] font-bold"
           >
             Add
           </button>
@@ -87,13 +87,13 @@ const App = () => {
                     <div className="flex space-x-1 ml-2">
                       <button
                         onClick={saveEdit}
-                        className="bg-green-600 text-white px-2 py-0.5 text-xs rounded"
+                        className="bg-green-600 hover:bg-green-500 cursor-pointer text-white px-2 py-0.5 text-xs rounded"
                       >
                         Save
                       </button>
                       <button
                         onClick={() => setEditIndex(null)}
-                        className="bg-gray-600 text-white px-2 py-0.5 text-xs rounded"
+                        className="bg-gray-600 hover:bg-gray-500 cursor-pointer text-white px-2 py-0.5 text-xs rounded"
                       >
                         Cancel
                       </button>
