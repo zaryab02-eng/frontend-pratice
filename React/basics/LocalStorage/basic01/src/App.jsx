@@ -2,10 +2,16 @@ import { useState } from "react";
 
 const App = () => {
   const [myName, setmyName] = useState("");
+  const [displayName, setDisplayName] = useState("");
 
   const savedName = () => {
     localStorage.setItem("My name", myName);
     alert("Name Saved");
+  };
+
+  const loadName = () => {
+    const saved = localStorage.getItem("My name");
+    setDisplayName(saved);
   };
 
   return (
@@ -24,6 +30,13 @@ const App = () => {
         >
           Save
         </button>
+        <button
+          onClick={loadName}
+          className="bg-green-600 text-white font-bold rounded px-2 py-1"
+        >
+          Load
+        </button>
+        <p className="text-white font-bold ">Loaded Name: {displayName}</p>
       </div>
     </>
   );
