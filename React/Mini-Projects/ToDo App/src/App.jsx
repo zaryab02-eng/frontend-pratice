@@ -2,16 +2,35 @@ import { TiTick } from "react-icons/ti";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiDeleteBin4Line } from "react-icons/ri";
 import { MdEdit } from "react-icons/md";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  // LOCALSTORAGE LOGIC #1: Initialize state from localStorage
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [editValue, setEditValue] = useState("");
-  const [completedTasks, setCompletedTasks] = useState([]);
+
+  const [completedTasks, setCompletedTasks] = useState(() => {
+    const savedCompleted = localStorage.getItem("completedTasks");
+    return savedCompleted ? JSON.parse(savedCompleted) : [];
+  });
+
+  // LOCALSTORAGE LOGIC #2: Save tasks to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // LOCALSTORAGE LOGIC #3: Save completed tasks to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks]);
 
   const saveEditTask = () => {
     if (newTask.trim() === "") return;
@@ -22,6 +41,12 @@ const App = () => {
   const dltTask = (taskToDelete) => {
     const newTasks = tasks.filter((task, index) => index !== taskToDelete);
     setTasks(newTasks);
+
+    // LOCALSTORAGE LOGIC #4: Update completed tasks when a task is deleted
+    const updatedCompleted = completedTasks
+      .filter((i) => i !== taskToDelete)
+      .map((i) => (i > taskToDelete ? i - 1 : i));
+    setCompletedTasks(updatedCompleted);
   };
 
   const saveEdit = () => {
