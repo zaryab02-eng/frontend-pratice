@@ -31,6 +31,20 @@ const App = () => {
     }
   };
 
+  const dltBtn = (indexToDelete) => {
+    const updated = students.filter(
+      (student, index) => index !== indexToDelete
+    );
+    setStudents(updated);
+    setDisplayStudent(updated);
+    localStorage.setItem("studentsList", JSON.stringify(updated));
+  };
+
+  const clearAll = () => {
+    localStorage.removeItem("studentsList");
+    setDisplayStudent([]);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-y-1">
@@ -77,9 +91,21 @@ const App = () => {
               <div>Name: {display.name}</div>
               <div>Age: {display.age}</div>
               <div>City: {display.city}</div>
+              <button
+                onClick={() => dltBtn(index)}
+                className="bg-red-700 text-white px-2.5 py-1.5 rounded hover:bg-red-600 cursor-pointer"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
+        <button
+          onClick={clearAll}
+          className="bg-green-700 text-white px-2.5 py-1.5 rounded hover:bg-green-600 cursor-pointer"
+        >
+          Clear All
+        </button>
       </div>
     </>
   );
