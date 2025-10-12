@@ -25,7 +25,9 @@ const App = () => {
   const loadStudents = () => {
     const saved = localStorage.getItem("studentsList");
     if (saved) {
-      setDisplayStudent(JSON.parse(saved));
+      const loadedStudents = JSON.parse(saved);
+      setStudents(loadedStudents); // 🔥 Add this line
+      setDisplayStudent(loadedStudents);
     }
   };
 
@@ -69,7 +71,7 @@ const App = () => {
             Load Student
           </button>
         </div>
-        <ul className="bg-white p-2 text-black">
+        <ul className="bg-white p-2 text-black divide-y divide-gray-300 h-[230px] overflow-y-auto">
           {displayStudent.map((display, index) => (
             <li key={index} className=" bg-gray-100 rounded">
               <div>Name: {display.name}</div>
