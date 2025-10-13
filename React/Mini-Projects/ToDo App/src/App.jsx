@@ -7,46 +7,36 @@ import { RiDeleteBin4Line } from "react-icons/ri";
 import { MdEdit } from "react-icons/md";
 
 const App = () => {
-  // LOCALSTORAGE LOGIC #1: Initialize state from localStorage
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
-
+  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [editValue, setEditValue] = useState("");
+  const [completedTasks, setCompletedTasks] = useState([]);
 
-  const [completedTasks, setCompletedTasks] = useState(() => {
-    const savedCompleted = localStorage.getItem("completedTasks");
-    return savedCompleted ? JSON.parse(savedCompleted) : [];
-  });
-
-  // LOCALSTORAGE LOGIC #2: Save tasks to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+    const savedTasks = localStorage.getItem("todoList");
+    const savedCompleted = localStorage.getItem("completedList");
 
-  // LOCALSTORAGE LOGIC #3: Save completed tasks to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
-  }, [completedTasks]);
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+    if (savedCompleted) {
+      setCompletedTasks(JSON.parse(savedCompleted));
+    }
+  }, []);
 
   const saveEditTask = () => {
     if (newTask.trim() === "") return;
-    setTasks([...tasks, newTask]);
+    const updated = [...tasks, newTask];
+    setTasks(updated);
+    localStorage.setItem("todoList", JSON.stringify(updated));
     setNewTask("");
   };
 
   const dltTask = (taskToDelete) => {
     const newTasks = tasks.filter((task, index) => index !== taskToDelete);
     setTasks(newTasks);
-
-    // LOCALSTORAGE LOGIC #4: Update completed tasks when a task is deleted
-    const updatedCompleted = completedTasks
-      .filter((i) => i !== taskToDelete)
-      .map((i) => (i > taskToDelete ? i - 1 : i));
-    setCompletedTasks(updatedCompleted);
+    localStorage.setItem("todoList", JSON.stringify(newTasks));
   };
 
   const saveEdit = () => {
@@ -57,17 +47,20 @@ const App = () => {
       return task;
     });
     setTasks(updatedTasks);
+    localStorage.setItem("todoList", JSON.stringify(updatedTasks));
     setEditIndex(null);
   };
 
   const toggleComplete = (index) => {
+    let updated;
     if (completedTasks.includes(index)) {
-      setCompletedTasks(completedTasks.filter((i) => i !== index));
+      updated = completedTasks.filter((i) => i !== index);
     } else {
-      setCompletedTasks([...completedTasks, index]);
+      updated = [...completedTasks, index];
     }
+    setCompletedTasks(updated);
+    localStorage.setItem("completedList", JSON.stringify(updated)); // 🔥 Add
   };
-
   return (
     <>
       <div className="bg-[#fefefe] h-[19rem] w-[21rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border rounded-2xl">
