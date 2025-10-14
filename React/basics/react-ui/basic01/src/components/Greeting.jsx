@@ -1,8 +1,8 @@
 const Greeting = () => {
   return (
-    <div>
-      <h1 className="bg-blue-600 text-white">Hello, React!</h1>
-      <p className="text-white">
+    <div className="p-6">
+      <h1 className="bg-blue-600 text-white p-4 rounded-lg">Hello, React!</h1>
+      <p className="text-white leading-relaxed">
         This is my first component, Lorem ipsum dolor sit, amet consectetur
         adipisicing elit. Similique omnis voluptatum quam inventore nisi alias
         expedita, quod architecto laborum soluta. Libero, est unde. Fuga dolore
