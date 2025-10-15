@@ -1,6 +1,6 @@
 const ProductCard = ({ product }) => {
   return (
-    <div className="p-6">
+    <div className="p-6 flex-wrap">
       <div className="h-[20rem] w-64 bg-white rounded-2xl shadow-2xl flex flex-col justify-between p-5 py-[20px] ">
         <div className="relative">
           <img

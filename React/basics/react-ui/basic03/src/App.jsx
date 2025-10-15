@@ -1,3 +1,4 @@
+import Navbar from "./assets/components/Navbar";
 import ProductCard from "./assets/components/ProductCard";
 
 const App = () => {
@@ -85,11 +86,14 @@ const App = () => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
-      {products.map(function (product) {
-        return <ProductCard key={product.id} product={product} />;
-      })}
-    </div>
+    <>
+      <Navbar />
+      <div className="flex flex-wrap gap-4 justify-center">
+        {products.map(function (product) {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </div>
+    </>
   );
 };
 
