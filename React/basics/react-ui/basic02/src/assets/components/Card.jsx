@@ -1,28 +1,24 @@
 import { FaBookmark } from "react-icons/fa";
 
-const Card = () => {
+const Card = ({ job }) => {
   return (
     <div className="p-6">
       <div className="bg-white text-black h-72 w-64 rounded-2xl relative">
         <div className="flex justify-between p-6">
           <div className="w-max h-max">
-            <img
-              className="w-8"
-              src="https://img.favpng.com/11/1/15/google-logo-png-favpng-sdEUHqixZ3JpmUxbr41KhEU5g.jpg"
-              alt="Google"
-            />
+            <img className="w-8" src={job.logo} alt={job.company} />
           </div>
           <div className="px-2.5 py-1 bg-[#EAEAEA] space-x-1 rounded w-min h-min flex items-center justify-between">
-            <h4 className="text-[13px]">Saved</h4>
+            <h4 className="text-[13px]">{job.saved ? "Saved" : "Save"}</h4>
             <FaBookmark className="text-[12px]" />
           </div>
         </div>
         <div className="flex flex-col px-6 space-y-3 items-start">
           <div className="flex items-center space-x-1">
-            <h5 className="text-[13px] font-arial">Google</h5>
-            <span className="text-[9px] text-gray-400">30 days ago</span>
+            <h5 className="text-[13px] font-arial">{job.company}</h5>
+            <span className="text-[9px] text-gray-400">{job.posted}</span>
           </div>
-          <h1 className="font-semibold text-[20px]">Graphic Designer</h1>
+          <h1 className="font-semibold text-[20px]">{job.title}</h1>
           <div className="flex space-x-2">
             <div className="text-[12px] py-1 px-2 rounded-lg bg-[#EAEAEA]">
               <p>Full-time</p>
@@ -34,10 +30,10 @@ const Card = () => {
         </div>
         <div className="px-6 flex justify-between absolute bottom-6 space-x-11">
           <div className="leading-4.5">
-            <h1 className="text-[15px] font-semibold">$150-220k</h1>
-            <span className="text-[9px] text-gray-400">Mountain View CA</span>
+            <h1 className="text-[15px] font-semibold">{job.salary}</h1>
+            <span className="text-[9px] text-gray-400">{job.location}</span>
           </div>
-          <button className="bg-[#000000] text-white px-3 py-1.5 rounded-lg text-[13px]">
+          <button className="bg-[#000000] text-white px-3 py-1.5 rounded-lg text-[13px] cursor-pointer">
             Apply now
           </button>
         </div>
