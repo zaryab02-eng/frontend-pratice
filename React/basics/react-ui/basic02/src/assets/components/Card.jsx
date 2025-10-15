@@ -21,10 +21,10 @@ const Card = ({ job }) => {
           <h1 className="font-semibold text-[20px]">{job.title}</h1>
           <div className="flex space-x-2">
             <div className="text-[12px] py-1 px-2 rounded-lg bg-[#EAEAEA]">
-              <p>Full-time</p>
+              <p>{job.type[0]}</p>
             </div>
             <div className="text-[12px] py-1 px-2 rounded-lg bg-[#EAEAEA]">
-              <p>Flexible schedule</p>
+              <p>{job.type[1]}</p>
             </div>
           </div>
         </div>
