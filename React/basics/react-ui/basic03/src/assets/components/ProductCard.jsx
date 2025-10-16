@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
           <img
             src={product.image}
             alt={product.title}
-            className="w-[216px] rounded-2xl h-[145px] object-cover"
+            className="w-[216px] rounded-2xl h-[145px] object-cover border border-gray-300"
           />
           <div className="bg-[#E53431] absolute top-0 right-0 p-2 h-min w-min rounded-tr-2xl text-[15px] rounded-bl-[4rem] flex justify-end items-start">
             <span>{product.discount}%</span>

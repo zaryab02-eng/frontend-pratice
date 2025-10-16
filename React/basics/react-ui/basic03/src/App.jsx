@@ -1,4 +1,5 @@
 import Footer from "./assets/components/Footer";
+import Hero from "./assets/components/Hero";
 import Navbar from "./assets/components/Navbar";
 import ProductCard from "./assets/components/ProductCard";
 
@@ -28,7 +29,7 @@ const App = () => {
       id: 3,
       title: "DSLR Camera",
       image:
-        "https://www.picturecorrect.com/wp-content/uploads/2016/05/dslr-camera-features.jpg",
+        "https://www.orionphotogroup.com/wp-content/uploads/2023/09/OPG-Blog-Best-Professional-Canon-Cameras-That-Should-Be-On-Every-Photographers-List-10-12-2023-scaled.jpg",
       price: 699.99,
       oldPrice: 899.99,
       rating: 4.7,
@@ -89,7 +90,8 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-wrap gap-4 justify-center">
+      <Hero />
+      <div className="flex flex-wrap gap-4 justify-center py-12">
         {products.map(function (product) {
           return <ProductCard key={product.id} product={product} />;
         })}
