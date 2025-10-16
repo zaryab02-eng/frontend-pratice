@@ -1,3 +1,4 @@
+import Footer from "./assets/components/Footer";
 import Navbar from "./assets/components/Navbar";
 import ProductCard from "./assets/components/ProductCard";
 
@@ -93,6 +94,7 @@ const App = () => {
           return <ProductCard key={product.id} product={product} />;
         })}
       </div>
+      <Footer />
     </>
   );
 };

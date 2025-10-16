@@ -4,3 +4,29 @@ body {
   background-color: gray;
   color: white;
 }
+
+.nav-link {
+  position: relative;
+  color: #374151; /* text-gray-700 */
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: #2563eb; /* text-blue-600 */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #2563eb; /* bg-blue-600 */
+  width: 0;
+  transition: all 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}

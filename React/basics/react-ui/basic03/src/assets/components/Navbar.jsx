@@ -6,39 +6,19 @@ const Navbar = () => {
   return (
     <div className="h-14 bg-white flex justify-between items-center px-5 sticky top-0 z-10">
       <div>
-        <img src={Logo} alt="logo" className="h-36" />
+        <img src={Logo} alt="logo" className="h-14" />
       </div>
       <div className="text-black flex gap-x-9 font-semibold">
-        <a
-          href="#"
-          className="relative text-gray-700 hover:text-blue-600 transition-all duration-300
-                     after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-600 after:w-0 
-                     hover:after:w-full after:transition-all after:duration-300"
-        >
+        <a href="#" className="nav-link">
           Home
         </a>
-        <a
-          href="#"
-          className="relative text-gray-700 hover:text-blue-600 transition-all duration-300
-                     after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-600 after:w-0 
-                     hover:after:w-full after:transition-all after:duration-300"
-        >
+        <a href="#" className="nav-link">
           Products
         </a>
-        <a
-          href="#"
-          className="relative text-gray-700 hover:text-blue-600 transition-all duration-300
-                     after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-600 after:w-0 
-                     hover:after:w-full after:transition-all after:duration-300"
-        >
+        <a href="#" className="nav-link">
           About
         </a>
-        <a
-          href="#"
-          className="relative text-gray-700 hover:text-blue-600 transition-all duration-300
-                     after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-600 after:w-0 
-                     hover:after:w-full after:transition-all after:duration-300"
-        >
+        <a href="#" className="nav-link">
           Contact
         </a>
       </div>
