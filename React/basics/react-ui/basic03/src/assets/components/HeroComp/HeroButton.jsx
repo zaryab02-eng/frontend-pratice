@@ -6,7 +6,7 @@ const HeroButton = () => {
       <button className="relative left-2 cursor-pointer lg:ml-2">
         Get Started
       </button>
-      <div className="bg-black text-white text-[1rem] p-3 rounded-full relative left-[0.50rem]">
+      <div className="bg-black text-white text-[1rem] p-1.5 xl:p-3 rounded-full relative left-[0.50rem]">
         <MdArrowForwardIos />
       </div>
     </div>
