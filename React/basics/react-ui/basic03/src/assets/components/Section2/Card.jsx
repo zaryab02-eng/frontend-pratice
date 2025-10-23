@@ -2,7 +2,7 @@ const Card = ({ id, title, description, color }) => {
   return (
     <div className="py-3">
       <div
-        className="h-[14.8544rem] w-[20.795rem] rounded-2xl text-white py-10 px-8 flex flex-col justify-around"
+        className="h-[14.8544rem] w-[20.795rem] rounded-2xl text-white py-10 px-8 flex flex-col justify-around "
         style={{ backgroundColor: color }}
       >
         <h4 className="text-[1.1418rem] font-semibold pb-16">{id}</h4>
