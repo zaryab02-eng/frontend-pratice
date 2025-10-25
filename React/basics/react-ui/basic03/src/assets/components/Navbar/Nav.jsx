@@ -21,7 +21,7 @@ const Nav = () => {
     <div
       className={`fixed top-0 left-0 w-full h-14 lg:h-[4.6875rem] sm:h-[3.125rem] md:h-[4.0625rem] 
       flex items-center justify-between px-6 lg:px-7 sm:px-7 md:px-10 z-50 text-white transition-all duration-300
-      ${isScrolled ? "bg-gray-900/50 backdrop-blur-md" : "bg-transparent"}`}
+      ${isScrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"}`}
     >
       <h2 className="font-bold sm:text-[1.125rem] md:text-2xl lg:text-[1.375rem] cursor-pointer sm:relative sm:left-2">
         LUMINU
