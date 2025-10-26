@@ -1,6 +1,6 @@
 const SectionTexts = () => {
   return (
-    <div className="text-black pt-16 w-72 mb-12 sm:w-dvw">
+    <div className="text-black pt-16 w-72 mb-12 sm:w-[100%] ">
       <h4 className="text-[0.8413rem] sm:text-[1.4359rem] font-semibold">
         FINANCIAL TOOLS
       </h4>
