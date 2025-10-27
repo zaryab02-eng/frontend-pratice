@@ -4,7 +4,7 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 const Nav2 = () => {
   return (
-    <div className="flex text-[1.3rem]">
+    <div className="flex text-[1.3rem] gap-x-7">
       <IoIosSearch />
       <IoBagOutline />
       <HiOutlineMenuAlt4 />
