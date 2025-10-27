@@ -4,10 +4,10 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 const Nav2 = () => {
   return (
-    <div className="flex text-[1.3rem] gap-x-7">
+    <div className="flex text-[1.3rem] lg:text-[1.1rem] gap-x-7 lg:gap-x-10">
       <IoIosSearch />
       <IoBagOutline />
-      <HiOutlineMenuAlt4 />
+      <HiOutlineMenuAlt4 className="lg:hidden" />
     </div>
   );
 };
