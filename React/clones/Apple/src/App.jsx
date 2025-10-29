@@ -1,11 +1,11 @@
 import Nav from "./assets/Components/Navbar/Nav";
-import NavHeading from "./assets/Components/Navbar2/NavHeading";
+import Section1 from "./assets/Components/Sections/Section1/Section1";
 
 const App = () => {
   return (
     <>
       <Nav />
-      <NavHeading />
+      <Section1 />
     </>
   );
 };
