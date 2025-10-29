@@ -8,7 +8,9 @@ const Nav3 = () => {
       <a href="#">iPhone</a>
       <a href="#">Watch</a>
       <a href="#">AirPods</a>
-      <a href="#">TV & Home</a>
+      <a className="w-max" href="#">
+        TV & Home
+      </a>
       <a href="#">Entertainment</a>
       <a href="#">Accessories</a>
       <a href="#z">Support</a>

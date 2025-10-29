@@ -1,8 +1,8 @@
 import { CiCirclePlus } from "react-icons/ci";
 const NavHeading = () => {
   return (
-    <div className="h-[6.125rem] flex justify-center items-center px-6 sm:px-10 ">
-      <div className="w-max leading-5 text-[0.850rem] flex text-center">
+    <div className="h-[6.125rem] flex justify-center items-center px-6 sm:px-10 sm:pb-3.5 md:pb-11 ">
+      <div className="w-max leading-5 text-[0.850rem] md:text-[0.7rem] lg:text-[0.9rem] flex text-center">
         <p>
           Get up to 6 months of No Cost EMI plus up to ₹10000.00 instant
           cashback on selected products with eligible cards.
