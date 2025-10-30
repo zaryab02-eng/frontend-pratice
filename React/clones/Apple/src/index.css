@@ -6,3 +6,11 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "SFProDisplayLight";
+  src: url("./assets/fonts/fonts/SFPRODISPLAYLIGHTITALIC.OTF")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
