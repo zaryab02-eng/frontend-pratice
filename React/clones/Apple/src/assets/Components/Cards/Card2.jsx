@@ -2,14 +2,18 @@ import { Card2Data } from "../../../data/Card2Data.js";
 
 const Card2 = () => {
   return (
-    <div>
+    <div className="flex overflow-scroll gap-x-4 mr-6">
       {Card2Data.map((product) => (
         <div
           key={product.id}
-          className="h-[28.125rem] w-[19.3125rem] rounded-2xl relative mt-6 pl-7 pt-12 flex flex-col justify-start bg-cover bg-center"
+          className="h-[28.125rem] w-[19.3125rem] shrink-0 rounded-2xl relative mt-6 pl-7 pt-12 flex flex-col justify-start bg-cover bg-center"
           style={{ backgroundImage: `url('${product.image}')` }}
         >
-          <div className="text-white">
+          <div
+            className={`${
+              product.theme === "light" ? "text-black" : "text-white"
+            }`}
+          >
             <a
               href="#"
               className="text-[1.3125rem] font-semibold tracking-tight"
