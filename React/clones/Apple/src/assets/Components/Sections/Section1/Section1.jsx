@@ -2,6 +2,7 @@ import CardSection1 from "./CardSection1";
 import Latest from "./Latest";
 import NavHeading from "./NavHeading";
 import StoreBox from "./StoreBox";
+import HelpIsHere from "./HelpIsHere";
 
 const Section1 = () => {
   return (
@@ -10,6 +11,7 @@ const Section1 = () => {
       <StoreBox />
       <CardSection1 />
       <Latest />
+      <HelpIsHere />
     </div>
   );
 };
