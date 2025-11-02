@@ -16,19 +16,25 @@ const Card2 = () => {
           <div
             className={`${
               product.theme === "light" ? "text-black" : "text-white"
-            }  flex flex-col relative bottom-6`}
+            }  flex flex-col relative bottom-6 font-medium`}
           >
             <a href="#" className="text-[0.7rem] ">
               {product.tag}
             </a>
             <a
               href="#"
-              className="text-[1.3125rem]  leading-6 relative top-2.5 tracking-wider font-semibold lg:tracking-wider md:text-[1.4rem] lg:text-[1.8rem] md:tracking-tighter font-[SFProDisplay]"
+              className="text-[1.3000rem]  leading-6 relative top-2.5 tracking-wider font-semibold lg:tracking-wider md:text-[1.4rem] lg:text-[1.8rem] md:tracking-tighter font-[SFProDisplay]"
             >
               {product.name}
             </a>
             <div className="flex flex-col gap-y-0.5 font-[SFProDisplay]">
-              <span className="text-[1.0525rem] leading-5 relative top-4 font-medium text-gray-800 md:text-[0.7em] lg:text-[0.8rem] tracking-wide font-[SFProDisplay] lg:tracking-wider">
+              <span
+                className={`text-[1.0525rem] leading-5 relative top-4 font-medium text-gray-900 md:text-[0.7em] lg:text-[0.8rem] tracking-wide font-[SFProDisplay] lg:tracking-wider ${
+                  product.id === 3
+                    ? "leading-5 tracking-wide text-[1.0625rem]"
+                    : ""
+                }`}
+              >
                 {product.price}
               </span>
             </div>
