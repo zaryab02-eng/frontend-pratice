@@ -2,7 +2,7 @@ import Card2 from "../../Cards/Card2";
 
 const Latest = () => {
   return (
-    <div className="w-full h-[34.625rem] lg:h-[36rem] font-semibold tracking-wider pl-6 md:pl-5 md:relative md:bottom-42 lg:relative lg:bottom-44 lg:mt-40">
+    <div className="w-full h-[34.625rem] lg:h-[36rem] mb-7 font-semibold tracking-wider pl-6 md:pl-5 md:relative md:bottom-42 lg:relative lg:bottom-44 lg:mt-40">
       <h2 className="text-2xl md:text-[1.4rem] lg:text-[1.8rem] md:mt-1 lg:relative lg:pb-3 font-[SFProDisplay] xl:tracking-wide leading-7 xl:top-1 xl:left-19">
         The latest.&nbsp;
         <span className="text-[#76767B]">

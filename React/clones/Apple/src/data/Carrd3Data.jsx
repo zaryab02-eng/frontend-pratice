@@ -1,8 +1,17 @@
 export const Card3Data = [
   {
     id: 1,
-    name: "Shop with a Specialist\n over video",
-    price: "Choose your next device\nin a guided, one-way video session.",
+    name: (
+      <>
+        Shop with a Specialist <br /> over video
+      </>
+    ),
+    price: (
+      <>
+        Choose your next device in a <br /> guided, one-way video <br />
+        session.
+      </>
+    ),
     theme: "light",
     image:
       "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-specialist-video-202509_GEO_IN?wid=960&hei=1000&fmt=p-jpg&qlt=95",
