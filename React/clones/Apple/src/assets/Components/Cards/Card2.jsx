@@ -4,7 +4,7 @@ const Card2 = () => {
   return (
     <div
       id="card1"
-      className="flex overflow-x-auto gap-x-4 sm:gap-x-5 relative pr-6 xl:relative xl:pl-18 xl:pr-24 xl:bottom-1"
+      className="flex overflow-x-auto gap-x-4 sm:gap-x-5 relative pr-6 md:-mt-1 xl:relative xl:pl-18 xl:pr-24 xl:bottom-1"
     >
       {Card2Data.map((product) => (
         <div
