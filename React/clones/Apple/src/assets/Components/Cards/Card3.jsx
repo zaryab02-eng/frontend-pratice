@@ -8,9 +8,9 @@ const Card2 = () => {
       {Card3Data.map((product) => (
         <div
           key={product.id}
-          className={`h-[28.125rem] w-[19.3125rem] md:font-light snap-center sm:snap-end md:w-[22rem] lg:w-[25rem] lg:h-[31.25rem] md:h-[23rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
+          className={`h-[28.125rem] w-[19.3125rem] md:font-light snap-center sm:snap-end lg:w-[25rem] lg:h-[31.25rem] md:h-[24rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
             product.id === 1 ? "relative pt-17 ml-12 sm:relative sm:pt-10" : ""
-          } `}
+          }   ${product.id === 5 ? "md:w-[18rem]" : "md:w-[22rem]"} `}
           style={{ backgroundImage: `url('${product.image}')` }}
         >
           <div
@@ -18,7 +18,7 @@ const Card2 = () => {
               product.theme === "light" ? "text-black" : "text-white"
             }  flex flex-col relative bottom-6 font-medium`}
           >
-            <a href="#" className="text-[0.7rem] md:mt-5 ">
+            <a href="#" className="text-[0.7rem] ">
               {product.tag}
             </a>
             <a
