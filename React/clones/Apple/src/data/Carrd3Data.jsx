@@ -32,7 +32,7 @@ export const Card3Data = [
     price: (
       <>
         Come and try it for yourself in a <br className="md:hidden" /> free
-        session at the Apple Store
+        session <br className="hidden md:flex" /> at the Apple Store
       </>
     ),
     theme: "light",
@@ -42,10 +42,15 @@ export const Card3Data = [
   {
     id: 4,
     tag: "TODAY AT APPLE",
-    name: "Join free sessions at your Apple Store",
+    name: (
+      <>
+        Join free sessions at your <br className="hidden md:flex" /> Apple Store
+      </>
+    ),
     price: (
       <>
-        Learn about the latest features <br /> and how to go further with your
+        Learn about the latest features <br className="md:hidden" /> and how to
+        go further <br className="hidden md:flex" /> with your
         <br className="md:hidden" />
         Apple devices.
       </>
@@ -59,8 +64,9 @@ export const Card3Data = [
     tag: "SMALL BUSINESS",
     name: (
       <>
-        From enterprise to small business, we'll work with
-        <br className="md:hidden" /> you
+        From enterprise to small <br className="hidden md:flex" /> business,
+        we'll work with
+        <br /> you
       </>
     ),
     theme: "dark",
@@ -73,7 +79,8 @@ export const Card3Data = [
     name: "Set up your new decvice with help from a Specialist",
     price: (
       <>
-        Let us guide you through data transfer, the latest features and
+        Let us guide you through data transfer, the latest{" "}
+        <br className="hidden md:flex" /> features and
         <br className="md:hidden" />
         more, in an online, one-to-one session.
       </>
@@ -87,7 +94,8 @@ export const Card3Data = [
     tag: "WATCH AND LEARN",
     name: (
       <>
-        Need support? Our teams <br className="md:hidden" /> are here for you.
+        Need support? Our teams <br className="md:hidden" /> are{" "}
+        <br className="hidden md:flex" /> here for you.
       </>
     ),
     theme: "light",
