@@ -3,6 +3,7 @@ import Latest from "./Latest";
 import NavHeading from "./NavHeading";
 import StoreBox from "./StoreBox";
 import HelpIsHere from "./HelpIsHere";
+import Apple from "./AppleStore";
 
 const Section1 = () => {
   return (
@@ -12,6 +13,7 @@ const Section1 = () => {
       <CardSection1 />
       <Latest />
       <HelpIsHere />
+      <Apple />
     </div>
   );
 };
