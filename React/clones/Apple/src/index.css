@@ -3,6 +3,11 @@
 html,
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @font-face {

@@ -1,5 +1,3 @@
-import Card4 from "../../Cards/Card4";
-
 const Apple = () => {
   return (
     <div className="w-full h-[34.625rem] lg:h-[36rem] sm:-mt-8 top-6 relative font-semibold tracking-wider md:ml-[-0.7rem] md:pr-2 md:relative md:bottom-63 lg:relative lg:bottom-44 lg:mt-40">
@@ -10,9 +8,7 @@ const Apple = () => {
           <br className="sm:hidden" /> with us.
         </span>
       </h2>
-      <div className="relative top-2 sm:relative sm:top-2.5">
-        <Card4 />
-      </div>
+      <div className="relative top-2 sm:relative sm:top-2.5"></div>
     </div>
   );
 };
