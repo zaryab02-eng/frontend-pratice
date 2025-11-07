@@ -3,7 +3,7 @@ const Card2 = () => {
   return (
     <div
       id="card1"
-      className="flex overflow-x-auto -ml-6 gap-x-5 md:gap-x-4 lg:gap-x-5 sm:gap-x-5 relative pr-6 xl:relative xl:pl-18 xl:pr-24 xl:bottom-25 "
+      className="flex overflow-x-auto -ml-6 gap-x-5 md:gap-x-4 lg:gap-x-5 sm:gap-x-5 relative pr-6 xl:relative xl:pl-20 xl:pr-24 xl:bottom-25 "
     >
       {Card3Data.map((product) => (
         <div
