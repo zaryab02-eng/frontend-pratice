@@ -1,4 +1,4 @@
-import { Card3Data } from "../../../data/Carrd3Data.jsx";
+import { Card3Data } from "../../../data/Card3Data.jsx";
 const Card2 = () => {
   return (
     <div

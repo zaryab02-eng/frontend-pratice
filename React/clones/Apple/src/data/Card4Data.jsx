@@ -1,0 +1,82 @@
+import { IoCardOutline } from "react-icons/io5";
+import { MdOutlineDevices } from "react-icons/md";
+import { FaApple } from "react-icons/fa";
+import { BsEmojiGrin } from "react-icons/bs";
+import { FiTruck } from "react-icons/fi";
+
+export const Card4Data = [
+  {
+    id: 1,
+    logo: <IoCardOutline />,
+    text: (
+      <>
+        No Cost EMI. Plus <br className="hidden xl:flex" /> Instant Cashback.
+      </>
+    ),
+  },
+  {
+    id: 2,
+    logo: <MdOutlineDevices className="text-blue-700" />,
+    text: (
+      <>
+        <span className="text-blue-700">
+          Exchange your <br className="hidden xl:flex" /> smartphone,
+        </span>
+        get <br className="xl:hidden" />
+        <br className="hidden xl:flex" /> ₹ 3350.00-₹64000.00
+        <br className="hidden xl:flex" /> in credit towards a new
+        <br className="hidden xl:flex" /> one.*
+      </>
+    ),
+  },
+  {
+    id: 3,
+    logo: <FaApple className="text-[#F3695F]" />,
+    text: (
+      <>
+        <span className="bg-[linear-gradient(to_right,_#ff7a00,_#ff007a,_#7a00ff,_#007aff,_#00ff88)] bg-clip-text text-transparent font-semibold">
+          Customise your Mac.
+        </span>
+      </>
+    ),
+  },
+  {
+    id: 4,
+    logo: <BsEmojiGrin className="text-[#AC39FF]" />,
+    text: (
+      <>
+        Make them yours.
+        <span className="text-[#AC39FF]">
+          <br className="hidden xl:flex" /> Engrave a mix of emoji,
+          <br className="hidden xl:flex" /> names and number for
+          <br className="hidden xl:flex" /> free.
+        </span>
+      </>
+    ),
+  },
+  {
+    id: 5,
+    logo: <FiTruck className="text-[#008009]" />,
+    text: (
+      <>
+        <span className="text-[#008009] tracking-normal">
+          Enjoy free delivery , or <br className="hidden xl:flex" /> easy pickup
+        </span>
+        , from an <br className="xl:hidden" /> Apple Store.
+      </>
+    ),
+  },
+  {
+    id: 6,
+    logo: <MdOutlineDevices />,
+    text: (
+      <>
+        <span className="text-blue-700">
+          Trade in your eligible <br className="hidden xl:flex" /> Mac, Apple
+          Watch or <br className="hidden xl:flex" /> iPad for instant credit.*
+        </span>
+        <br className="hidden xl:flex" /> in-store only.
+      </>
+    ),
+  },
+];
