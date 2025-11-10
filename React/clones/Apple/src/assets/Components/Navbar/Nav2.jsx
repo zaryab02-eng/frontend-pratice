@@ -1,4 +1,3 @@
-// Nav2.jsx
 import { IoIosSearch } from "react-icons/io";
 import { BiShoppingBag } from "react-icons/bi";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";

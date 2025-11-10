@@ -8,8 +8,8 @@ const Card2 = () => {
       {Card3Data.map((product) => (
         <div
           key={product.id}
-          className={`h-[28.125rem] w-[19.3125rem] md:font-light lg:pr-2 lg:h-[31.25rem] md:h-[24rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
-            product.id === 1 ? "relative pt-17 ml-12 sm:relative sm:pt-10" : ""
+          className={`h-[28.125rem] w-[19.3125rem] md:font-light shadow-2xl lg:pr-2 lg:h-[31.25rem] md:h-[24rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
+            product.id === 1 ? "relative pt-17 ml-12 sm:relative sm:pt-18" : ""
           }   ${
             product.id === 5
               ? "md:w-[18rem] lg:w-[25rem] xl:w-[25rem]"

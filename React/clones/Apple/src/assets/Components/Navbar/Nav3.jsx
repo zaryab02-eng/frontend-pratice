@@ -1,4 +1,3 @@
-// Nav3.jsx
 const Nav3 = () => {
   return (
     <div className="xl:text-[0.8rem] xl:pt-0.5 xl:flex xl:gap-x-10 hidden lg:flex lg:text-[0.8rem] lg:gap-x-10 ">

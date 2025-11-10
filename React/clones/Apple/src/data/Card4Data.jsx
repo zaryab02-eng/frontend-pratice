@@ -16,22 +16,28 @@ export const Card4Data = [
   },
   {
     id: 2,
-    logo: <MdOutlineDevices className="text-blue-700" />,
+    logo: <MdOutlineDevices className="text-[#007AFF]" />,
     text: (
       <>
-        <span className="text-blue-700">
+        <span className="text-[#007AFF]">
           Exchange your <br className="hidden xl:flex" /> smartphone,
         </span>
-        get <br className="xl:hidden" />
-        <br className="hidden xl:flex" /> ₹ 3350.00-₹64000.00
-        <br className="hidden xl:flex" /> in credit towards a new
-        <br className="hidden xl:flex" /> one.*
+        <span>
+          get <br className="xl:hidden" />
+          <br className="hidden xl:flex" /> ₹3350.00-₹64000.00
+          <br className="hidden xl:flex" /> in{" "}
+          <br className="sm:hidden md:hidden lg:hidden xl:hidden" /> credit
+          towards a new
+          <br className="hidden xl:flex" /> one.*
+        </span>
       </>
     ),
   },
   {
     id: 3,
-    logo: <FaApple className="text-[#F3695F]" />,
+    logo: (
+      <FaApple className="text-[#F3695F] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1" />
+    ),
     text: (
       <>
         <span className="bg-[linear-gradient(to_right,_#ff7a00,_#ff007a,_#7a00ff,_#007aff,_#00ff88)] bg-clip-text text-transparent font-semibold">
@@ -42,12 +48,16 @@ export const Card4Data = [
   },
   {
     id: 4,
-    logo: <BsEmojiGrin className="text-[#AC39FF]" />,
+    logo: (
+      <BsEmojiGrin className="text-[#AC39FF] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1" />
+    ),
     text: (
       <>
         Make them yours.
         <span className="text-[#AC39FF]">
-          <br className="hidden xl:flex" /> Engrave a mix of emoji,
+          <br className="hidden xl:flex" /> Engrave
+          <br className="md:hidden lg:hidden xl:hidden sm:flex" /> a mix of
+          emoji,
           <br className="hidden xl:flex" /> names and number for
           <br className="hidden xl:flex" /> free.
         </span>
@@ -56,11 +66,13 @@ export const Card4Data = [
   },
   {
     id: 5,
-    logo: <FiTruck className="text-[#008009]" />,
+    logo: (
+      <FiTruck className="text-[#008009] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1" />
+    ),
     text: (
       <>
-        <span className="text-[#008009] tracking-normal">
-          Enjoy free delivery , or <br className="hidden xl:flex" /> easy pickup
+        <span className="text-[#008009] tracking-tight">
+          Enjoy free delivery, or <br className="hidden xl:flex" /> easy pickup
         </span>
         , from an <br className="xl:hidden" /> Apple Store.
       </>
@@ -68,14 +80,17 @@ export const Card4Data = [
   },
   {
     id: 6,
-    logo: <MdOutlineDevices />,
+    logo: (
+      <MdOutlineDevices className="text-[#007AFF] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1" />
+    ),
     text: (
       <>
         <span className="text-blue-700">
           Trade in your eligible <br className="hidden xl:flex" /> Mac, Apple
           Watch or <br className="hidden xl:flex" /> iPad for instant credit.*
         </span>
-        <br className="hidden xl:flex" /> in-store only.
+        <br className="hidden xl:flex" /> in-store
+        <br className="md:hidden lg:hidden xl:hidden" /> only.
       </>
     ),
   },

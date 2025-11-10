@@ -1,4 +1,3 @@
-// Nav1.jsx
 import { FaApple } from "react-icons/fa";
 
 const Nav1 = () => {
