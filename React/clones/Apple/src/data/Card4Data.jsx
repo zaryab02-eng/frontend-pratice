@@ -25,7 +25,7 @@ export const Card4Data = [
         <span>
           get <br className="xl:hidden" />
           <br className="hidden xl:flex" /> ₹3350.00-₹64000.00
-          <br className="hidden xl:flex" /> in{" "}
+          <br className="hidden xl:flex lg:flex" /> in
           <br className="sm:hidden md:hidden lg:hidden xl:hidden" /> credit
           towards a new
           <br className="hidden xl:flex" /> one.*
