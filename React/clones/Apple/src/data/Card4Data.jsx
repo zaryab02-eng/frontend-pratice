@@ -55,7 +55,7 @@ export const Card4Data = [
       <>
         Make them yours.
         <span className="text-[#AC39FF]">
-          <br className="hidden xl:flex" /> Engrave
+          <br className="hidden xl:flex lg:flex" /> Engrave
           <br className="md:hidden lg:hidden xl:hidden sm:flex" /> a mix of
           emoji,
           <br className="hidden xl:flex" /> names and number for
@@ -72,9 +72,10 @@ export const Card4Data = [
     text: (
       <>
         <span className="text-[#008009] tracking-tight">
-          Enjoy free delivery, or <br className="hidden xl:flex" /> easy pickup
+          Enjoy free delivery, or <br className="hidden xl:flex lg:flex" /> easy
+          pickup
         </span>
-        , from an <br className="xl:hidden" /> Apple Store.
+        , from an <br /> Apple Store.
       </>
     ),
   },
@@ -86,10 +87,11 @@ export const Card4Data = [
     text: (
       <>
         <span className="text-blue-700">
-          Trade in your eligible <br className="hidden xl:flex" /> Mac, Apple
-          Watch or <br className="hidden xl:flex" /> iPad for instant credit.*
+          Trade in your eligible <br className="hidden xl:flex lg:flex" /> Mac,
+          Apple Watch or <br className="hidden xl:flex lg:flex" /> iPad for
+          instant credit.*
         </span>
-        <br className="hidden xl:flex" /> in-store
+        <br className="hidden xl:flex lg:flex" /> in-store
         <br className="md:hidden lg:hidden xl:hidden" /> only.
       </>
     ),

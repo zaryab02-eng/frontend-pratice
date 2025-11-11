@@ -19,7 +19,7 @@ const Card4 = () => {
             </div>
             <a
               href="#"
-              className={`text-[1.3rem] md:text-[1.2rem] md:font-medium leading-5 sm:tracking-normal  md:top-[-0.2rem] lg:top-6 lg:text-[1.4rem] lg:left-1 lg:leading-6 lg:tracking-wide md:left-[-0.1rem] top-4.5 left-0.5 relative tracking-tight `}
+              className={`text-[1.3rem] md:text-[1.2rem] md:font-medium leading-5 sm:tracking-normal md:top-[-0.2rem] lg:top-6 lg:text-[1.4rem] lg:font-semibold lg:left-1 lg:leading-6 lg:tracking-wide md:left-[-0.1rem] top-4.5 left-0.5 relative tracking-tight `}
             >
               {card.text}
             </a>
