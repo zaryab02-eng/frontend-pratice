@@ -4,10 +4,10 @@ import { CiCirclePlus } from "react-icons/ci";
 const NavHeading = () => {
   return (
     <Motion.div
-      initial={{ opacity: 0, y: -60 }}
+      initial={{ opacity: 0, y: -200 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 1.5,
+        duration: 1.6,
         ease: [0.22, 1, 0.36, 1],
       }}
       className="h-min w-full bg-[#FFFFFF] z-0 flex justify-center items-center py-5 relative bottom-4.5 mt-4.5 px-8 sm:px-10 sm:pb-3.5 md:relative md:bottom-7 lg:relative lg:pt-3.5 xl:relative xl:pt-6 xl:right-6"
