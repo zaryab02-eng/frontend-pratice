@@ -4,6 +4,7 @@ import NavHeading from "./NavHeading";
 import StoreBox from "./StoreBox";
 import HelpIsHere from "./HelpIsHere";
 import Apple from "./AppleStore";
+import Special from "./Special";
 
 const Section1 = () => {
   return (
@@ -14,6 +15,7 @@ const Section1 = () => {
       <Latest />
       <HelpIsHere />
       <Apple />
+      <Special />
     </div>
   );
 };
