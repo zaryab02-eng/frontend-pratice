@@ -1,3 +1,10 @@
+import img1 from "../assets/Gallery/Card3Gallery/1.webp";
+import img2 from "../assets/Gallery/Card3Gallery/2.webp";
+import img3 from "../assets/Gallery/Card3Gallery/3.webp";
+import img4 from "../assets/Gallery/Card3Gallery/4.webp";
+import img5 from "../assets/Gallery/Card3Gallery/5.webp";
+import img6 from "../assets/Gallery/Card3Gallery/6.webp";
+import img7 from "../assets/Gallery/Card3Gallery/7.webp";
 export const Card3Data = [
   {
     id: 1,
@@ -14,16 +21,14 @@ export const Card3Data = [
       </>
     ),
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-specialist-video-202509_GEO_IN?wid=960&hei=1000&fmt=p-jpg&qlt=95",
+    image: img1,
   },
   {
     id: 2,
     tag: "APPLE SPECIALIST",
     name: "Shop one on one with a Specialist online ",
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-specialist-help-202506?wid=4000&hei=4167&fmt=p-jpg&qlt=95&.v=TkJLQU9OWTZMS1N4dlhoOWl3SEhrUkxnN3NTOHN5WTV1c3NEYkc1TXhDMWorUGRVSzBNTnk4aWVXZTBsSnJkbEhjUnA4dFc4UjhxaGJyeTZ4TGxiTlExd2w0cFRwTkFXcVMrRy8xS0hPK0wvSlYzalNtQnlZRDd0YzdTaUlhTlo",
+    image: img2,
   },
   {
     id: 3,
@@ -36,8 +41,7 @@ export const Card3Data = [
       </>
     ),
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-taa-202505?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=cFEvalhFakpZVzg4RFZsWktqbXFNY0RvMUw4Rm9vb3JCaDFWOTNnU01UOVNTeEZoVVBncVRqTkNMNS9uNklFcEtYeVk3dW9BYmZDa2xxQitSOWhMaG9GTzZCL2trL3hMU1d2K2ZPcTVKWXM",
+    image: img3,
   },
   {
     id: 4,
@@ -56,8 +60,7 @@ export const Card3Data = [
       </>
     ),
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-TAA-202310?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=VXV6Z09DaTFST3FqTnRkTjNkSENPM1ZnVFR5VGxOMG5WYlh6ZVpnWVpmOVNTeEZoVVBncVRqTkNMNS9uNklFcGdNL0tvRHFBWjFabEJvUTIxa3lDRWI2aER5OTZhZjhhVzlPaThxMkc0QVE",
+    image: img4,
   },
   {
     id: 5,
@@ -70,8 +73,7 @@ export const Card3Data = [
       </>
     ),
     theme: "dark",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-card-40-business-202409_GEO_IN?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=alV4a1Q5dWpXakxENUdPdUc5bk5oL3AvbkFpTUJaVTl5YXRNYno3eGE5aXFFMHhFSDhqV0JNYUQxSWJ4aDVUMm1td3JHMmlHM0d0VzBMMGs5ZHR4WjNqb1RJQWJGSnhVM2c1V3gzR1hhMHFHUTVhN1k1UDMwUiszWWU3d2JvUTc",
+    image: img5,
   },
   {
     id: 6,
@@ -86,8 +88,7 @@ export const Card3Data = [
       </>
     ),
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-personal-setup-202408?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=cFhHZjJBWFBWT2pMQnNFR2RGWlEwWlNLRUlsMkFxY1ZMQzZzY0tkenJrbmJpYlE0VldEazFQNXh6WFBPRkF3SmNva0xZQWFEV2ljOWRGNWZJRk4vWGpyanhrWU1SUk1JdlhicWJrdXd2djlzeDRiY2xGcWt2YVRkSWVZeUhQK1U",
+    image: img6,
   },
   {
     id: 7,
@@ -99,7 +100,6 @@ export const Card3Data = [
       </>
     ),
     theme: "light",
-    image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-support-app-202507?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SUtmZXJxdU1COUhIcFgyU0FNY3ZxRUZ5T3lsUkNBamthcUlaMWJnYkE2QlNTeEZoVVBncVRqTkNMNS9uNklFcEtYeVk3dW9BYmZDa2xxQitSOWhMaGhWM01jTG93d0hNYUJFYldTdWVWV1E",
+    image: img7,
   },
 ];
