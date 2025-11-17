@@ -7,7 +7,7 @@ import { FiTruck } from "react-icons/fi";
 export const Card4Data = [
   {
     id: 1,
-    logo: <IoCardOutline />,
+    logo: <IoCardOutline className="text-5xl" />,
     text: (
       <>
         No Cost EMI. Plus <br className="hidden xl:flex" /> Instant Cashback.
@@ -16,7 +16,7 @@ export const Card4Data = [
   },
   {
     id: 2,
-    logo: <MdOutlineDevices className="text-[#007AFF]" />,
+    logo: <MdOutlineDevices className="text-[#007AFF] ml-1" />,
     text: (
       <>
         <span className="text-[#007AFF]">
