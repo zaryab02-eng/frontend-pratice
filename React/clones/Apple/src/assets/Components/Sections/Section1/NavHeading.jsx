@@ -10,7 +10,7 @@ const NavHeading = () => {
         duration: 1.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="h-min w-full bg-[#FFFFFF] z-0 flex justify-center items-center py-5 relative bottom-4.5 mt-4.5 px-8 sm:px-10 sm:py-5 md:relative md:bottom-7 lg:relative lg:pt-3.5 xl:relative xl:pt-6 xl:right-6"
+      className="h-min w-full bg-[#FFFFFF] z-0 flex justify-center items-center py-5 relative bottom-4.5 mt-4.5 px-8 sm:px-10 sm:py-5 md:relative md:bottom-7 lg:relative lg:pt-3.5 xl:relative xl:pt-6 xl:right-3"
     >
       <div className="w-max leading-5 text-[0.9rem] md:text-[0.7rem] lg:text-[0.9rem] flex text-center font-[SFProDisplay] sm:tracking-widest">
         <p className="font-[SFProDisplay] tracking-wide">
