@@ -20,7 +20,7 @@ const Card5 = () => {
           <div
             className={`${
               product.theme === "light" ? "text-black" : "text-white"
-            }  flex flex-col relative bottom-6 font-medium `}
+            }  flex flex-col relative bottom-10 font-medium `}
           >
             <a
               href="#"
