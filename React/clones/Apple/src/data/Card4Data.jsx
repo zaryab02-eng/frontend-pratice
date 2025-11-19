@@ -41,11 +41,11 @@ export const Card4Data = [
   {
     id: 3,
     logo: (
-      <FaApple className="text-[#F3695F] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1" />
+      <FaApple className="text-[#F3695F] sm:text-[2.6rem] sm:relative sm:left-1.5 sm:top-1 md:text-[1.8rem]" />
     ),
     text: (
       <>
-        <span className="bg-[linear-gradient(to_right,_#ff7a00,_#ff007a,_#7a00ff,_#007aff,_#00ff88)] bg-clip-text text-transparent font-semibold">
+        <span className="bg-[linear-gradient(to_right,_#ff7a00,_#ff007a,_#7a00ff,_#007aff,_#00ff88)] bg-clip-text text-transparent md:relative md:left-1 md:tracking-tight font-semibold">
           Customise your Mac.
         </span>
       </>
