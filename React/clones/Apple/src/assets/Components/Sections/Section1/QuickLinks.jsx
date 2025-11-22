@@ -6,7 +6,10 @@ const QuickLink = () => {
       <h2 className="text-[1.3125rem] font-semibold md:text-[1.4rem] md:font-normal ml-6 lg:text-[1.9rem] xl:bottom-28  lg:tracking-tight lg:left-2.5 lg:bottom-0.5 lg:relative font-[SFProDisplay]  xl:font-semibold xl:text-[1.8rem] md:tracking-normal leading-7 xl:relative xl:left-20 xl:tracking-wide">
         Quick Links
       </h2>
-      <div className="w-full h-min py-2 overflow-x-auto gap-x-2 top-2.5 flex relative">
+      <div
+        id="card1"
+        className="w-full h-min py-2 overflow-x-auto gap-x-2 top-3 flex relative"
+      >
         <Tag6 />
       </div>
     </div>
