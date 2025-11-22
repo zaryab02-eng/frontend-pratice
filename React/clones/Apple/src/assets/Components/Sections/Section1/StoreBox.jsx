@@ -1,7 +1,7 @@
 import { GoArrowUpRight } from "react-icons/go";
 const StoreBox = () => {
   return (
-    <div className="h-max w-full px-6 xl:px-24 2xl:relative 2xl:left-12">
+    <div className="h-max bg-[#F5F5F7] w-full px-6 xl:px-24 2xl:relative 2xl:left-12">
       <div className="h-[16.25rem] w-full font-[SFProDisplay] pt-12 sm:relative sm:bottom-4 md:flex md:justify-between md:relative md:bottom-14 lg:relative lg:bottom-5 xl:top-2">
         <h1 className="text-[3rem] md:text-[3.7rem] lg:text-[4.8rem] font-semibold md:relative md:bottom-1.5 xl:bottom-4.5 xl:tracking-wide ">
           Store

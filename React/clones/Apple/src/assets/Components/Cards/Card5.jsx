@@ -8,13 +8,9 @@ const Card5 = () => {
       {Card5Data.map((product) => (
         <div
           key={product.id}
-          className={`h-[28.125rem] w-[19.3125rem] md:font-light shadow-2xl lg:pr-2 lg:h-[31.25rem] md:h-[24rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
+          className={`h-[28.125rem] w-[19.3125rem] md:font-light shadow-2xl lg:pr-2 lg:h-[31.25rem] md:h-[23.5rem] md:w-[19rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
             product.id === 1 ? "relative pt-17 ml-12 sm:relative sm:pt-18" : ""
-          }   ${
-            product.id === 5
-              ? "md:w-[18rem] lg:w-[25rem] xl:w-[25rem]"
-              : "md:w-[22rem] lg:w-[31rem] xl:w-[30rem]"
-          } `}
+          }`}
           style={{ backgroundImage: `url('${product.image}')` }}
         >
           <div
@@ -24,15 +20,13 @@ const Card5 = () => {
           >
             <a
               href="#"
-              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-1.5"
+              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-6 md:left-1 md:tracking-tight"
             >
               {product.tag}
             </a>
             <a
               href="#"
-              className={`text-[1.3000rem] leading-6 relative top-2.5 tracking-wider font-semibold md:text-[1.4rem] lg:text-[1.77rem] lg:tracking-wide lg:leading-8 md:tracking-normal font-[SFProDisplay] ${
-                product.id === 1 ? "md:relative md:mt-4 md:ml-1 " : ""
-              }`}
+              className={`text-[1.3000rem] leading-6 relative top-2.5 tracking-wider font-semibold md:text-[1.4rem] lg:text-[1.77rem] lg:tracking-wide lg:leading-8 md:tracking-normal font-[SFProDisplay] md:relative md:mt-4 md:ml-1 md:font-normal`}
             >
               {product.name}
             </a>
