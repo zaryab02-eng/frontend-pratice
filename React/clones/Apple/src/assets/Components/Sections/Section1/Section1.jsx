@@ -5,7 +5,6 @@ import StoreBox from "./StoreBox";
 import HelpIsHere from "./HelpIsHere";
 import Apple from "./AppleStore";
 import Special from "./Special";
-import QuickLink from "./QuickLinks";
 
 const Section1 = () => {
   return (
@@ -17,7 +16,6 @@ const Section1 = () => {
       <HelpIsHere />
       <Apple />
       <Special />
-      <QuickLink />
     </div>
   );
 };
