@@ -1,6 +1,6 @@
 const Quick = () => {
   return (
-    <div>
+    <div className="relative sm:top-4.5">
       <h2 className="relative bottom-3 left-5.5 text-black text-[1.3125rem] font-[SFProDisplay] font-semibold tracking-wide">
         Quick Links
       </h2>
