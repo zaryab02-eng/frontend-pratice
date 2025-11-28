@@ -20,13 +20,13 @@ const Card5 = () => {
           >
             <a
               href="#"
-              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-6 md:left-1 md:tracking-tight lg:tracking-wider"
+              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-6 md:left-1 md:tracking-tight lg:tracking-wider xl:translate-x-0.5"
             >
               {product.tag}
             </a>
             <a
               href="#"
-              className={`text-[1.3000rem] leading-6 relative top-2.5 tracking-wider font-semibold md:text-[1.4rem] lg:text-[1.77rem] lg:tracking-wide lg:leading-8 md:tracking-normal font-[SFProDisplay] md:relative md:mt-4 md:ml-1 md:font-normal`}
+              className={`text-[1.3000rem] leading-6 relative top-2.5 tracking-wider font-semibold md:text-[1.4rem] lg:text-[1.77rem] lg:tracking-wide lg:leading-8 md:tracking-normal font-[SFProDisplay] md:relative md:mt-4 md:ml-1 md:font-normal xl:font-semibold xl:translate-y-1 xl:translate-x-0.5`}
             >
               {product.name}
             </a>
