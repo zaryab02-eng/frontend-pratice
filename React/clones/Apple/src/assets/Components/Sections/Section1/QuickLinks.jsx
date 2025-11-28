@@ -1,6 +1,6 @@
 const Quick = () => {
   return (
-    <div className="md:-translate-120 md:-translate-x-1">
+    <div className=" md:-translate-x-1">
       {/* Only translate the heading container */}
       <div className="sm:translate-y-5">
         <h2 className="text-black text-[1.3rem] font-[SFProDisplay] font-semibold tracking-wider sm:tracking-wide -translate-y-4.5 translate-x-5.5">

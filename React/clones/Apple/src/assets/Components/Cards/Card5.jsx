@@ -3,12 +3,12 @@ const Card5 = () => {
   return (
     <div
       id="card1"
-      className="flex overflow-x-auto -ml-6 gap-x-5 md:gap-x-4 lg:gap-x-5 sm:gap-x-5 relative pr-6 xl:relative xl:pl-20 xl:pr-24 xl:bottom-25 "
+      className="flex overflow-x-auto -ml-6 relative pr-6 xl:relative xl:pl-20 xl:pr-24 xl:bottom-25 "
     >
       {Card5Data.map((product) => (
         <div
           key={product.id}
-          className={`h-[28.125rem] w-[19.3125rem] md:font-light shadow-2xl lg:pr-2 lg:h-[31.25rem] md:h-[23.5rem] md:w-[19rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 lg:pt-11 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
+          className={`h-[28.125rem] w-[19.3125rem] md:font-light shadow-2xl lg:h-[31.25rem] md:h-[23.5rem] lg:w-[25rem] md:w-[19rem] shrink-0 rounded-2xl relative mt-6 pl-7 lg:pl-8 md:pl-5 md:pt-9 pt-12 flex flex-col justify-start bg-cover bg-center ${
             product.id === 1 ? "relative pt-17 ml-12 sm:relative sm:pt-18" : ""
           }`}
           style={{ backgroundImage: `url('${product.image}')` }}
@@ -16,11 +16,11 @@ const Card5 = () => {
           <div
             className={`${
               product.theme === "light" ? "text-black" : "text-white"
-            }  flex flex-col relative bottom-11 font-medium `}
+            }  flex flex-col relative bottom-11 font-medium lg:translate-y-4 lg:-translate-x-1.5 `}
           >
             <a
               href="#"
-              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-6 md:left-1 md:tracking-tight"
+              className="text-[0.7rem] md:text-[0.6rem] lg:text-[0.7rem] md:relative md:top-6 md:left-1 md:tracking-tight lg:tracking-wider"
             >
               {product.tag}
             </a>
