@@ -1,9 +1,9 @@
 const Quick = () => {
   return (
-    <div className=" md:-translate-x-1 lg:-translate-y-23 lg:-translate-x-0">
+    <div className=" md:-translate-x-1 lg:-translate-y-23 lg:-translate-x-0 xl:-translate-y-49 xl:translate-x-18">
       {/* Only translate the heading container */}
       <div className="sm:translate-y-5">
-        <h2 className="text-black text-[1.3rem] lg:text-[1.8rem] font-[SFProDisplay] font-semibold tracking-wider sm:tracking-wide -translate-y-4.5 translate-x-5.5">
+        <h2 className="text-black text-[1.3rem] lg:text-[1.8rem] xl:text-[1.7rem] font-[SFProDisplay] font-semibold tracking-wider sm:tracking-wide -translate-y-4.5 translate-x-5.5">
           Quick Links
         </h2>
       </div>
