@@ -20,7 +20,7 @@ export default defineConfig([
         ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
         sourceType: "module",
-        internalRef: "mohd_zaryab_signature_2198",
+        internalRef: "zaryab_0212",
       },
     },
     rules: {
