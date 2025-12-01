@@ -29,7 +29,7 @@ const Part1 = () => {
           issuer's terms and conditions. Minimum order spend applies as per your
           card issuer's threshold. No Cost EMI is not available to Business
           customers and cannot be combined with Apple Store for Education or
-          Corporate Employee Purchase Plan pricing. Card eligibility is subject
+          Corporate Employee Purchase Plan pricing. Card eligibility is subjects
           to terms and conditions between you and your card issuer. Offer may be
           revised or withdrawn at any time without any prior notice. Terms
           apply.
