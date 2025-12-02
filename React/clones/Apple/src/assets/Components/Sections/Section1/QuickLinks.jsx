@@ -1,13 +1,13 @@
 const Quick = () => {
   return (
-    <div className=" md:-translate-x-1 md:-translate-y-120 lg:-translate-y-23 lg:-translate-x-0 xl:-translate-y-49 xl:translate-x-18">
+    <div className=" md:-translate-x-1 md:-translate-y-120 lg:-translate-y-23 lg:-translate-x-0 xl:-translate-y-48.5 xl:translate-x-18">
       {/* Only translate the heading container */}
       <div className="sm:-translate-y-1">
         <h2 className="text-black text-[1.3rem] lg:text-[1.8rem] xl:text-[1.7rem] font-[SFProDisplay] font-semibold tracking-wider sm:tracking-wide translate-y-0.5 translate-x-5.5">
           Quick Links
         </h2>
       </div>
-      <div className="mt-1.5 -translate-x-0.5 sm:mt-1.5 md:mt-[-0.1rem] md:ml-[-0.2rem] lg:mt-2">
+      <div className="mt-1.5 -translate-x-0.5 sm:mt-1.5 md:mt-[-0.1rem] md:ml-[-0.2rem] lg:mt-2 xl:mt-1">
         <div
           id="card1"
           className="w-full py-3 pl-6 pr-5.5 flex items-center gap-2 overflow-x-auto whitespace-nowrap will-change-transform sm:tracking-wide"
