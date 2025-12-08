@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#page1 {
+  background-color: aqua;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+#page2 {
+  background-color: sandybrown;
+  color: white;
+  height: 100%;
+  width: 100%;
+  padding: 1vw 0;
+}
+
+#page3 {
+  background-color: darkmagenta;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+#page2 h2 {
+  font-size: 40vw;
+}
