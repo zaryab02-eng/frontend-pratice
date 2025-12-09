@@ -8,14 +8,12 @@ import NotFound from "./assets/Components/NotFound";
 import Men from "./assets/Components/Men";
 import Women from "./assets/Components/Women";
 import Kids from "./assets/Components/Kids";
-import Nav2 from "./assets/Components/Nav2";
 import Footer from "./assets/Components/Footer";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <Nav2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
