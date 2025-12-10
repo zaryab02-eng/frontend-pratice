@@ -1,7 +1,7 @@
 const Part1 = () => {
   return (
     <>
-      <div className="pl-4 pr-4.5 text-[0.75rem] mt-16.5 sm:mt-13 tracking-wide space-y-2 xl:space-x-4 leading-4 sm:leading-3.5 md:-translate-y-122 md:leading-3 lg:leading-4 xl:leading-4 xl:tracking-wide text-gray-500 font-[SFProDisplay]">
+      <div className="pl-4 pr-4.5 text-[0.75rem] mt-16.5 sm:mt-13 tracking-wide space-y-2 xl:space-x-4 leading-4 sm:leading-3.5 md:-translate-y-122 lg:-translate-y-20 lg:pl-5 md:leading-3 lg:leading-4 xl:leading-4 xl:tracking-wide text-gray-500 font-[SFProDisplay]">
         <p>
           ∆ Apple Intelligence is available in beta. Some features may not be
           available in all regions or languages. For feature and language
