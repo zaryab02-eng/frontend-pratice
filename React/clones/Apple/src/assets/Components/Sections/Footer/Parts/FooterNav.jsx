@@ -10,7 +10,7 @@ const FooterNav = () => {
         </span>
         <IoIosArrowForward className="text-gray-500 sm:translate-y-0.5 md:-translate-y-1 text-[0.5rem]" />
       </div>
-      <span className="text-[0.8rem] translate-y-0.5 md:-translate-y-1 -translate-x-0.5 text-gray-700 tracking-tight md:text-[0.5rem]">
+      <span className="text-[0.8rem] translate-y-0.5 md:-translate-y-1 -translate-x-0.5 text-gray-700 tracking-tight md:text-[0.5rem] md:tracking-wide">
         Apple Store Online
       </span>
     </div>
