@@ -6,7 +6,7 @@ const App = () => {
   const incre = () => {
     setNum((prev) => {
       if (prev === 10) return prev;
-      return (prev = 1);
+      return prev + 1;
     });
   };
 
