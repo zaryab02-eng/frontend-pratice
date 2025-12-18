@@ -5,7 +5,6 @@ const App = () => {
 
   const incre = () => {
     setNum((prev) => {
-      if (prev === 10) return prev;
       return prev + 1;
     });
   };
@@ -21,9 +20,13 @@ const App = () => {
     <div className="bg-black text-white h-screen flex justify-center items-center ">
       <div className="h-1/3 w-1/4 border border-white px-9 pt-8">
         <div className="w-full h-max border border-amber-50 flex justify-center mt-3 py-1.5">
-          <h3>Display</h3>
-          <h2>{num}</h2>
+          {num === 10 ? (
+            <h2 className="text-red-500 font-bold">Mid Point Reached</h2>
+          ) : (
+            <h2 className="text-white">{num}</h2>
+          )}
         </div>
+
         <div className="w-full h-max flex justify-center mt-3 py-1.5 gap-x-3">
           <button
             className="px-6 rounded-2xl bg-red-500 text-2xl hover:bg-red-700 cursor-pointer active:scale-95"
