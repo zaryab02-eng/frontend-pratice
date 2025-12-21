@@ -12,7 +12,11 @@ const App = () => {
   };
 
   let display;
-  if (num % 3 === 0 && num % 5 === 0) {
+  if (num < 0) {
+    display = `${num} is a negtaive number`;
+  } else if (num === 0) {
+    display = `${num} is zero`;
+  } else if (num % 3 === 0 && num % 5 === 0) {
     display = `${num} is a FizzBuzz`;
   } else if (num % 3 === 0) {
     display = `${num} is a Fizz`;
