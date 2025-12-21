@@ -18,9 +18,9 @@ const App = () => {
 
   let display;
   if (num % 2 == 0) {
-    display = `${num} is even`;
+    display = `${num} is an even`;
   } else {
-    display = `${num} is odd`;
+    display = `${num} is an odd`;
   }
 
   return (
