@@ -1,3 +1,4 @@
 const sumArr = (arr) => {
-  for (let i = 0; i < arr; i++) {}
+  let num = 0;
+  for (let i = num; i < arr; i++) {}
 };
