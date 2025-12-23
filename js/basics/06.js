@@ -1,11 +1,11 @@
-const evenNums = (arr) => {
-  let evenArr = [];
+const evenNum = (arr) => {
+  let even = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 0) {
-      evenArr.push(arr[i]);
+      even.push(arr[i]);
     }
   }
-  return evenArr;
+  return even;
 };
 
-console.log(evenNums([1, 2, 3, 4, 6]));
+console.log(evenNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
