@@ -9,3 +9,4 @@ const getEvenNumbers = (arr) => {
 };
 
 console.log(getEvenNumbers([1, 2, 3, 4, 5, 6]));
+// practice
