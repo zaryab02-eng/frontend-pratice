@@ -32,5 +32,12 @@ btn.addEventListener("click", () => {
     count += 1;
     counter.innerText = `Theme toggled ${count} times`;
   }
+
+  if (count === 5) {
+    btn.disabled = true;
+    text.innerText = "Toggle limit reached";
+    btn.style.background = "gray";
+    btn.style.color = "red";
+  }
   isLight = !isLight;
 });
