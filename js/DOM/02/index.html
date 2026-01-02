@@ -22,12 +22,19 @@
         padding-top: 3px;
         padding-bottom: 3px;
         cursor: pointer;
+        width: max-content;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <p id="text"></p>
+      <p id="counter"></p>
       <button id="btn"></button>
     </div>
     <script src="app.js"></script>
