@@ -1,6 +1,7 @@
 const btn = document.getElementById("btn");
 const text = document.getElementById("text");
 const counter = document.getElementById("counter");
+const resetBtn = document.getElementById("rst");
 
 let isLight = false;
 let count = 0;
@@ -8,6 +9,9 @@ let count = 0;
 text.innerText = "Current Mode: Dark";
 btn.innerText = "☀️ Light Mode";
 counter.innerText = `Theme toggled ${count} times`;
+resetBtn.innerText = "RESET";
+resetBtn.style.backgroundColor = "red";
+resetBtn.style.color = "white";
 
 document.body.style.backgroundColor = "black";
 document.body.style.color = "white";
@@ -40,4 +44,12 @@ btn.addEventListener("click", () => {
     btn.style.color = "red";
   }
   isLight = !isLight;
+});
+
+resetBtn.addEventListener("click", () => {
+  count = 0;
+  counter.innerText = `Counter Reset To ${count}`;
+  btn.disabled = false;
+  btn.style.backgroundColor = "white";
+  btn.style.color = "black";
 });
