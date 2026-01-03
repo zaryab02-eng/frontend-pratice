@@ -48,8 +48,17 @@ btn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
   count = 0;
-  counter.innerText = `Counter Reset To ${count}`;
+  isLight = false;
+
+  counter.innerText = `Theme toggled ${count} times`;
+  text.innerText = "Current Mode: Dark";
+
   btn.disabled = false;
+  btn.innerText = "☀️ Light Mode";
+
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+
   btn.style.backgroundColor = "white";
   btn.style.color = "black";
 });
