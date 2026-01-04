@@ -1,5 +1,6 @@
 const btn = document.getElementById("btn");
 const text = document.getElementById("text");
+const text2 = document.getElementById("text2");
 const counter = document.getElementById("counter");
 const resetBtn = document.getElementById("rst");
 
@@ -45,6 +46,12 @@ btn.addEventListener("click", () => {
   }
   isLight = !isLight;
 });
+
+if (count % 2 === 0) {
+  text2.innerText = "You like switching themes 😄";
+} else {
+  text2.innerText = "Make up your mind 😅";
+}
 
 resetBtn.addEventListener("click", () => {
   count = 0;
