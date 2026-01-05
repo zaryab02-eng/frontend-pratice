@@ -8,4 +8,6 @@ btn.addEventListener("click", () => {
   !inputTxt
     ? (display.innerText = "Please type something")
     : (display.innerText = inputTxt);
+
+  input.value = "";
 });
