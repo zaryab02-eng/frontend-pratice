@@ -3,5 +3,9 @@ const input = document.getElementById("input");
 const btn = document.getElementById("btn");
 
 btn.addEventListener("click", () => {
-  display.innerText = input.value;
+  let inputTxt = input.value;
+
+  inputTxt === ""
+    ? (display.innerText = "Please type something")
+    : (display.innerText = inputTxt);
 });
