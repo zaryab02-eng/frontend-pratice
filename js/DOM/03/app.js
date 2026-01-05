@@ -5,7 +5,7 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
   let inputTxt = input.value;
 
-  inputTxt === ""
+  !inputTxt
     ? (display.innerText = "Please type something")
     : (display.innerText = inputTxt);
 });
