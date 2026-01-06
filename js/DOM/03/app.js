@@ -14,5 +14,7 @@ btn.addEventListener("click", () => {
 });
 
 input.addEventListener("input", () => {
-  counter.innerText = `Characters: ${input.value.length}`;
+  input.value.length > 20
+    ? (counter.innerText = `Limit Reached: ${input.value.length}`)
+    : (counter.innerText = `Characters: ${input.value.length}`);
 });
