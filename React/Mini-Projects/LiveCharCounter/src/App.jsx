@@ -12,6 +12,7 @@ const App = () => {
         </h4>
         <input
           type="text"
+          value={text}
           placeholder="Enter text here"
           className="bg-amber-100 text-black"
           onChange={(e) => setText(e.target.value)}
