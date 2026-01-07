@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const App = () => {
+  const [text, setText] = useState("");
+  const [toDo, setToDo] = useState([]);
+
+  const addButton = () => {
+    setToDo([...toDo, text]);
+  };
+
   return (
     <div>
       <div className="bg-gray-500 h-96 p-2">
@@ -7,13 +16,24 @@ const App = () => {
             type="text"
             placeholder="Enter your todo here"
             className="bg-white text-black py-1 px-2"
+            onChange={(e) => setText(e.target.value)}
           />
-          <button className="px-2.5 py-1 bg-red-500 rounded">Add</button>
+          <button
+            className="px-2.5 py-1 bg-red-500 rounded"
+            onClick={addButton}
+          >
+            Add
+          </button>
         </div>
 
         <ul className="h-64 bg-red-500 translate-y-14 p-2">
-          <li>hello</li>
-          <li>hello</li>
+          {toDo.map((todo, idx) => {
+            return (
+              <li className="text-white" key={idx}>
+                {todo}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
