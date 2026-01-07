@@ -2,6 +2,11 @@ import { useState } from "react";
 
 const App = () => {
   const [text, setText] = useState("");
+
+  const resetBtn = () => {
+    setText("");
+  };
+
   return (
     <div>
       <div className="h-72 w-52 border border-white flex flex-col justify-center items-center space-y-3">
@@ -21,6 +26,12 @@ const App = () => {
           disabled={text.length > 25}
         />
       </div>
+      <button
+        className="px-2.5 py-1 bg-red-600 text-white active:scale-95 cursor-pointer"
+        onClick={resetBtn}
+      >
+        RESET
+      </button>
     </div>
   );
 };
