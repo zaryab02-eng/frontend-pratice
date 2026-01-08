@@ -6,6 +6,11 @@ const App = () => {
 
   const addButton = () => {
     setToDo([...toDo, text]);
+    setText("");
+  };
+
+  const deleteButton = (index) => {
+    setToDo(toDo.filter((to, idx) => idx !== index));
   };
 
   return (
@@ -17,6 +22,7 @@ const App = () => {
             placeholder="Enter your todo here"
             className="bg-white text-black py-1 px-2"
             onChange={(e) => setText(e.target.value)}
+            value={text}
           />
           <button
             className="px-2.5 py-1 bg-red-500 rounded"
@@ -31,6 +37,12 @@ const App = () => {
             return (
               <li className="text-white" key={idx}>
                 {todo}
+                <button
+                  className="bg-red-600 text-white p-2 rounded-2xl"
+                  onClick={() => deleteButton(idx)}
+                >
+                  X
+                </button>
               </li>
             );
           })}
