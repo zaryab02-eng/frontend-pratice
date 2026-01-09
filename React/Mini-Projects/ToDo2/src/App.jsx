@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const App = () => {
   const [text, setText] = useState("");
   const [toDo, setToDo] = useState([]);
+  const inputRef = useRef(null);
 
   const addButton = () => {
     setToDo([...toDo, text]);
     setText("");
+    inputRef.current.focus();
   };
 
   const deleteButton = (index) => {
@@ -18,6 +20,7 @@ const App = () => {
       <div className="bg-gray-500 h-96 p-2">
         <div className="translate-y-6">
           <input
+            ref={inputRef}
             type="text"
             placeholder="Enter your todo here"
             className="bg-white text-black py-1 px-2"
