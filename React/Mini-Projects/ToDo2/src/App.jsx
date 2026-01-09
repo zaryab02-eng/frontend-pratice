@@ -27,6 +27,7 @@ const App = () => {
           <button
             className="px-2.5 py-1 bg-red-500 rounded"
             onClick={addButton}
+            disabled={text.trim() === ""}
           >
             Add
           </button>
