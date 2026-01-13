@@ -6,6 +6,7 @@ const App = () => {
 
   const addItem = () => {
     setToDo([...toDo, text]);
+    setText("");
   };
 
   return (
