@@ -9,6 +9,10 @@ const App = () => {
     setText("");
   };
 
+  const deleteButton = (indexToDelete) => {
+    setToDo(toDo.filter((to, idx) => idx !== indexToDelete));
+  };
+
   return (
     <div className="space-y-1">
       <div className="space-x-1">
@@ -27,9 +31,17 @@ const App = () => {
           Add
         </button>
       </div>
-      <ul className=" bg-white text-black">
+      <ul className=" bg-white text-black w-59 h-50 overflow-y-auto p-1">
         {toDo.map((item, idx) => (
-          <li key={idx}>{item}</li>
+          <li key={idx}>
+            {item}
+            <button
+              className="bg-red-500 text-white px-2 py-1 rounded"
+              onClick={() => deleteButton(idx)}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
