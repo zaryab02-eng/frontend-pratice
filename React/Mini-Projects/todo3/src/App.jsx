@@ -19,7 +19,11 @@ const App = () => {
           className="bg-white placeholder:text-black text-black"
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="bg-red-500 text-white" onClick={addItem}>
+        <button
+          className="bg-red-500 text-white"
+          onClick={addItem}
+          disabled={text.trim() === ""}
+        >
           Add
         </button>
       </div>
