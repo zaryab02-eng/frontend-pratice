@@ -9,8 +9,8 @@ const App = () => {
     setText("");
   };
 
-  const deleteButton = (indexToDelete) => {
-    setToDo(toDo.filter((to, idx) => idx !== indexToDelete));
+  const deleteButton = (deleteIndex) => {
+    setToDo(toDo.filter((to, idx) => idx !== deleteIndex));
   };
 
   return (
@@ -47,5 +47,4 @@ const App = () => {
     </div>
   );
 };
-//working
 export default App;
