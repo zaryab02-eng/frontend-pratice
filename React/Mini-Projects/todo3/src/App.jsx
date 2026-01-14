@@ -5,7 +5,7 @@ const App = () => {
   const [toDo, setToDo] = useState([]);
 
   const addItem = () => {
-    setToDo([...toDo, text]);
+    setToDo([...toDo, { text, done: false }]);
     setText("");
   };
 
@@ -33,8 +33,11 @@ const App = () => {
       </div>
       <ul className=" bg-white text-black w-59 h-50 overflow-y-auto p-1">
         {toDo.map((item, idx) => (
-          <li key={idx}>
-            {item}
+          <li
+            key={idx}
+            style={{ textDecoration: item.done ? "line-through" : "none" }}
+          >
+            {item.text}
             <button
               className="bg-red-500 text-white px-2 py-1 rounded"
               onClick={() => deleteButton(idx)}
