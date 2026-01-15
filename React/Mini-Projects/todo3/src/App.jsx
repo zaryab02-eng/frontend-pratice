@@ -13,6 +13,14 @@ const App = () => {
     setToDo(toDo.filter((to, idx) => idx !== deleteIndex));
   };
 
+  const toggleDone = (index) => {
+    setToDo(
+      toDo.map((item, idx) =>
+        idx === index ? { ...item, done: !item.done } : item
+      )
+    );
+  };
+
   return (
     <div className="space-y-1">
       <div className="space-x-1">
@@ -35,7 +43,11 @@ const App = () => {
         {toDo.map((item, idx) => (
           <li
             key={idx}
-            style={{ textDecoration: item.done ? "line-through" : "none" }}
+            onClick={() => toggleDone(idx)}
+            style={{
+              textDecoration: item.done ? "line-through" : "none",
+              cursor: "pointer",
+            }}
           >
             {item.text}
             <button
