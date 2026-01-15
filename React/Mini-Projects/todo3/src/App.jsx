@@ -52,7 +52,10 @@ const App = () => {
             {item.text}
             <button
               className="bg-red-500 text-white px-2 py-1 rounded"
-              onClick={() => deleteButton(idx)}
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteButton(idx);
+              }}
             >
               Delete
             </button>
