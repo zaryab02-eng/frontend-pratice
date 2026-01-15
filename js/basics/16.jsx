@@ -8,7 +8,14 @@ function App() {
   ]);
 
   function toggleTodo(id) {
-    // logic here
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, done: !todo.done };
+        }
+        return todo;
+      })
+    );
   }
 
   return (
