@@ -11,12 +11,12 @@ const CityMap = () => {
   ]);
 
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-primary via-secondary to-tertiary rounded-2xl overflow-hidden">
-      {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+    <div className="relative w-full h-full bg-gradient-to-br from-base via-surface to-elevated rounded-2xl overflow-hidden border border-border">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-transparent to-transparent"></div>
 
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Subtle Grid */}
+      <div className="absolute inset-0 opacity-[0.02]">
         <svg width="100%" height="100%">
           <defs>
             <pattern
@@ -30,7 +30,7 @@ const CityMap = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1"
-                className="text-gray-400"
+                className="text-white"
               />
             </pattern>
           </defs>
@@ -38,32 +38,31 @@ const CityMap = () => {
         </svg>
       </div>
 
-      {/* Heat zones with blur effect */}
+      {/* Glowing Heat Zones */}
       {pulsePoints.map((point, idx) => (
         <div
           key={idx}
-          className="absolute rounded-full blur-3xl animate-pulse"
+          className="absolute rounded-full blur-3xl animate-pulse-slow"
           style={{
             left: `${point.x}%`,
             top: `${point.y}%`,
             width: `${point.size}rem`,
             height: `${point.size}rem`,
-            background: `radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)`,
             animationDelay: `${point.delay}s`,
-            animationDuration: "4s",
           }}
         />
       ))}
 
-      {/* Connecting lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-20">
+      {/* Connection Lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-10">
         <line
           x1="20%"
           y1="30%"
           x2="45%"
           y2="50%"
-          stroke="#6366f1"
-          strokeWidth="1"
+          stroke="#8b5cf6"
+          strokeWidth="1.5"
           strokeDasharray="4 4"
         />
         <line
@@ -71,8 +70,8 @@ const CityMap = () => {
           y1="50%"
           x2="70%"
           y2="35%"
-          stroke="#6366f1"
-          strokeWidth="1"
+          stroke="#8b5cf6"
+          strokeWidth="1.5"
           strokeDasharray="4 4"
         />
         <line
@@ -80,8 +79,8 @@ const CityMap = () => {
           y1="35%"
           x2="80%"
           y2="55%"
-          stroke="#6366f1"
-          strokeWidth="1"
+          stroke="#8b5cf6"
+          strokeWidth="1.5"
           strokeDasharray="4 4"
         />
         <line
@@ -89,13 +88,13 @@ const CityMap = () => {
           y1="60%"
           x2="55%"
           y2="70%"
-          stroke="#6366f1"
-          strokeWidth="1"
+          stroke="#8b5cf6"
+          strokeWidth="1.5"
           strokeDasharray="4 4"
         />
       </svg>
 
-      {/* Activity indicators */}
+      {/* Active Indicators */}
       {pulsePoints.map((point, idx) => (
         <div
           key={`indicator-${idx}`}
@@ -107,22 +106,22 @@ const CityMap = () => {
           }}
         >
           <div className="relative">
-            <div className="w-3 h-3 bg-accent rounded-full animate-ping opacity-75"></div>
-            <div className="absolute inset-0 w-3 h-3 bg-accent rounded-full"></div>
+            <div className="w-3.5 h-3.5 bg-accent rounded-full animate-ping opacity-60"></div>
+            <div className="absolute inset-0 w-3.5 h-3.5 bg-accent rounded-full shadow-lg shadow-accent/50"></div>
           </div>
         </div>
       ))}
 
-      {/* Center text overlay */}
+      {/* Center Content */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <h3 className="text-3xl font-bold text-gray-100 mb-2">Your City</h3>
-          <p className="text-sm text-gray-400">
+        <div className="text-center px-6">
+          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2 tracking-tight">Your City</h3>
+          <p className="text-sm text-text-tertiary font-medium mb-4">
             Live confessions happening now
           </p>
-          <div className="mt-4 flex items-center justify-center gap-2">
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            <span className="text-xs text-gray-500">Active zones</span>
+          <div className="flex items-center justify-center gap-2.5">
+            <div className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-lg shadow-accent/50"></div>
+            <span className="text-xs text-text-muted font-medium">{pulsePoints.length} active zones</span>
           </div>
         </div>
       </div>

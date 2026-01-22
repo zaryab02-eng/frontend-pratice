@@ -9,34 +9,41 @@ const Profile = () => {
 
   const handleSave = () => {
     setIsEditing(false);
-    // Mock save - no actual storage
     alert("Profile updated! (Mock save - no real storage)");
   };
 
+  const stats = [
+    { label: "Confessions", value: 0 },
+    { label: "Upvotes", value: 0 },
+    { label: "Views", value: 0 },
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-6 max-w-2xl">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-100 mb-2">
-          Profile Settings
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-3xl">
+      {/* Header */}
+      <div className="mb-10 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
+          Profile <span className="gradient-text">Settings</span>
         </h1>
-        <p className="text-gray-400">Manage your anonymous identity</p>
+        <p className="text-lg text-text-tertiary font-medium">Manage your anonymous identity</p>
       </div>
 
       {/* Profile Card */}
-      <div className="bg-secondary border border-border rounded-xl p-8 mb-6">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-3xl">
-            👤
+      <div className="bg-surface/50 backdrop-blur-sm border border-border rounded-2xl p-6 lg:p-8 mb-6">
+        <div className="flex items-center gap-5 mb-8">
+          <div className="relative">
+            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-4xl shadow-lg">
+              👤
+            </div>
+            <div className="absolute inset-0 rounded-2xl bg-accent opacity-0 hover:opacity-20 blur-xl transition-all"></div>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-gray-100">
-              {displayName}
-            </h2>
-            <p className="text-sm text-gray-500">Member since January 2026</p>
+            <h2 className="text-2xl font-bold text-white mb-1">{displayName}</h2>
+            <p className="text-sm text-text-muted font-medium">Member since January 2026</p>
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           <Input
             label="Display Name"
             value={displayName}
@@ -53,7 +60,7 @@ const Profile = () => {
             disabled={!isEditing}
           />
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-2">
             {!isEditing ? (
               <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
             ) : (
@@ -68,9 +75,19 @@ const Profile = () => {
         </div>
       </div>
 
+      {/* Stats Grid */}
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        {stats.map((stat, idx) => (
+          <div key={idx} className="bg-surface/50 backdrop-blur-sm border border-border rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+            <div className="text-xs text-text-muted font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
       {/* Privacy Notice */}
-      <div className="bg-tertiary border border-border rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-gray-100 mb-3 flex items-center gap-2">
+      <div className="bg-surface/50 backdrop-blur-sm border border-border rounded-2xl p-6 lg:p-8">
+        <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2.5">
           <svg
             className="w-5 h-5 text-accent"
             fill="currentColor"
@@ -84,40 +101,24 @@ const Profile = () => {
           </svg>
           Privacy & Anonymity
         </h3>
-        <ul className="space-y-2 text-sm text-gray-400">
-          <li className="flex items-start gap-2">
-            <span className="text-accent">•</span>
-            <span>Your confessions are completely anonymous</span>
+        <ul className="space-y-3 text-sm text-text-secondary">
+          <li className="flex items-start gap-3">
+            <span className="text-accent font-bold mt-0.5">•</span>
+            <span className="font-medium">Your confessions are completely anonymous</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-accent">•</span>
-            <span>Display name is optional and can be changed anytime</span>
+          <li className="flex items-start gap-3">
+            <span className="text-accent font-bold mt-0.5">•</span>
+            <span className="font-medium">Display name is optional and can be changed anytime</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-accent">•</span>
-            <span>No personal data is collected or stored</span>
+          <li className="flex items-start gap-3">
+            <span className="text-accent font-bold mt-0.5">•</span>
+            <span className="font-medium">No personal data is collected or stored</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-accent">•</span>
-            <span>Your IP address is never logged with confessions</span>
+          <li className="flex items-start gap-3">
+            <span className="text-accent font-bold mt-0.5">•</span>
+            <span className="font-medium">Your IP address is never logged with confessions</span>
           </li>
         </ul>
-      </div>
-
-      {/* Stats (Mock) */}
-      <div className="grid grid-cols-3 gap-4 mt-6">
-        <div className="bg-secondary border border-border rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-gray-100">0</div>
-          <div className="text-xs text-gray-500 mt-1">Confessions</div>
-        </div>
-        <div className="bg-secondary border border-border rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-gray-100">0</div>
-          <div className="text-xs text-gray-500 mt-1">Upvotes</div>
-        </div>
-        <div className="bg-secondary border border-border rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-gray-100">0</div>
-          <div className="text-xs text-gray-500 mt-1">Views</div>
-        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const Input = ({
   return (
     <div className={`w-full ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-sm font-medium text-text-secondary mb-2">
           {label}
         </label>
       )}
@@ -23,13 +23,13 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         maxLength={maxLength}
-        className="w-full px-4 py-3 bg-secondary text-gray-200 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-gray-500 transition-smooth"
+        className="w-full px-4 py-3 bg-surface text-white border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent placeholder-text-muted transition-all hover:border-border-light"
         {...props}
       />
-      <div className="flex justify-between items-center mt-1">
-        {error && <span className="text-sm text-red-400">{error}</span>}
+      <div className="flex justify-between items-center mt-2">
+        {error && <span className="text-sm text-error font-medium">{error}</span>}
         {showCount && maxLength && (
-          <span className="text-xs text-gray-500 ml-auto">
+          <span className="text-xs text-text-muted font-medium ml-auto">
             {value.length}/{maxLength}
           </span>
         )}

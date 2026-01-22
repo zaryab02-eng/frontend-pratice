@@ -12,7 +12,6 @@ const PostConfession = ({ onPost }) => {
       return;
     }
 
-    // Mock submission
     const newConfession = {
       id: Date.now(),
       text: text.trim(),
@@ -28,33 +27,38 @@ const PostConfession = ({ onPost }) => {
   };
 
   return (
-    <div className="bg-secondary border border-border rounded-xl p-6">
-      <h3 className="text-xl font-semibold text-gray-100 mb-4">
-        Share Anonymously
-      </h3>
+    <div className="bg-surface/50 backdrop-blur-sm border border-border rounded-2xl p-6 lg:p-8">
+      <div className="mb-6">
+        <h3 className="text-2xl font-bold text-white mb-2">Share Your Thoughts</h3>
+        <p className="text-sm text-text-tertiary font-medium">
+          Express yourself freely. Your identity stays private.
+        </p>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="What's on your mind? Your identity stays private..."
+          placeholder="What's on your mind? Share your confession anonymously..."
           maxLength={maxLength}
-          className="w-full h-32 px-4 py-3 bg-tertiary text-gray-200 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent placeholder-gray-500 resize-none transition-smooth"
+          className="w-full h-36 px-4 py-3.5 bg-elevated/50 text-white border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent placeholder-text-muted resize-none transition-all hover:border-border-light font-normal"
         />
 
         <div className="flex items-center justify-between mt-4">
-          <span className="text-xs text-gray-500">
-            {text.length}/{maxLength} characters
+          <span className={`text-xs font-medium transition-all ${
+            text.length > maxLength * 0.9 ? "text-warning" : "text-text-muted"
+          }`}>
+            {text.length}/{maxLength}
           </span>
 
           <Button type="submit" disabled={text.trim().length < 10}>
-            Post Anonymously
+            Post Confession
           </Button>
         </div>
       </form>
 
-      <div className="mt-4 p-3 bg-tertiary border border-border rounded-lg">
-        <p className="text-xs text-gray-400 flex items-start gap-2">
+      <div className="mt-5 p-4 bg-accent/5 border border-accent/20 rounded-xl">
+        <p className="text-xs text-text-tertiary flex items-start gap-2.5 leading-relaxed">
           <svg
             className="w-4 h-4 text-accent flex-shrink-0 mt-0.5"
             fill="currentColor"
@@ -66,8 +70,7 @@ const PostConfession = ({ onPost }) => {
               clipRule="evenodd"
             />
           </svg>
-          Your confession is completely anonymous. No personal information is
-          collected or stored.
+          <span className="font-medium">Your confession is completely anonymous. No personal information is collected or stored.</span>
         </p>
       </div>
     </div>
