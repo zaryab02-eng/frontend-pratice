@@ -13,10 +13,10 @@ function AreaView({ area, onBack }) {
       hotspots={null}
       fixedUI={
         <>
-          {/* Back button - small, in corner (works on both desktop and mobile) */}
+          {/* Back button - positioned below search bar on mobile */}
           <button
             onClick={onBack}
-            className="absolute top-4 left-4 md:top-6 md:left-6 z-30 glass-strong p-2.5 md:p-3 rounded-full hover:scale-110 active:scale-95 transition-transform shadow-lg pointer-events-auto"
+            className="absolute top-20 left-4 md:top-6 md:left-6 z-40 glass-strong p-2.5 md:p-3 rounded-full hover:scale-110 active:scale-95 transition-transform shadow-lg pointer-events-auto"
           >
             <svg
               className="w-5 h-5 md:w-6 md:h-6 text-white"

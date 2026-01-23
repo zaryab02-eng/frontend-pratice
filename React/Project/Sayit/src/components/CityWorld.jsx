@@ -8,6 +8,7 @@ import SearchBar from "./SearchBar";
 function CityWorld({ onAreaSelect, userCity, onLogout }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // Mock hotspot data - intensity based on confession count
   const hotspots = [
@@ -22,7 +23,7 @@ function CityWorld({ onAreaSelect, userCity, onLogout }) {
   return (
     <WorldMapCanvas
       hotspots={
-        <div className="absolute inset-0">
+        <div className={`absolute inset-0 transition-opacity duration-300 ${isDrawerOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           {hotspots.map((spot) => (
             <HotspotMarker
               key={spot.id}
@@ -49,7 +50,7 @@ function CityWorld({ onAreaSelect, userCity, onLogout }) {
           />
 
           {/* Trending panel - slim dropdown like Twitter */}
-          <TrendingDrawer userCity={userCity} />
+          <TrendingDrawer userCity={userCity} onDrawerStateChange={setIsDrawerOpen} />
 
         </>
       }

@@ -1,7 +1,7 @@
 // Login screen with background video and glassmorphism Google button
 function LoginScreen({ onContinue }) {
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0a0a0c] font-sans">
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-[#0a0a0c] font-sans">
       {/* Background Video */}
       <video
         autoPlay

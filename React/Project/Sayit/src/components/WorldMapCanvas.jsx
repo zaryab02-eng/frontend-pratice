@@ -5,7 +5,7 @@ function WorldMapCanvas({ children, zoomed = false, hotspots, fixedUI }) {
   const mapHeight = zoomed ? "150%" : "200%";
 
   return (
-    <div className="relative w-full h-full overflow-auto">
+    <div className="relative w-full h-full overflow-auto lg:scrollbar-hide">
       {/* Scrollable map container */}
       <div 
         className="relative"
