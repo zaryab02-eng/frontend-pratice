@@ -1,6 +1,6 @@
 let marks = 92;
 
-if (marks >= 92) {
+if (marks >= 90) {
   console.log("A");
 } else if (marks >= 75) {
   console.log("B");
