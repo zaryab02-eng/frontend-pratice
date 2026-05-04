@@ -5,11 +5,15 @@ const decBtn = document.getElementById("decrease");
 let count = 0;
 
 incBtn.addEventListener("click", () => {
-  count = count + 1;
-  display.innerText = count;
+  if (count < 10) {
+    count = count + 1;
+    display.innerText = count;
+  }
 });
 
 decBtn.addEventListener("click", () => {
-  count = count - 1;
-  display.innerText = count;
+  if (count > 0) {
+    count = count - 1;
+    display.innerText = count;
+  }
 });
