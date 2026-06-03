@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>RandomColorChanger</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
+  <body class="flex flex-col items-center gap-y-2 mt-1">
+    <h2
+      id="txt"
+      class="py-0.5 px-1.5 w-max rounded font-bold bg-black text-white"
+    >
+      Color
+    </h2>
+    <button
+      id="btn"
+      class="py-0.5 px-1.5 w-max rounded font-bold bg-blue-400 text-white cursor-pointer hover:bg-blue-600"
+    >
+      Generate
+    </button>
     <script src="app.js"></script>
   </body>
 </html>
