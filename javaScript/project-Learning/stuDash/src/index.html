@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body class="h-screen flex flex-col">
+    <div
+      class="bg-black w-full h-14 text-white flex justify-around items-center shrink-0"
+    >
+      <div>
+        <button class="bg-amber-100 text-black rounded px-1.5" id="all">
+          Show All
+        </button>
+        <button class="bg-amber-100 text-black rounded px-1.5" id="exp">
+          Expensive
+        </button>
+        <button class="bg-amber-100 text-black rounded px-1.5" id="chp">
+          Cheap
+        </button>
+        <button class="bg-amber-100 text-black rounded px-1.5" id="cst">
+          Costliest
+        </button>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="search here"
+          class="bg-white placeholder:text-black border-white text-black px-2 border h-6 w-2xs placeholder:px-2"
+          id="input"
+        />
+        <button class="bg-amber-100 text-black rounded px-1.5" id="srh">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 flex justify-center items-center">
+      <h1 id="display">Display</h1>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
