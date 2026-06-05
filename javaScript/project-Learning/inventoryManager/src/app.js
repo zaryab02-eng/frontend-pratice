@@ -4,6 +4,7 @@ const outStock = document.getElementById("outStock");
 const input = document.getElementById("input");
 const search = document.getElementById("search");
 const display = document.getElementById("display");
+const smryBtn = document.getElementById("summary");
 
 const products = [
   { name: "Laptop", stock: 5 },
@@ -59,7 +60,7 @@ search.addEventListener("click", () => {
     return inputValue === product.name.toLowerCase();
   });
 
-  if (matchFind.length === 0) {
+  if (!matchFind) {
     display.textContent = "no result found";
     return;
   }
@@ -70,5 +71,21 @@ search.addEventListener("click", () => {
     matchFind.stock === 0
       ? `${matchFind.name} - out of stock`
       : `${matchFind.name} - ${matchFind.stock} left`;
+  display.appendChild(item);
+});
+
+smryBtn.addEventListener("click", () => {
+  display.textContent = "";
+  const totalItems = products.length;
+  const inStock = products.filter((product) => {
+    return product.stock > 0;
+  });
+  const outStock = products.filter((product) => {
+    return product.stock === 0;
+  });
+
+  const item = document.createElement("p");
+  item.style.whiteSpace = "pre-line";
+  item.textContent = `Total Products: ${totalItems}\nIn Stock: ${inStock.length}\nOut of Stock: ${outStock.length}`;
   display.appendChild(item);
 });
