@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inventory manager</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="flex justify-center h-screen items-center">
+    <div class="bg-gray-500 w-3xl h-96 rounded-2xl">
+      <div
+        class="w-full h-14 bg-black top-14 relative flex justify-around items-center"
+      >
+        <button
+          class="text-white bg-gray-500 rounded h-8 px-2 cursor-pointer"
+          id="showAll"
+        >
+          Show All
+        </button>
+        <button
+          class="text-white bg-gray-500 rounded h-8 px-2 cursor-pointer"
+          id="inStock"
+        >
+          In Stock
+        </button>
+        <button
+          class="text-white bg-gray-500 rounded h-8 px-2 cursor-pointer"
+          id="outStock"
+        >
+          Out of Stock
+        </button>
+        <div class="flex justify-center items-center">
+          <input
+            type="text"
+            class="text-black bg-white placeholder:text-black px-2 h-8"
+            placeholder="search here"
+            id="input"
+          />
+          <button
+            class="text-white bg-gray-500 rounded h-8 px-2 cursor-pointer"
+            id="search"
+          >
+            search
+          </button>
+        </div>
+      </div>
+      <h1 class="text-2xl text-white font-bold mt-38 text-center" id="display">
+        Display
+      </h1>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
