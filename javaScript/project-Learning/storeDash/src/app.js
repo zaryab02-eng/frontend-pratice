@@ -77,3 +77,14 @@ mstStckBtn.addEventListener("click", () => {
   item.textContent = `${mostStock.name} - Quantity ${mostStock.stock}`;
   display.appendChild(item);
 });
+
+search.addEventListener("click", () => {
+  display.textContent = "";
+  const inputItem = input.value.trim().toLowerCase();
+  const matchedItem = products.find((product) => {
+    return inputItem === product.name.toLowerCase();
+  });
+  display.textContent = matchedItem
+    ? `${matchedItem.name} - ${matchedItem.stock} left`
+    : ` item not found`;
+});
