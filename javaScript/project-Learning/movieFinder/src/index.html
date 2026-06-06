@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Dashboard</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body class="flex h-screen items-center justify-center">
+    <div class="h-96 w-4xl rounded-2xl bg-gray-500">
+      <div
+        class="relative top-14 flex h-14 w-full items-center justify-around bg-black px-4"
+      >
+        <button
+          class="h-8 cursor-pointer rounded bg-gray-500 px-2 text-white"
+          id="showAll"
+        >
+          Show All
+        </button>
+
+        <button
+          class="h-8 cursor-pointer rounded bg-gray-500 px-2 text-white"
+          id="inStock"
+        >
+          Top Rated
+        </button>
+
+        <button
+          class="h-8 cursor-pointer rounded bg-gray-500 px-2 text-white"
+          id="outStock"
+        >
+          Highly Rated (8+)
+        </button>
+
+        <button
+          class="h-8 cursor-pointer rounded bg-gray-500 px-2 text-white"
+          id="summary"
+        >
+          Average Rating
+        </button>
+
+        <div class="flex items-center gap-2">
+          <input
+            type="text"
+            id="input"
+            placeholder="Search here..."
+            class="h-8 bg-white px-2 text-black placeholder:text-black"
+          />
+
+          <button
+            class="h-8 cursor-pointer rounded bg-gray-500 px-2 text-white"
+            id="search"
+          >
+            Search Movie
+          </button>
+        </div>
+      </div>
+
+      <h1 class="mt-28 text-center text-2xl font-bold text-white" id="display">
+        Display
+      </h1>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
