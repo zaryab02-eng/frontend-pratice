@@ -5,6 +5,8 @@ const avgRatingBtn = document.getElementById("avgRating");
 const input = document.getElementById("input");
 const searchaBtn = document.getElementById("search");
 const display = document.getElementById("display");
+const highRatingFirstBtn = document.getElementById("highRatingFirst");
+const lowestRatingFirst = document.getElementById("lowestRatingFirst");
 
 const movies = [
   { name: "Inception", rating: 9 },
@@ -19,6 +21,26 @@ function renderMovies(movieArray) {
   item.textContent = `${movieArray.name} - ${movieArray.rating}⭐`;
   return display.appendChild(item);
 }
+
+highRatingFirstBtn.addEventListener("click", () => {
+  display.textContent = "";
+  const highestRated = [...movies].sort((a, b) => {
+    return b.rating - a.rating;
+  });
+  highestRated.forEach((movie) => {
+    renderMovies(movie);
+  });
+});
+
+lowestRatingFirst.addEventListener("click", () => {
+  display.textContent = "";
+  const lowestRated = [...movies].sort((a, b) => {
+    return a.rating - b.rating;
+  });
+  lowestRated.forEach((movie) => {
+    renderMovies(movie);
+  });
+});
 
 showAllBtn.addEventListener("click", () => {
   display.textContent = "";
