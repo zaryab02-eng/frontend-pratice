@@ -21,10 +21,29 @@
 
 // console.log(result);
 
+// const products = [
+//   { name: "Laptop", stock: 5 },
+//   { name: "Mouse", stock: 10 },
+//   { name: "Keyboard", stock: 8 },
+// ];
+
+// const winner = products.reduce((current, product) => {
+//   if (product.stock > current.stock) {
+//     return product;
+//   }
+//   return current;
+// }, products[0]);
+
+// const result = {
+//   mostStock: winner,
+// };
+
+// console.log(result);
+
 const products = [
-  { name: "Laptop", stock: 5 },
-  { name: "Mouse", stock: 10 },
-  { name: "Keyboard", stock: 8 },
+  { name: "Laptop", stock: 5, price: 50000 },
+  { name: "Mouse", stock: 10, price: 1000 },
+  { name: "Keyboard", stock: 8, price: 2000 },
 ];
 
 const winner = products.reduce((current, product) => {
@@ -34,7 +53,12 @@ const winner = products.reduce((current, product) => {
   return current;
 }, products[0]);
 
+const StockTotal = products.reduce((current, product) => {
+  return product.stock + current;
+}, 0);
+
 const result = {
+  totalStock: StockTotal,
   mostStock: winner,
 };
 
