@@ -1,53 +1,53 @@
-// const products = [{ stock: 5 }, { stock: 8 }, { stock: 3 }];
+const products = [{ stock: 5 }, { stock: 8 }, { stock: 3 }];
 
-// const result = products.reduce(
-//   (current, product) => {
-//     return {
-//       totalProduct: current.totalProduct + product.stock,
-//     };
-//   },
-//   {
-//     totalProduct: 0,
-//   },
-// );
+const result = products.reduce(
+  (current, product) => {
+    return {
+      totalProduct: current.totalProduct + product.stock,
+    };
+  },
+  {
+    totalProduct: 0,
+  },
+);
 
-// console.log(result);
+console.log(result);
 
-// const products = [{ stock: 5 }, { stock: 8 }, { stock: 3 }];
+const products = [{ stock: 5 }, { stock: 8 }, { stock: 3 }];
 
-// function productSummary() {
-//   return products.reduce(
-//     (current, product) => {
-//       return {
-//         totalProducts: current.totalProducts + 1,
-//         totalStock: current.totalStock + product.stock,
-//       };
-//     },
-//     {
-//       totalProducts: 0,
-//       totalStock: 0,
-//     },
-//   );
-// }
-// console.log(productSummary());
+function productSummary() {
+  return products.reduce(
+    (current, product) => {
+      return {
+        totalProducts: current.totalProducts + 1,
+        totalStock: current.totalStock + product.stock,
+      };
+    },
+    {
+      totalProducts: 0,
+      totalStock: 0,
+    },
+  );
+}
+console.log(productSummary());
 
-// const products = [
-//   { name: "Laptop", price: 70000 },
-//   { name: "Mouse", price: 500 },
-//   { name: "Keyboard", price: 2000 },
-// ];
+const products = [
+  { name: "Laptop", price: 70000 },
+  { name: "Mouse", price: 500 },
+  { name: "Keyboard", price: 2000 },
+];
 
-// const result = products.reduce(
-//   (current, product) => {
-//     return {
-//       totalPrice: current.totalPrice + product.price,
-//     };
-//   },
-//   {
-//     totalPrice: 0,
-//   },
-// );
-// console.log(result);
+const result = products.reduce(
+  (current, product) => {
+    return {
+      totalPrice: current.totalPrice + product.price,
+    };
+  },
+  {
+    totalPrice: 0,
+  },
+);
+console.log(result);
 
 const products = [
   { name: "Laptop", price: 70000 },
@@ -68,3 +68,29 @@ const mostExpensive = {
 };
 
 console.log(mostExpensive);
+
+const products = [
+  { name: "Laptop", price: 70000, stock: 5 },
+  { name: "Mouse", price: 500, stock: 0 },
+  { name: "Keyboard", price: 2000, stock: 8 },
+];
+
+function productSummary() {
+  return products.reduce(
+    (current, product) => {
+      const mostExp = product.price > current.currExp;
+      return {
+        totalStock: current.totalStock + product.stock,
+        mostExpensive: mostExp ? product.price : current.currExp,
+        currExp: mostExp.price,
+      };
+    },
+    {
+      totalStock: 0,
+      mostExpensive: "",
+      currExp: 0,
+    },
+  );
+}
+
+console.log(productSummary());
