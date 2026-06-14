@@ -4,14 +4,9 @@ const products = [
   { name: "Keyboard", price: 2000, stock: 8 },
 ];
 
-// const winner = products
-//   .filter((product) => product.stock > 0)
-//   .reduce((total, product) => total + product.price, 0);
-
-// console.log(winner);
-
 const result = products
-  .sort((a, b) => a.price - b.price)
-  .map((product) => product.name);
+  .filter((product) => product.stock > 0)
+  .sort((a, b) => b.price - a.price)
+  .reduce((current, product) => product.price + current, 0);
 
 console.log(result);
