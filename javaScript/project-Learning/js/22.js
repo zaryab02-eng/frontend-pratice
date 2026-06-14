@@ -1,23 +1,17 @@
 const products = [
-  { name: "Laptop", stock: 5, price: 50000 },
-  { name: "Mouse", stock: 0, price: 1000 },
-  { name: "Keyboard", stock: 8, price: 2000 },
+  { name: "Laptop", price: 50000, stock: 5 },
+  { name: "Mouse", price: 1000, stock: 0 },
+  { name: "Keyboard", price: 2000, stock: 8 },
 ];
 
-const result = products.reduce(
-  (current, product) => {
-    return {
-      totalPrice: product.price + current.totalPrice,
-      availableProducts:
-        product.stock > 0
-          ? [...current.availableProducts, product.name]
-          : current.availableProducts,
-    };
-  },
-  {
-    totalPrice: 0,
-    availableProducts: [],
-  },
-);
+// const winner = products
+//   .filter((product) => product.stock > 0)
+//   .reduce((total, product) => total + product.price, 0);
+
+// console.log(winner);
+
+const result = products
+  .sort((a, b) => a.price - b.price)
+  .map((product) => product.name);
 
 console.log(result);
