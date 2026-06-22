@@ -72,10 +72,16 @@ async function userData() {
       throw new Error("Failed to fetch");
     }
     const data = await response.json();
-    const { name, email } = data.find(({ id }) => id === 8);
-    console.log({ name, email });
+    const {
+      name,
+      address: { city },
+      company: { name: copmanyName },
+    } = data.find(({ id }) => id === 7);
+    console.log({ name, city, copmanyName });
   } catch (error) {
     console.log(error);
+  } finally {
+    console.log("Successful");
   }
 }
 
