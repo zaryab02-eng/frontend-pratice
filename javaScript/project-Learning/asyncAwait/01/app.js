@@ -5,16 +5,27 @@ async function userInfo() {
       throw new Error("Failed to fetch");
     }
     const data = await response.json();
-    const user = data.map(
-      ({ name, address: { city }, company: { name: companyName } }) => {
+    const selectedUsers = data.reduce(
+      (current, user) => {
+        const { email } = user;
+        if (email.endsWith(".biz") && !current.firstBizUser) {
+          current.firstBizUser = user;
+        }
         return {
-          name,
-          city,
-          companyName,
+          totalUsers: current.totalUsers + 1,
+          bizEmailUsers: email.endsWith(".biz")
+            ? current.bizEmailUsers + 1
+            : current.bizEmailUsers,
+          firstBizUser: current.firstBizUser,
         };
       },
+      {
+        totalUsers: 0,
+        bizEmailUsers: 0,
+        firstBizUser: null,
+      },
     );
-    console.log(user);
+    console.log(selectedUsers);
   } catch (error) {
     console.log(error);
   }
