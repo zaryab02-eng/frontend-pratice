@@ -8,8 +8,8 @@ async function userInfo() {
     const userData = data.reduce(
       (current, user) => {
         const {
-          address: { city },
           name,
+          address: { city },
         } = user;
 
         if (city.includes("South") && !current.firstSouthUser) {
@@ -18,21 +18,20 @@ async function userInfo() {
 
         if (city.includes("South")) {
           current.lastSouthUser = user;
-          current.southUserNames.push(name);
+          current.southUsers.push({ name, city });
         }
-
         return {
           totalUsers: current.totalUsers + 1,
           firstSouthUser: current.firstSouthUser,
           lastSouthUser: current.lastSouthUser,
-          southUserNames: current.southUserNames,
+          southUsers: current.southUsers,
         };
       },
       {
         totalUsers: 0,
         firstSouthUser: null,
         lastSouthUser: null,
-        southUserNames: [],
+        southUsers: [],
       },
     );
     console.log(userData);
