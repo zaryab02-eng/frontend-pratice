@@ -5,36 +5,32 @@ async function userInfo() {
       throw new Error("Failed to fetch");
     }
     const data = await response.json();
-    const userData = data.reduce(
+    const userSummary = data.reduce(
       (current, user) => {
-        const {
-          name,
-          address: { city },
-        } = user;
-
-        if (city.includes("South") && !current.firstSouthUser) {
-          current.firstSouthUser = user;
+        const { name, email } = user;
+        if (email.endsWith(".biz") && !current.firstBizUser) {
+          current.firstBizUser = user;
+        }
+        if (email.endsWith(".biz")) {
+          current.lastBizUser = user;
+          current.bizUsers.push({ name, email });
         }
 
-        if (city.includes("South")) {
-          current.lastSouthUser = user;
-          current.southUsers.push({ name, city });
-        }
         return {
           totalUsers: current.totalUsers + 1,
-          firstSouthUser: current.firstSouthUser,
-          lastSouthUser: current.lastSouthUser,
-          southUsers: current.southUsers,
+          firstBizUser: current.firstBizUser,
+          lastBizUser: current.lastBizUser,
+          bizUsers: current.bizUsers,
         };
       },
       {
         totalUsers: 0,
-        firstSouthUser: null,
-        lastSouthUser: null,
-        southUsers: [],
+        firstBizUser: null,
+        lastBizUser: null,
+        bizUsers: [],
       },
     );
-    console.log(userData);
+    console.log(userSummary);
   } catch (error) {
     console.log(error);
   }
