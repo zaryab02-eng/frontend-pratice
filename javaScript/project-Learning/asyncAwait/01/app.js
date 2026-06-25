@@ -5,32 +5,43 @@ async function userInfo() {
       throw new Error("Failed to fetch");
     }
     const data = await response.json();
-    const userSummary = data.reduce(
+    const userData = data.reduce(
       (current, user) => {
-        const { name, email } = user;
-        if (email.endsWith(".biz") && !current.firstBizUser) {
-          current.firstBizUser = user;
+        const {
+          name,
+          address: { city },
+        } = user;
+
+        if (city.includes("South") && !current.firstSouthUser) {
+          current.firstSouthUser = user;
         }
-        if (email.endsWith(".biz")) {
-          current.lastBizUser = user;
-          current.bizUsers.push({ name, email });
+
+        if (city.includes("South")) {
+          current.lastSouthUser = user;
+          current.southUserNames.push(name);
+          current.southUserCount += 1;
+          current.southUsers.push({ name, city });
         }
 
         return {
           totalUsers: current.totalUsers + 1,
-          firstBizUser: current.firstBizUser,
-          lastBizUser: current.lastBizUser,
-          bizUsers: current.bizUsers,
+          firstSouthUser: current.firstSouthUser,
+          lastSouthUser: current.lastSouthUser,
+          southUserNames: current.southUserNames,
+          southUserCount: current.southUserCount,
+          southUsers: current.southUsers,
         };
       },
       {
         totalUsers: 0,
-        firstBizUser: null,
-        lastBizUser: null,
-        bizUsers: [],
+        firstSouthUser: null,
+        lastSouthUser: null,
+        southUserNames: [],
+        southUserCount: 0,
+        southUsers: [],
       },
     );
-    console.log(userSummary);
+    console.log(userData);
   } catch (error) {
     console.log(error);
   }
