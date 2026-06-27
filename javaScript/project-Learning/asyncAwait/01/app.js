@@ -18,13 +18,16 @@ async function userInfo() {
     const posts = await responsePosts.json();
 
     const result = users.map(({ id, name }) => {
-      const userPosts = posts.filter(({ userId }) => userId === id);
+      const userPosts = posts
+        .filter(({ userId }) => userId === id)
+        .map(({ title }) => title);
       return {
         userName: name,
-        postCount: userPosts.length,
+        postTitles: userPosts,
       };
     });
     return result;
+    postTitles;
   } catch (error) {
     console.log(error);
   }
