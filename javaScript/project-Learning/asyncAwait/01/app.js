@@ -34,31 +34,65 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const responseName = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const responsePost = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+
+//     if (!responseName.ok) {
+//       throw new Error("Failed to fetch user names");
+//     }
+//     if (!responsePost.ok) {
+//       throw new Error("Failed to fetch user posts");
+//     }
+//     const users = await responseName.json();
+//     const posts = await responsePost.json();
+
+//     const result = users.map(({ id, username }) => {
+//       const userPosts = posts.filter(({ userId }) => id === userId);
+//       const lastPost = userPosts[userPosts.length - 1];
+//       const { body = null } = lastPost ?? {};
+//       return {
+//         userName: username,
+//         latestPostBody: body,
+//       };
+//     });
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
-    const responseName = await fetch(
+    const userResponse = await fetch(
       "https://jsonplaceholder.typicode.com/users",
     );
-    const responsePost = await fetch(
+    const postResponse = await fetch(
       "https://jsonplaceholder.typicode.com/posts",
     );
-
-    if (!responseName.ok) {
-      throw new Error("Failed to fetch user names");
+    if (!userResponse.ok) {
+      throw new Error("Failed to fetch users");
     }
-    if (!responsePost.ok) {
-      throw new Error("Failed to fetch user posts");
+    if (!postResponse.ok) {
+      throw new Error("Failed to fetch posts");
     }
-    const users = await responseName.json();
-    const posts = await responsePost.json();
+    const user = await userResponse.json();
+    const posts = await postResponse.json();
 
-    const result = users.map(({ id, username }) => {
-      const userPosts = posts.filter(({ userId }) => id === userId);
-      const lastPost = userPosts[userPosts.length - 1];
-      const { body = null } = lastPost ?? {};
+    const result = user.map(({ username, id }) => {
+      const userTitles = posts
+        .filter(({ userId }) => id === userId)
+        .map(({ title }) => title);
       return {
         userName: username,
-        latestPostBody: body,
+        postTitles: userTitles,
       };
     });
     console.log(result);
