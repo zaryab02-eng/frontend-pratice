@@ -10,32 +10,26 @@ async function userInfo() {
     if (!responseNames.ok) {
       throw new Error("Failed to fetch user names");
     }
+
     if (!responsePosts.ok) {
-      throw new Error("Failed to fetch user names");
+      throw new Error("Failed to fetch posts");
     }
 
     const users = await responseNames.json();
     const posts = await responsePosts.json();
 
-    const result = users.map(({ id, name }) => {
-      const userPosts = posts
-        .filter(({ userId }) => userId === id)
-        .map(({ title }) => title);
+    const result = users.map(({ id, username }) => {
+      const firstBody = posts.find(({ userId }) => id === userId);
+      const { body = null } = firstBody ?? {};
       return {
-        userName: name,
-        postTitles: userPosts,
+        userName: username,
+        firstPostBody: body,
       };
     });
-    return result;
-    postTitles;
+    console.log(result);
   } catch (error) {
     console.log(error);
   }
 }
 
-async function main() {
-  const user = await userInfo();
-  console.log(user);
-}
-
-main();
+userInfo();
