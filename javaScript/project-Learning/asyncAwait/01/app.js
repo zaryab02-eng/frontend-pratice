@@ -122,10 +122,11 @@ async function userInfo() {
     const post = await postResponse.json();
 
     const result = users.map(({ id, username }) => {
-      const postCount = post.filter(({ userId }) => id === userId);
+      const hasPosts = post.some(({ userId, title }) => id === userId);
+
       return {
         userName: username,
-        totalPosts: postCount.length,
+        hasPosts: hasPosts,
       };
     });
     console.log(result);
