@@ -103,6 +103,40 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const post = await postResponse.json();
+
+//     const result = users.map(({ id, username }) => {
+//       const hasPosts = post.some(({ userId, title }) => id === userId);
+
+//       return {
+//         userName: username,
+//         hasPosts: hasPosts,
+//       };
+//     });
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
     const userResponse = await fetch(
@@ -122,13 +156,15 @@ async function userInfo() {
     const post = await postResponse.json();
 
     const result = users.map(({ id, username }) => {
-      const hasPosts = post.some(({ userId, title }) => id === userId);
+      const postMatch = post.find(({ userId }) => id === userId);
+      const { title = null } = postMatch ?? {};
 
       return {
         userName: username,
-        hasPosts: hasPosts,
+        firstPostTitle: title,
       };
     });
+
     console.log(result);
   } catch (error) {
     console.log(error);
