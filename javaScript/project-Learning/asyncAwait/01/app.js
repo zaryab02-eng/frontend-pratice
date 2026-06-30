@@ -192,12 +192,12 @@ async function userInfo() {
     const post = await postResponse.json();
 
     const result = users.map(({ id, username }) => {
-      const matchedPost = post.filter(({ userId }) => id === userId);
-      const latestPost = matchedPost[matchedPost.length - 1];
-      const { title = null } = latestPost ?? {};
+      const matchedPosts = post.filter(({ userId }) => id === userId);
+      const postTitles = matchedPosts.map(({ title }) => title);
+
       return {
         userName: username,
-        latestPostTitle: title,
+        postTitles,
       };
     });
     console.log(result);
