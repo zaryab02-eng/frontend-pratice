@@ -171,6 +171,69 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postResponse.json();
+
+//     const result = users.map(({ id, username }) => {
+//       const userPosts = posts.filter(({ userId }) => id === userId);
+//       const titles = userPosts.map(({ title }) => title);
+//       let shortestPostTitle = null;
+//       for (const title of titles) {
+//         if (
+//           shortestPostTitle === null ||
+//           title.length < shortestPostTitle.length
+//         ) {
+//           shortestPostTitle = title;
+//         }
+//       }
+//       let longestPostTitle = null;
+//       for (const title of titles) {
+//         if (
+//           longestPostTitle === null ||
+//           title.length > longestPostTitle.length
+//         ) {
+//           longestPostTitle = title;
+//         }
+//       }
+
+//       const totalChar = titles.reduce(
+//         (current, title) => current + title.length,
+//         0,
+//       );
+
+//       const averageTitleLength = Number(
+//         titles.length === 0 ? 0 : (totalChar / titles.length).toFixed(1),
+//       );
+//       return {
+//         userName: username,
+//         shortestPostTitle: shortestPostTitle,
+//         longestPostTitle: longestPostTitle,
+//         averageTitleLength: averageTitleLength,
+//       };
+//     });
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
     const userResponse = await fetch(
@@ -193,6 +256,7 @@ async function userInfo() {
       const userPosts = posts.filter(({ userId }) => id === userId);
       const titles = userPosts.map(({ title }) => title);
       let shortestPostTitle = null;
+      let longestPostTitle = null;
       for (const title of titles) {
         if (
           shortestPostTitle === null ||
@@ -200,9 +264,6 @@ async function userInfo() {
         ) {
           shortestPostTitle = title;
         }
-      }
-      let longestPostTitle = null;
-      for (const title of titles) {
         if (
           longestPostTitle === null ||
           title.length > longestPostTitle.length
@@ -211,19 +272,15 @@ async function userInfo() {
         }
       }
 
-      const totalChar = titles.reduce(
-        (current, title) => current + title.length,
-        0,
-      );
-
-      const averageTitleLength = Number(
-        titles.length === 0 ? 0 : (totalChar / titles.length).toFixed(1),
-      );
+      const titleDifference =
+        titles.length === 0
+          ? 0
+          : longestPostTitle.length - shortestPostTitle.length;
       return {
         userName: username,
         shortestPostTitle: shortestPostTitle,
         longestPostTitle: longestPostTitle,
-        averageTitleLength: averageTitleLength,
+        titleDifference: titleDifference,
       };
     });
     console.log(result);
