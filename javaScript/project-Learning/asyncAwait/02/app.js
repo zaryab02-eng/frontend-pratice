@@ -291,6 +291,91 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postsResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postsResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postsResponse.json();
+
+//     if (users.length === 0 || posts.length === 0) {
+//       throw new Error("No data found");
+//     }
+
+//     const result = users.map(({ id, name }) => {
+//       const matchedPosts = posts.filter(({ userId }) => id === userId);
+//       let totalTitleLength = 0;
+//       for (const title of matchedPosts) {
+//         totalTitleLength += title.length;
+//       }
+
+//       return {
+//         userName: name,
+//         totalTitleLength: totalTitleLength,
+//       };
+//     });
+//     result.sort((a, b) => b.totalTitleLength - a.totalTitleLength);
+//     console.log(result[0].userName);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postsResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postsResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postsResponse.json();
+
+//     if (users.length === 0 || posts.length === 0) {
+//       throw new Error("No data found");
+//     }
+
+//     const result = users.map(({ id, name }) => {
+//       const matchedPosts = posts.filter(({ userId }) => id === userId);
+//       let totalChar = 0;
+//       for (const { title } of matchedPosts) {
+//         totalChar += title.length;
+//       }
+//       let postCount = matchedPosts.length;
+//       const average = Number((totalChar / postCount).toFixed(1));
+//       return {
+//         name,
+//         average,
+//       };
+//     });
+//     result.sort((a, b) => b.average - a.average);
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
     const userResponse = await fetch(
@@ -313,19 +398,19 @@ async function userInfo() {
     }
 
     const result = users.map(({ id, name }) => {
-      const matchedPosts = posts.filter(({ userId }) => id === userId);
-      let totalTitleLength = 0;
-      for (const title of matchedPosts) {
-        totalTitleLength += title.length;
-      }
+      const matchedPost = posts.filter(({ userId }) => id === userId);
 
+      let totalBodyChar = 0;
+      for (const { body } of matchedPost) {
+        totalBodyChar += body.length;
+      }
       return {
-        userName: name,
-        totalTitleLength: totalTitleLength,
+        name,
+        totalBodyChar,
       };
     });
-    result.sort((a, b) => b.totalTitleLength - a.totalTitleLength);
-    console.log(result[0].userName);
+    result.sort((a, b) => b.totalBodyChar - a.totalBodyChar);
+    console.log(result[0].name);
   } catch (error) {
     console.log(error);
   }
