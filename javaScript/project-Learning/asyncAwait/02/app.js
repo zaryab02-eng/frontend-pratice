@@ -376,6 +376,48 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postsResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postsResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postsResponse.json();
+
+//     if (users.length === 0 || posts.length === 0) {
+//       throw new Error("No data found");
+//     }
+
+//     const result = users.map(({ id, name }) => {
+//       const matchedPost = posts.filter(({ userId }) => id === userId);
+
+//       let totalBodyChar = 0;
+//       for (const { body } of matchedPost) {
+//         totalBodyChar += body.length;
+//       }
+//       return {
+//         name,
+//         totalBodyChar,
+//       };
+//     });
+//     result.sort((a, b) => b.totalBodyChar - a.totalBodyChar);
+//     console.log(result[0].name);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
     const userResponse = await fetch(
@@ -399,18 +441,19 @@ async function userInfo() {
 
     const result = users.map(({ id, name }) => {
       const matchedPost = posts.filter(({ userId }) => id === userId);
-
-      let totalBodyChar = 0;
-      for (const { body } of matchedPost) {
-        totalBodyChar += body.length;
+      let longestTitleLength = 0;
+      for (const { title } of matchedPost) {
+        if (title.length > longestTitleLength) {
+          longestTitleLength = title.length;
+        }
       }
       return {
         name,
-        totalBodyChar,
+        longestTitleLength,
       };
     });
-    result.sort((a, b) => b.totalBodyChar - a.totalBodyChar);
-    console.log(result[0].name);
+    result.sort((a, b) => b.longestTitleLength - a.longestTitleLength);
+    console.log(`${result[0].name} - ${result[0].longestTitleLength}`);
   } catch (error) {
     console.log(error);
   }
