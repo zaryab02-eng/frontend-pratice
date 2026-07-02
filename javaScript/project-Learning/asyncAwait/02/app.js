@@ -234,56 +234,98 @@
 
 // userInfo();
 
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postResponse.json();
+
+//     const result = users.map(({ id, username }) => {
+//       const userPosts = posts.filter(({ userId }) => id === userId);
+//       const titles = userPosts.map(({ title }) => title);
+//       let shortestPostTitle = null;
+//       let longestPostTitle = null;
+//       for (const title of titles) {
+//         if (
+//           shortestPostTitle === null ||
+//           title.length < shortestPostTitle.length
+//         ) {
+//           shortestPostTitle = title;
+//         }
+//         if (
+//           longestPostTitle === null ||
+//           title.length > longestPostTitle.length
+//         ) {
+//           longestPostTitle = title;
+//         }
+//       }
+
+//       const titleDifference =
+//         titles.length === 0
+//           ? 0
+//           : longestPostTitle.length - shortestPostTitle.length;
+//       return {
+//         userName: username,
+//         shortestPostTitle: shortestPostTitle,
+//         longestPostTitle: longestPostTitle,
+//         titleDifference: titleDifference,
+//       };
+//     });
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
 async function userInfo() {
   try {
     const userResponse = await fetch(
       "https://jsonplaceholder.typicode.com/users",
     );
-    const postResponse = await fetch(
+    const postsResponse = await fetch(
       "https://jsonplaceholder.typicode.com/posts",
     );
-
     if (!userResponse.ok) {
       throw new Error("Failed to fetch users");
     }
-    if (!postResponse.ok) {
+    if (!postsResponse.ok) {
       throw new Error("Failed to fetch posts");
     }
     const users = await userResponse.json();
-    const posts = await postResponse.json();
+    const posts = await postsResponse.json();
 
-    const result = users.map(({ id, username }) => {
-      const userPosts = posts.filter(({ userId }) => id === userId);
-      const titles = userPosts.map(({ title }) => title);
-      let shortestPostTitle = null;
-      let longestPostTitle = null;
-      for (const title of titles) {
-        if (
-          shortestPostTitle === null ||
-          title.length < shortestPostTitle.length
-        ) {
-          shortestPostTitle = title;
-        }
-        if (
-          longestPostTitle === null ||
-          title.length > longestPostTitle.length
-        ) {
-          longestPostTitle = title;
-        }
+    if (users.length === 0 || posts.length === 0) {
+      throw new Error("No data found");
+    }
+
+    const result = users.map(({ id, name }) => {
+      const matchedPosts = posts.filter(({ userId }) => id === userId);
+      let totalTitleLength = 0;
+      for (const title of matchedPosts) {
+        totalTitleLength += title.length;
       }
 
-      const titleDifference =
-        titles.length === 0
-          ? 0
-          : longestPostTitle.length - shortestPostTitle.length;
       return {
-        userName: username,
-        shortestPostTitle: shortestPostTitle,
-        longestPostTitle: longestPostTitle,
-        titleDifference: titleDifference,
+        userName: name,
+        totalTitleLength: totalTitleLength,
       };
     });
-    console.log(result);
+    result.sort((a, b) => b.totalTitleLength - a.totalTitleLength);
+    console.log(result[0].userName);
   } catch (error) {
     console.log(error);
   }
