@@ -461,7 +461,53 @@
 
 // userInfo();
 
-async function userInfo() {
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postResponse.json();
+//     if (users.length === 0 || posts.length === 0) {
+//       throw new Error("No data found");
+//     }
+
+//     const result = users.map(({ id, name }) => {
+//       const matchedPosts = posts.filter(({ userId }) => id === userId);
+//       let shortestTitle = null;
+//       for (const { title } of matchedPosts) {
+//         if (shortestTitle === null) {
+//           shortestTitle = title.length;
+//         }
+//         if (title.length < shortestTitle) {
+//           shortestTitle = title.length;
+//         }
+//       }
+//       return {
+//         name,
+//         shortestTitle,
+//       };
+//     });
+//     result.sort((a, b) => a.shortestTitle - b.shortestTitle);
+//     console.log(`${result[0].name} - ${result[0].shortestTitle}`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
+async function usersInfo() {
   try {
     const userResponse = await fetch(
       "https://jsonplaceholder.typicode.com/users",
@@ -472,37 +518,34 @@ async function userInfo() {
     if (!userResponse.ok) {
       throw new Error("Failed to fetch users");
     }
-
     if (!postResponse.ok) {
       throw new Error("Failed to fetch posts");
     }
     const users = await userResponse.json();
     const posts = await postResponse.json();
     if (users.length === 0 || posts.length === 0) {
-      throw new Error("No data found");
+      throw new Error("No data found!");
     }
 
     const result = users.map(({ id, name }) => {
       const matchedPosts = posts.filter(({ userId }) => id === userId);
-      let shortestTitle = null;
-      for (const { title } of matchedPosts) {
-        if (shortestTitle === null) {
-          shortestTitle = title.length;
-        }
-        if (title.length < shortestTitle) {
-          shortestTitle = title.length;
-        }
-      }
+      const totalBodyTitle = matchedPosts.reduce(
+        (sum, { title, body }) => sum + title.length + body.length,
+
+        0,
+      );
+
       return {
         name,
-        shortestTitle,
+        totalBodyTitle,
       };
     });
-    result.sort((a, b) => a.shortestTitle - b.shortestTitle);
-    console.log(`${result[0].name} - ${result[0].shortestTitle}`);
+    result.sort((a, b) => b.totalBodyTitle - a.totalBodyTitle);
+
+    console.log(`${result[0].name} - ${result[0].totalBodyTitle}`);
   } catch (error) {
     console.log(error);
   }
 }
 
-userInfo();
+usersInfo();
