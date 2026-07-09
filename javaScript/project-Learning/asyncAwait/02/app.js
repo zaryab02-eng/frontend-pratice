@@ -507,6 +507,49 @@
 
 // userInfo();
 
+// async function usersInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const posts = await postResponse.json();
+//     if (users.length === 0 || posts.length === 0) {
+//       throw new Error("No data found!");
+//     }
+
+//     const result = users.map(({ id, name }) => {
+//       const matchedPosts = posts.filter(({ userId }) => id === userId);
+//       const totalBodyTitle = matchedPosts.reduce(
+//         (sum, { title, body }) => sum + title.length + body.length,
+
+//         0,
+//       );
+
+//       return {
+//         name,
+//         totalBodyTitle,
+//       };
+//     });
+//     result.sort((a, b) => b.totalBodyTitle - a.totalBodyTitle);
+
+//     console.log(`${result[0].name} - ${result[0].totalBodyTitle}`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// usersInfo();
+
 async function usersInfo() {
   try {
     const userResponse = await fetch(
@@ -526,23 +569,18 @@ async function usersInfo() {
     if (users.length === 0 || posts.length === 0) {
       throw new Error("No data found!");
     }
-
     const result = users.map(({ id, name }) => {
       const matchedPosts = posts.filter(({ userId }) => id === userId);
-      const totalBodyTitle = matchedPosts.reduce(
-        (sum, { title, body }) => sum + title.length + body.length,
-
-        0,
+      const titleLengthGrtrThn40 = matchedPosts.filter(
+        ({ title }) => title.length > 40,
       );
-
       return {
         name,
-        totalBodyTitle,
+        titleLength: titleLengthGrtrThn40.length,
       };
     });
-    result.sort((a, b) => b.totalBodyTitle - a.totalBodyTitle);
-
-    console.log(`${result[0].name} - ${result[0].totalBodyTitle}`);
+    result.sort((a, b) => b.titleLength - a.titleLength);
+    console.log(`${result[0].name} - ${result[0].titleLength}`);
   } catch (error) {
     console.log(error);
   }
