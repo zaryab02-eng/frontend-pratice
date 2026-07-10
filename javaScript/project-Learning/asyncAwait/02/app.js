@@ -41,16 +41,16 @@
 
 // usersInfo();
 
-function runningMaximum(num) {
+function runningMinimum(num) {
   let result = [];
-  let largest = num[0];
+  let minimum = num[0];
   for (let i = 0; i < num.length; i++) {
-    if (num[i] > largest) {
-      largest = num[i];
+    if (num[i] < minimum) {
+      minimum = num[i];
     }
-    result.push(largest);
+    result.push(minimum);
   }
   return result;
 }
 
-console.log(runningMaximum([3, 8, 2, 10, 5]));
+console.log(runningMinimum([5, 3, 8, 2, 4]));
