@@ -39,16 +39,14 @@
 
 // usersInfo();
 
-function runningOddCount(num) {
+function runningProduct(num) {
+  let product = 1;
   let result = [];
-  let count = 0;
   for (let i = 0; i < num.length; i++) {
-    if (num[i] % 2 !== 0) {
-      count++;
-    }
-    result.push(count);
+    product = num[i] * product;
+    result.push(product);
   }
   return result;
 }
 
-console.log(runningOddCount([2, 5, 8, 3, 6, 1]));
+console.log(runningProduct([2, 3, 4, 5]));
