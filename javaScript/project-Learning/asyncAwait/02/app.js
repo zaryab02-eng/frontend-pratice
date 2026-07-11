@@ -39,14 +39,14 @@
 
 // usersInfo();
 
-function runningProduct(num) {
-  let product = 1;
+function runningAverage(num) {
+  let sum = 0;
   let result = [];
   for (let i = 0; i < num.length; i++) {
-    product = num[i] * product;
-    result.push(product);
+    sum += num[i];
+    result.push(sum);
   }
   return result;
 }
 
-console.log(runningProduct([2, 3, 4, 5]));
+console.log(runningAverage([2, 4, 6, 8]));
