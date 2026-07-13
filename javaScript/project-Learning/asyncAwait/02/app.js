@@ -39,16 +39,13 @@
 
 // usersInfo();
 
-function runningAverage(num) {
-  let sum = 0;
-  let result = [];
-  let avg = 0;
+function firstConsecutivePair(num) {
   for (let i = 0; i < num.length; i++) {
-    sum += num[i];
-    avg = sum / (i + 1);
-    result.push(avg);
+    if (num[i] === num[i + 1]) {
+      return [num[i], num[i + 1]];
+    }
   }
-  return result;
+  return -1;
 }
 
-console.log(runningAverage([2, 4, 6, 8]));
+console.log(firstConsecutivePair([3, 5, 5, 2, 2, 8]));
