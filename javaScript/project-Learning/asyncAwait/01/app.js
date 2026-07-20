@@ -173,37 +173,41 @@
 
 // userInfo();
 
-async function userInfo() {
-  try {
-    const userResponse = await fetch(
-      "https://jsonplaceholder.typicode.com/users",
-    );
-    const postResponse = await fetch(
-      "https://jsonplaceholder.typicode.com/posts",
-    );
+// async function userInfo() {
+//   try {
+//     const userResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/users",
+//     );
+//     const postResponse = await fetch(
+//       "https://jsonplaceholder.typicode.com/posts",
+//     );
 
-    if (!userResponse.ok) {
-      throw new Error("Failed to fetch users");
-    }
-    if (!postResponse.ok) {
-      throw new Error("Failed to fetch posts");
-    }
-    const users = await userResponse.json();
-    const post = await postResponse.json();
+//     if (!userResponse.ok) {
+//       throw new Error("Failed to fetch users");
+//     }
+//     if (!postResponse.ok) {
+//       throw new Error("Failed to fetch posts");
+//     }
+//     const users = await userResponse.json();
+//     const post = await postResponse.json();
 
-    const result = users.map(({ id, username }) => {
-      const matchedPosts = post.filter(({ userId }) => id === userId);
-      const postTitles = matchedPosts.map(({ title }) => title);
+//     const result = users.map(({ id, username }) => {
+//       const matchedPosts = post.filter(({ userId }) => id === userId);
+//       const postTitles = matchedPosts.map(({ title }) => title);
 
-      return {
-        userName: username,
-        postTitles,
-      };
-    });
-    console.log(result);
-  } catch (error) {
-    console.log(error);
-  }
-}
+//       return {
+//         userName: username,
+//         postTitles,
+//       };
+//     });
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// userInfo();
+
+async function userInfo() {}
 
 userInfo();
