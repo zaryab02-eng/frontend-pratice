@@ -40,11 +40,37 @@
 // }
 // console.log(total(10, 20, 30, 40));
 
-function report(name, ...scores) {
-  console.log(name);
-  scores.forEach((score) => {
-    console.log(score);
-  });
-}
+// function report(name, ...scores) {
+//   console.log(name);
+//   scores.forEach((score) => {
+//     console.log(score);
+//   });
+// }
 
-report("Zaryab", 90, 95, 98);
+// report("Zaryab", 90, 95, 98);
+
+// function outer() {
+//   let count = 0;
+
+//   function inner() {
+//     count++;
+//     console.log(count);
+//   }
+
+//   return inner;
+// }
+
+// const counter = outer();
+
+// counter();
+// counter();
+// counter();
+
+function greet(name) {
+  function inner() {
+    console.log(`Hello ${name}`);
+  }
+  return inner;
+}
+const sayHello = greet("Zaryab");
+sayHello();
