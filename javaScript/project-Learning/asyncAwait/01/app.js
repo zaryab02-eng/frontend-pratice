@@ -24,13 +24,27 @@
 // const num2 = [...numbers, 20];
 // console.log(num2);
 
-const user = {
-  name: "Zaryab",
-  age: 20,
-};
+// const user = {
+//   name: "Zaryab",
+//   age: 20,
+// };
 
-const updatedUser = {
-  ...user,
-  age: 21,
-};
-console.log(updatedUser);
+// const updatedUser = {
+//   ...user,
+//   age: 21,
+// };
+// console.log(updatedUser);
+
+// function total(...nums) {
+//   return nums.reduce((current, num) => current + num, 0);
+// }
+// console.log(total(10, 20, 30, 40));
+
+function report(name, ...scores) {
+  console.log(name);
+  scores.forEach((score) => {
+    console.log(score);
+  });
+}
+
+report("Zaryab", 90, 95, 98);
