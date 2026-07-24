@@ -44,3 +44,18 @@ function showProducts() {
 }
 
 showProducts();
+
+function findProduct(inputId) {
+  const matchedId = products.find((product) => product.id === inputId);
+  const { name, price, stock } = matchedId;
+  if (!matchedId) {
+    console.log("No product found");
+  } else {
+    console.log(name);
+    console.log(`₹${price}`);
+    console.log(`Stock:${stock}`);
+  }
+  return matchedId;
+}
+
+findProduct(1);
