@@ -61,4 +61,4 @@ function updateStock(id, newStock) {
   matchedId.stock = newStock;
 }
 
-deleteProduct;
+function deleteProduct(id) {}
