@@ -43,8 +43,6 @@ function showProducts() {
   });
 }
 
-showProducts();
-
 function findProduct(inputId) {
   const matchedId = products.find((product) => product.id === inputId);
   const { name, price, stock } = matchedId;
@@ -58,4 +56,9 @@ function findProduct(inputId) {
   return matchedId;
 }
 
-findProduct(1);
+function updateStock(id, newStock) {
+  const matchedId = products.find((product) => product.id === id);
+  matchedId.stock = newStock;
+}
+
+deleteProduct;
