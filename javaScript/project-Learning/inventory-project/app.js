@@ -61,4 +61,11 @@ function updateStock(id, newStock) {
   matchedId.stock = newStock;
 }
 
-function deleteProduct(id) {}
+function deleteProduct(id) {
+  const updatedProduct = products.filter((product) => product.id !== id);
+  updatedProduct.forEach((product) => {
+    console.log(`${product.id} - ${product.name}`);
+  });
+}
+
+deleteProduct(2);
