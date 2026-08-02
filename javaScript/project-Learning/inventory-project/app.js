@@ -6,8 +6,9 @@ const products = [
 ];
 
 function updateProductPrice(products, proId, newPrice) {
-  const matchedProduct = products.filter((product) => product.id === proId);
-  return matchedProduct.map((product) => (product.price = newPrice));
+  return products.map((product) => {
+    return product.id === proId ? (product.price = newPrice) : product.price;
+  });
 }
 
 console.log(updateProductPrice(products, 3, 2000));
