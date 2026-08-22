@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const message = "Hello TypeScript";
-console.log(message);
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+console.log(calculateTotal(499, 3));
 //# sourceMappingURL=index.js.map
