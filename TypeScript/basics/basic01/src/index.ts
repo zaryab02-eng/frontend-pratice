@@ -1,5 +1,27 @@
-function calculateTotal(price: number, quantity: number): number {
-  return price * quantity;
+// function calculateTotal(
+//   price: number,
+//   quantity: number,
+//   discount: number,
+// ): number {
+//   let total = price * quantity;
+//   let discntAmnt = (total * discount) / 100;
+//   return total - discntAmnt;
+// }
+
+// console.log(calculateTotal(1000, 2, 10));
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  inStock: boolean;
 }
 
-console.log(calculateTotal(499, 3));
+let product: Product = {
+  id: 2,
+  name: "Keyboard",
+  price: 1499,
+  inStock: true,
+};
+
+console.log(product);
