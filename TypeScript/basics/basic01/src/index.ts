@@ -46,28 +46,54 @@
 // let products: string[] = ["Keyboard", "Mouse", "Monitor"];
 // console.log(products);
 
-interface Employee {
+// interface Employee {
+//   id: number | string;
+//   name: string;
+//   salary: number;
+// }
+
+// const employee: Employee[] = [
+//   {
+//     id: 101,
+//     name: "Zaryab",
+//     salary: 45000,
+//   },
+//   {
+//     id: "EMP-102",
+//     name: "Ali",
+//     salary: 50000,
+//   },
+//   {
+//     id: 103,
+//     name: "Ahmed",
+//     salary: 40000,
+//   },
+// ];
+
+// console.log(employee);
+
+interface Order {
   id: number;
-  name: string;
-  salary: number;
+  product: string;
+  status: "pending" | "shipped" | "delivered";
 }
 
-const employee: Employee[] = [
+const order: Order[] = [
   {
     id: 101,
-    name: "Zaryab",
-    salary: 45000,
+    product: "Keyboard",
+    status: "pending",
   },
   {
     id: 102,
-    name: "Ali",
-    salary: 50000,
+    product: "Mouse",
+    status: "shipped",
   },
   {
     id: 103,
-    name: "Ahmed",
-    salary: 40000,
+    product: "Monitor",
+    status: "delivered",
   },
 ];
 
-console.log(employee);
+console.log(order);

@@ -9,22 +9,22 @@
 //   return total - discntAmnt;
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
-const employee = [
+const order = [
     {
         id: 101,
-        name: "Zaryab",
-        salary: 45000,
+        product: "Keyboard",
+        status: "pending",
     },
     {
         id: 102,
-        name: "Ali",
-        salary: 50000,
+        product: "Mouse",
+        status: "shipped",
     },
     {
         id: 103,
-        name: "Ahmed",
-        salary: 40000,
+        product: "Monitor",
+        status: "delivered",
     },
 ];
-console.log(employee);
+console.log(order);
 //# sourceMappingURL=index.js.map
