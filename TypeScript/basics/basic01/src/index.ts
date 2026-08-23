@@ -26,18 +26,19 @@
 
 // console.log(product);
 
-interface Employee {
+interface Product {
   id: number;
   name: string;
-  salary: number;
-  isActive: boolean;
+  price: number;
+  description?: string;
+  inStock: boolean;
 }
 
-const employee: Employee = {
-  id: 101,
-  name: "Zaryab",
-  salary: 45000,
-  isActive: true,
+const product: Product = {
+  id: 1,
+  name: "Keyboard",
+  price: 1499,
+  inStock: true,
 };
 
-console.log(employee);
+console.log(product);
