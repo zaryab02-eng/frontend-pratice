@@ -26,19 +26,48 @@
 
 // console.log(product);
 
-interface Product {
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+//   description?: string;
+//   inStock: boolean;
+// }
+
+// const product: Product = {
+//   id: 1,
+//   name: "Keyboard",
+//   price: 1499,
+//   inStock: true,
+// };
+
+// console.log(product);
+
+// let products: string[] = ["Keyboard", "Mouse", "Monitor"];
+// console.log(products);
+
+interface Employee {
   id: number;
   name: string;
-  price: number;
-  description?: string;
-  inStock: boolean;
+  salary: number;
 }
 
-const product: Product = {
-  id: 1,
-  name: "Keyboard",
-  price: 1499,
-  inStock: true,
-};
+const employee: Employee[] = [
+  {
+    id: 101,
+    name: "Zaryab",
+    salary: 45000,
+  },
+  {
+    id: 102,
+    name: "Ali",
+    salary: 50000,
+  },
+  {
+    id: 103,
+    name: "Ahmed",
+    salary: 40000,
+  },
+];
 
-console.log(product);
+console.log(employee);

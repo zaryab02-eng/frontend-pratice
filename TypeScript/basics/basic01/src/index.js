@@ -9,11 +9,22 @@
 //   return total - discntAmnt;
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
-const product = {
-    id: 1,
-    name: "Keyboard",
-    price: 1499,
-    inStock: true,
-};
-console.log(product);
+const employee = [
+    {
+        id: 101,
+        name: "Zaryab",
+        salary: 45000,
+    },
+    {
+        id: 102,
+        name: "Ali",
+        salary: 50000,
+    },
+    {
+        id: 103,
+        name: "Ahmed",
+        salary: 40000,
+    },
+];
+console.log(employee);
 //# sourceMappingURL=index.js.map
