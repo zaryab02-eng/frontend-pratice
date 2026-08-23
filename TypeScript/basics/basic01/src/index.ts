@@ -10,18 +10,34 @@
 
 // console.log(calculateTotal(1000, 2, 10));
 
-interface Product {
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+//   inStock: boolean;
+// }
+
+// let product: Product = {
+//   id: 2,
+//   name: "Keyboard",
+//   price: 1499,
+//   inStock: true,
+// };
+
+// console.log(product);
+
+interface Employee {
   id: number;
   name: string;
-  price: number;
-  inStock: boolean;
+  salary: number;
+  isActive: boolean;
 }
 
-let product: Product = {
-  id: 2,
-  name: "Keyboard",
-  price: 1499,
-  inStock: true,
+const employee: Employee = {
+  id: 101,
+  name: "Zaryab",
+  salary: 45000,
+  isActive: true,
 };
 
-console.log(product);
+console.log(employee);

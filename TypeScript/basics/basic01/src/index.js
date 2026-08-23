@@ -9,11 +9,11 @@
 //   return total - discntAmnt;
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
-let product = {
-    id: 2,
-    name: "Keyboard",
-    price: 1499,
-    inStock: true,
+const employee = {
+    id: 101,
+    name: "Zaryab",
+    salary: 45000,
+    isActive: true,
 };
-console.log(product);
+console.log(employee);
 //# sourceMappingURL=index.js.map
