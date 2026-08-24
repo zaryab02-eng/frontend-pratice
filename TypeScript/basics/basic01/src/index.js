@@ -1,30 +1,13 @@
 "use strict";
-// function calculateTotal(
-//   price: number,
-//   quantity: number,
-//   discount: number,
-// ): number {
-//   let total = price * quantity;
-//   let discntAmnt = (total * discount) / 100;
-//   return total - discntAmnt;
-// }
 Object.defineProperty(exports, "__esModule", { value: true });
-const order = [
-    {
-        id: 101,
-        product: "Keyboard",
-        status: "pending",
-    },
-    {
-        id: 102,
-        product: "Mouse",
-        status: "shipped",
-    },
-    {
-        id: 103,
-        product: "Monitor",
-        status: "delivered",
-    },
-];
-console.log(order);
+function formatId(id) {
+    if (typeof id === "string") {
+        return `ID:${id}`;
+    }
+    else {
+        return `ID:${id}`;
+    }
+}
+console.log(formatId(101));
+console.log(formatId("EMP-101"));
 //# sourceMappingURL=index.js.map
