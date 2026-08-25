@@ -1,32 +1,19 @@
-// function formatId(id: string | number): string {
-//   if (typeof id === "string") {
-//     return `ID:${id}`;
-//   } else {
-//     return `ID:${id}`;
-//   }
-// }
+type Order =
+  | { status: "delivered"; deliveryDate: string }
+  | { status: "cancelled"; reason: string };
 
-// console.log(formatId(101));
-
-// console.log(formatId("EMP-101"));
-
-interface Employee {
-  name: string;
-  salary: number;
-}
-
-interface Manager {
-  name: string;
-  teamSize: number;
-}
-
-function getRole(person: Employee | Manager): string {
-  if ("salary" in person) {
-    return "Employee";
+function getOrderInfo(order: Order): string {
+  if (order.status === "delivered") {
+    return `Delivered on ${order.deliveryDate}`;
   } else {
-    return "Manager";
+    return `Cancelled ${order.reason}`;
   }
 }
 
-console.log(getRole({ name: "Zaryab", teamSize: 5 }));
-console.log(getRole({ name: "Ali", salary: 4500 }));
+console.log(getOrderInfo({ status: "delivered", deliveryDate: "21 August" }));
+console.log(
+  getOrderInfo({
+    status: "cancelled",
+    reason: "duniya khatam ho gyi aadhe raaste me",
+  }),
+);

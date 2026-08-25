@@ -1,20 +1,16 @@
 "use strict";
-// function formatId(id: string | number): string {
-//   if (typeof id === "string") {
-//     return `ID:${id}`;
-//   } else {
-//     return `ID:${id}`;
-//   }
-// }
 Object.defineProperty(exports, "__esModule", { value: true });
-function getRole(person) {
-    if ("salary" in person) {
-        return "Employee";
+function getOrderInfo(order) {
+    if (order.status === "delivered") {
+        return `Delivered on ${order.deliveryDate}`;
     }
     else {
-        return "Manager";
+        return `Cancelled ${order.reason}`;
     }
 }
-console.log(getRole({ name: "Zaryab", teamSize: 5 }));
-console.log(getRole({ name: "Ali", salary: 4500 }));
+console.log(getOrderInfo({ status: "delivered", deliveryDate: "21 August" }));
+console.log(getOrderInfo({
+    status: "cancelled",
+    reason: "duniya khatam ho gyi aadhe raaste me",
+}));
 //# sourceMappingURL=index.js.map
