@@ -1,19 +1,16 @@
-type Order =
-  | { status: "delivered"; deliveryDate: string }
-  | { status: "cancelled"; reason: string };
+type Payment =
+  | { status: "success"; amount: number }
+  | { status: "failed"; reason: string };
 
-function getOrderInfo(order: Order): string {
-  if (order.status === "delivered") {
-    return `Delivered on ${order.deliveryDate}`;
+function getPaymentMessage(payment: Payment): string {
+  if (payment.status === "success") {
+    return `Payment successful: ₹${payment.amount}`;
   } else {
-    return `Cancelled ${order.reason}`;
+    return `Payment failed: ${payment.reason}`;
   }
 }
 
-console.log(getOrderInfo({ status: "delivered", deliveryDate: "21 August" }));
+console.log(getPaymentMessage({ status: "success", amount: 500 }));
 console.log(
-  getOrderInfo({
-    status: "cancelled",
-    reason: "duniya khatam ho gyi aadhe raaste me",
-  }),
+  getPaymentMessage({ status: "failed", reason: "Insufficient balance" }),
 );

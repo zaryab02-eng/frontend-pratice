@@ -1,16 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function getOrderInfo(order) {
-    if (order.status === "delivered") {
-        return `Delivered on ${order.deliveryDate}`;
+function getPaymentMessage(payment) {
+    if (payment.status === "success") {
+        return `Payment successful: ₹${payment.amount}`;
     }
     else {
-        return `Cancelled ${order.reason}`;
+        return `Payment failed: ${payment.reason}`;
     }
 }
-console.log(getOrderInfo({ status: "delivered", deliveryDate: "21 August" }));
-console.log(getOrderInfo({
-    status: "cancelled",
-    reason: "duniya khatam ho gyi aadhe raaste me",
-}));
+console.log(getPaymentMessage({ status: "success", amount: 500 }));
+console.log(getPaymentMessage({ status: "failed", reason: "Insufficient balance" }));
 //# sourceMappingURL=index.js.map
