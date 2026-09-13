@@ -11,16 +11,17 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function updateStock(id: number, status: boolean): Product[] {
+function updateStock(id: number, newPrice: number, status: boolean): Product[] {
   return products.map((product) => {
     if (product.id === id) {
       return {
         ...product,
         inStock: status,
+        price: newPrice,
       };
     }
     return product;
   });
 }
 
-console.log(updateStock(2, true));
+console.log(updateStock(2, 1000, true));
