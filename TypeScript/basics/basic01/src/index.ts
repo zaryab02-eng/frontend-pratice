@@ -12,10 +12,11 @@ const products: Product[] = [
 ];
 
 function getInStockCount(): number {
-  const numOfInStockPro = products.filter(({ inStock }) => inStock === true);
-  return numOfInStockPro.reduce((sum) => {
-    return sum + 1;
-  }, 0);
+  return products
+    .filter(({ inStock }) => inStock === true)
+    .reduce((sum) => {
+      return sum + 1;
+    }, 0);
 }
 
 console.log(getInStockCount());

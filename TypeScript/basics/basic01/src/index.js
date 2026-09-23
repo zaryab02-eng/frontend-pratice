@@ -6,8 +6,9 @@ const products = [
     { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 function getInStockCount() {
-    const numOfInStockPro = products.filter(({ inStock }) => inStock === true);
-    return numOfInStockPro.reduce((sum) => {
+    return products
+        .filter(({ inStock }) => inStock === true)
+        .reduce((sum) => {
         return sum + 1;
     }, 0);
 }
