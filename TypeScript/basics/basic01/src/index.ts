@@ -11,11 +11,11 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function getTotalPriceInStockProducts(): number {
-  const inStockPro = products.filter((product) => product.inStock === true);
-  return inStockPro.reduce((sum, { price }) => {
-    return sum + price;
+function getInStockCount(): number {
+  const numOfInStockPro = products.filter(({ inStock }) => inStock === true);
+  return numOfInStockPro.reduce((sum) => {
+    return sum + 1;
   }, 0);
 }
 
-console.log(getTotalPriceInStockProducts());
+console.log(getInStockCount());
