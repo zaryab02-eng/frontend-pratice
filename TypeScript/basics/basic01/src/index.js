@@ -6,10 +6,13 @@ const products = [
     { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 function getInStockCount() {
-    return products
-        .filter(({ inStock }) => inStock === true)
-        .reduce((sum) => {
-        return sum + 1;
+    return products.reduce((sum, { inStock }) => {
+        if (inStock === true) {
+            return sum + 1;
+        }
+        else {
+            return sum;
+        }
     }, 0);
 }
 console.log(getInStockCount());
