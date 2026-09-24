@@ -11,14 +11,20 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function getInventoryValue(): number {
-  return products.reduce((sum, { price, inStock }) => {
-    if (inStock === true) {
-      return sum + price;
-    } else {
-      return sum;
-    }
-  }, 0);
+// function getInventoryValue(): number {
+//   return products.reduce((sum, { price, inStock }) => {
+//     if (inStock === true) {
+//       return sum + price;
+//     } else {
+//       return sum;
+//     }
+//   }, 0);
+// }
+
+// console.log(getInventoryValue());
+
+function hasOutOfStockProduct(): boolean {
+  return products.some((product) => !product.inStock);
 }
 
-console.log(getInventoryValue());
+console.log(hasOutOfStockProduct());
