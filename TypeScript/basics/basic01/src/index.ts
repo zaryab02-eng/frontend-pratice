@@ -11,8 +11,8 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function areAllProductsInStock(): boolean {
-  return products.every((product) => product.inStock);
+function getExpensiveProduct(): Product | undefined {
+  return products.find(({ price }) => price > 10000);
 }
 
-console.log(areAllProductsInStock());
+console.log(getExpensiveProduct());
