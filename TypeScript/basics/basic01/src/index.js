@@ -5,15 +5,15 @@ const products = [
     { id: 2, name: "Mouse", price: 1200, inStock: false },
     { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
-function getInStockCount() {
-    return products.reduce((sum, { inStock }) => {
+function getInventoryValue() {
+    return products.reduce((sum, { price, inStock }) => {
         if (inStock === true) {
-            return sum + 1;
+            return sum + price;
         }
         else {
             return sum;
         }
     }, 0);
 }
-console.log(getInStockCount());
+console.log(getInventoryValue());
 //# sourceMappingURL=index.js.map
