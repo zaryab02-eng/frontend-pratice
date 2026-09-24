@@ -11,8 +11,8 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function getExpensiveProduct(): Product | undefined {
-  return products.find(({ price }) => price > 10000);
+function getAffordableProducts(maxPrice: number): Product[] {
+  return products.filter(({ price }) => price <= maxPrice);
 }
 
-console.log(getExpensiveProduct());
+console.log(getAffordableProducts(1000));
