@@ -11,8 +11,11 @@ const products: Product[] = [
   { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
 
-function getAffordableProducts(maxPrice: number): Product[] {
-  return products.filter(({ price }) => price <= maxPrice);
+function getExpensiveInStockCount(): number {
+  return products.reduce(
+    (sum, { price, inStock }) => (inStock && 5000 <= price ? sum + 1 : sum),
+    0,
+  );
 }
 
-console.log(getAffordableProducts(1000));
+console.log(getExpensiveInStockCount());

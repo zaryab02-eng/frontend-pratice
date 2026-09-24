@@ -5,8 +5,8 @@ const products = [
     { id: 2, name: "Mouse", price: 1200, inStock: false },
     { id: 3, name: "Monitor", price: 15000, inStock: true },
 ];
-function getAffordableProducts(maxPrice) {
-    return products.filter(({ price }) => price <= maxPrice);
+function getExpensiveInStockCount() {
+    return products.reduce((sum, { price, inStock }) => (inStock && 5000 <= price ? sum + 1 : sum), 0);
 }
-console.log(getAffordableProducts(1000));
+console.log(getExpensiveInStockCount());
 //# sourceMappingURL=index.js.map
