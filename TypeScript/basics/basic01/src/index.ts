@@ -1,21 +1,22 @@
-interface Product {
+interface Order {
   id: number;
-  name: string;
-  price: number;
-  inStock: boolean;
+  customer: string;
+  amount: number;
+  status: "paid" | "pending" | "cancelled";
 }
 
-const products: Product[] = [
-  { id: 1, name: "Keyboard", price: 2500, inStock: true },
-  { id: 2, name: "Mouse", price: 1200, inStock: false },
-  { id: 3, name: "Monitor", price: 15000, inStock: true },
+const orders: Order[] = [
+  { id: 1, customer: "Ali", amount: 2500, status: "paid" },
+  { id: 2, customer: "Sara", amount: 4000, status: "pending" },
+  { id: 3, customer: "John", amount: 6500, status: "paid" },
+  { id: 4, customer: "Ayan", amount: 3000, status: "cancelled" },
 ];
 
-function getHighValueInventory(): number {
-  return products.reduce(
-    (sum, { price, inStock }) => (inStock && price > 5000 ? sum + price : sum),
+function getTotalPaidAmount(): number {
+  return orders.reduce(
+    (sum, { status, amount }) => (status === "paid" ? sum + amount : sum),
     0,
   );
 }
 
-console.log(getHighValueInventory());
+console.log(getTotalPaidAmount());

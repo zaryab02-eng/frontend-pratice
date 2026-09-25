@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const products = [
-    { id: 1, name: "Keyboard", price: 2500, inStock: true },
-    { id: 2, name: "Mouse", price: 1200, inStock: false },
-    { id: 3, name: "Monitor", price: 15000, inStock: true },
+const orders = [
+    { id: 1, customer: "Ali", amount: 2500, status: "paid" },
+    { id: 2, customer: "Sara", amount: 4000, status: "pending" },
+    { id: 3, customer: "John", amount: 6500, status: "paid" },
+    { id: 4, customer: "Ayan", amount: 3000, status: "cancelled" },
 ];
-function getHighValueInventory() {
-    return products.reduce((sum, { price, inStock }) => (inStock && price > 5000 ? sum + price : sum), 0);
+function getTotalPaidAmount() {
+    return orders.reduce((sum, { status, amount }) => (status === "paid" ? sum + amount : sum), 0);
 }
-console.log(getHighValueInventory());
+console.log(getTotalPaidAmount());
 //# sourceMappingURL=index.js.map
