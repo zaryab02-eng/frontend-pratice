@@ -6,8 +6,16 @@ const orders = [
     { id: 3, customer: "John", amount: 6500, status: "paid" },
     { id: 4, customer: "Ayan", amount: 3000, status: "cancelled" },
 ];
-function getTotalPaidAmount() {
-    return orders.reduce((sum, { status, amount }) => (status === "paid" ? sum + amount : sum), 0);
+// function getTotalPaidAmount(): number {
+//   return orders.reduce(
+//     (sum, { status, amount }) => (status === "paid" ? sum + amount : sum),
+//     0,
+//   );
+// }
+// console.log(getTotalPaidAmount());
+function getAveragePaidAmount() {
+    const paidCount = orders.reduce((sum, { status }) => (status === "paid" ? sum + 1 : sum), 0);
+    return orders.reduce((sum, { status, amount }) => status === "paid" ? sum + amount / paidCount : sum, 0);
 }
-console.log(getTotalPaidAmount());
+console.log(getAveragePaidAmount());
 //# sourceMappingURL=index.js.map
