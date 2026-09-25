@@ -21,16 +21,31 @@ const orders: Order[] = [
 
 // console.log(getTotalPaidAmount());
 
-function getAveragePaidAmount(): number {
-  const paidCount = orders.reduce(
-    (sum, { status }) => (status === "paid" ? sum + 1 : sum),
-    0,
-  );
-  return orders.reduce(
-    (sum, { status, amount }) =>
-      status === "paid" ? sum + amount / paidCount : sum,
-    0,
-  );
-}
+// function getAveragePaidAmount(): number {
+//   const paidCount = orders.reduce(
+//     (sum, { status }) => (status === "paid" ? sum + 1 : sum),
+//     0,
+//   );
+//   return orders.reduce(
+//     (sum, { status, amount }) =>
+//       status === "paid" ? sum + amount / paidCount : sum,
+//     0,
+//   );
+// }
 
-console.log(getAveragePaidAmount());
+// console.log(getAveragePaidAmount());
+
+function getOrderStats(): {
+  paidCount: number;
+  paidAmount: number;
+} {
+  return orders.reduce((sum, { status, amount }) => {
+    return (
+      {},
+      {
+        paidCount: 0,
+        paidAmount: 0,
+      }
+    );
+  });
+}
