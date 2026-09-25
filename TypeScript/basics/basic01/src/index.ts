@@ -41,7 +41,9 @@ function getOrderStats(): {
 } {
   return orders.reduce((sum, { status, amount }) => {
     return (
-      {},
+      {
+        paidCount: status === "paid" ? sum
+      },
       {
         paidCount: 0,
         paidAmount: 0,
