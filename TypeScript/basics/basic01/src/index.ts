@@ -35,19 +35,25 @@ const orders: Order[] = [
 
 // console.log(getAveragePaidAmount());
 
-function getOrderStats(): {
-  paidCount: number;
-  paidAmount: number;
+function getOrderStatusCount(): {
+  paid: number;
+  pending: number;
+  cancelled: number;
 } {
-  return orders.reduce((sum, { status, amount }) => {
-    return (
-      {
-        paidCount: status === "paid" ? sum
-      },
-      {
-        paidCount: 0,
-        paidAmount: 0,
-      }
-    );
-  });
+  return orders.reduce(
+    (sum, { status }) => {
+      return {
+        paid: status === "paid" ? sum.paid + 1 : sum.paid,
+        pending: status === "pending" ? sum.pending + 1 : sum.pending,
+        cancelled: status === "cancelled" ? sum.cancelled + 1 : sum.cancelled,
+      };
+    },
+    {
+      paid: 0,
+      pending: 0,
+      cancelled: 0,
+    },
+  );
 }
+
+console.log(getOrderStatusCount());
