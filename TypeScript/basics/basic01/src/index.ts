@@ -36,22 +36,58 @@ const orders: Order[] = [
 // console.log(getAveragePaidAmount());
 
 function getOrderStatusCount(): {
-  paid: number;
-  pending: number;
-  cancelled: number;
+  paid: {
+    count: number;
+    amount: number;
+  };
+  pending: {
+    count: number;
+    amount: number;
+  };
+  cancelled: {
+    count: number;
+    amount: number;
+  };
 } {
   return orders.reduce(
-    (sum, { status }) => {
+    (sum, { status, amount }) => {
       return {
-        paid: status === "paid" ? sum.paid + 1 : sum.paid,
-        pending: status === "pending" ? sum.pending + 1 : sum.pending,
-        cancelled: status === "cancelled" ? sum.cancelled + 1 : sum.cancelled,
+        paid:
+          status === "paid"
+            ? {
+                count: sum.paid.count + 1,
+                amount: sum.paid.amount + amount,
+              }
+            : {
+                count: sum.paid.count,
+                amount: sum.paid.amount,
+              },
+        pending:
+          status === "pending"
+            ? {
+                count: sum.pending.count + 1,
+                amount: sum.pending.amount + amount,
+              }
+            : {
+                count: sum.pending.count,
+                amount: sum.pending.amount,
+              },
+        cancelled:
+          status === "cancelled"
+            ? {
+                count: sum.cancelled.count + 1,
+                amount: sum.cancelled.amount + amount,
+              }
+            : {
+                count: sum.cancelled.count,
+                amount: sum.cancelled.amount,
+              },
       };
     },
     {
-      paid: 0,
-      pending: 0,
-      cancelled: 0,
+      paid: { count: 0, amount: 0 },
+      pending: { count: 0, amount: 0 },
+      cancelled: { count: 0, amount: 0 },
     },
   );
 }
