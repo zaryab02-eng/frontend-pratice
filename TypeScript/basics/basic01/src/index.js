@@ -4,12 +4,22 @@
 //   email: string;
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
-// function formatUser(user: User | string): string {
-//   if (typeof user === "string") {
-//     return user;
-//   } else {
-//     return `${user.name} - ${user.email}`;
-//   }
-// }
-// console.log(formatUser("zryab"));
+function getUserInfo(user) {
+    if (user.role === "admin") {
+        return `${user.role} has ${user.permissions.length} permissions`;
+    }
+    else {
+        return `${user.role} has ${user.orders} orders`;
+    }
+}
+console.log(getUserInfo({
+    role: "admin",
+    permissions: ["delete", "edit"],
+}));
+// "Admin has 2 permissions"
+console.log(getUserInfo({
+    role: "customer",
+    orders: 5,
+}));
+// "Customer has 5 orders"
 //# sourceMappingURL=index.js.map
