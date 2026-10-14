@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function getFirst(items) {
-    return items[0];
+function getLast(item) {
+    return item[item.length - 1];
 }
+console.log(getLast([10, 20, 30]));
+console.log(getLast(["Ali", "Sara", "Ahmed"]));
 //# sourceMappingURL=index.js.map
